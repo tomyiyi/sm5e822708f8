@@ -72,9 +72,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A08 Gemini 联通优化
+  - name: 台湾 A28 联通优化
     type: vless
-    server: us08.graniterapids.com
+    server: twgame08.graniterapids.com
     port: 443
     uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
     udp: true
@@ -86,9 +86,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 台湾 A28 联通优化
+  - name: 美国 A02 IPv6双栈 Gemini
     type: vless
-    server: twgame08.graniterapids.com
+    server: us02.graniterapids.com
     port: 443
     uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
     udp: true
@@ -115,8 +115,8 @@ proxy-groups:
       - "台湾 A06 移动低延迟优化"
       - "台湾 A14 移动低延迟优化"
       - "美国 A03 IPv6双栈 Gemini"
-      - "美国 A08 Gemini 联通优化"
       - "台湾 A28 联通优化"
+      - "美国 A02 IPv6双栈 Gemini"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
