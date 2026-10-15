@@ -94,9 +94,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 美国 A16 低延迟游戏加速 限速5M
+- name: 美国 A14 Gemini 移动优化
   type: vless
-  server: us16.graniterapids.com
+  server: us14.graniterapids.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -141,12 +141,12 @@ proxy-groups:
   type: select
   proxies:
   - 美国 A08 Gemini 联通优化
-  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A14 Gemini 移动优化
   - DIRECT
 - name: ✈️ Gemini 专属出口(7IP)
   type: select
   proxies:
-  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A08 Gemini 联通优化
 - name: 🚫 黑名单节点(勿用)
   type: select
   proxies:
@@ -164,7 +164,7 @@ proxy-groups:
   type: select
   proxies:
   - 美国 A08 Gemini 联通优化
-  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A14 Gemini 移动优化
 rules:
 - DST-PORT,22,DIRECT
 - DOMAIN-SUFFIX,gemini.google.com,♊ Gemini 稳定组
