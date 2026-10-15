@@ -1,0 +1,4467 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+ipv6: true
+log-level: error
+unified-delay: true
+tcp-concurrent: true
+external-controller: 127.0.0.1:9091
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - localhost.ptlogin2.qq.com
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  proxy-server-nameserver:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - 119.29.29.29
+  - tls://8.8.4.4:853
+  nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 1.1.1.1
+  - 8.8.8.8
+  fallback:
+  - https://1.1.1.1/dns-query
+  - https://8.8.8.8/dns-query
+  - https://dns.google/dns-query
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
+proxies:
+- name: VPS-美国-LA-A (admin)
+  type: vless
+  server: 107.150.27.20
+  port: 8443
+  uuid: 3923271d-d8a3-482d-806a-d853694e3652
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UHmGldkZZ0TlTmjaZUHdQBvyn0FvZOea-saYQPzQihQ
+    short-id: 0df9
+    support-x25519mlkem768: true
+- name: VPS-美国-LA-B (friend-a)
+  type: vless
+  server: 107.150.27.20
+  port: 8443
+  uuid: b2e73109-2d89-4bda-aa92-9ce18ef879f6
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UHmGldkZZ0TlTmjaZUHdQBvyn0FvZOea-saYQPzQihQ
+    short-id: 0df9
+    support-x25519mlkem768: true
+- name: VPS-美国-LA-443通用
+  type: vless
+  server: 107.150.27.20
+  port: 443
+  uuid: 42f07ad8-a1d0-4a69-a726-5d9e5be4ba48
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: ENXVliidpGYGmL2AZgrGYCuIhDCe8gJzBSvSZYecg2I
+    short-id: a701cbb1cf71c50d
+- name: Gemini反代-us05.allmzk.org
+  type: vless
+  server: us05.allmzk.org
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: Gemini反代-us06.allmzk.org
+  type: vless
+  server: us06.allmzk.org
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 1 官网 tcp.bet
+  type: vless
+  server: 51.222.9.117
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 923DWC64BK7e6rlMh-dqcitgGwB26PkUodg8uLNisy8
+    short-id: 3c1acf45ef1c2b
+- name: IPv6 日本 A01 移动宽带优化
+  type: vless
+  server: diz01.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A02 移动宽带优化
+  type: vless
+  server: diz02.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A03 移动宽带优化
+  type: vless
+  server: diz03.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A04 移动宽带优化
+  type: vless
+  server: diz04.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A05 移动宽带优化
+  type: vless
+  server: diz05.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A06 移动宽带优化
+  type: vless
+  server: diz06.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A01
+  type: vless
+  server: ca01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A02
+  type: vless
+  server: ca02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A03 电信+联通 BGP低延迟优化
+  type: vless
+  server: ca03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A04 电信+联通 BGP低延迟优化
+  type: vless
+  server: ca04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A05 电信+联通 BGP高带宽优化
+  type: vless
+  server: ca05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 加拿大 A06 电信+联通 BGP高带宽优化
+  type: vless
+  server: ca06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A01 IEPL专线
+  type: vless
+  server: in01.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A02 IEPL专线
+  type: vless
+  server: in02.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A03 IEPL专线
+  type: vless
+  server: in03.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A04 IEPL专线
+  type: vless
+  server: in04.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A05 IEPL专线
+  type: vless
+  server: in05.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 印度 A06 IEPL专线
+  type: vless
+  server: in06.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A01 高带宽优化
+  type: vless
+  server: tw01.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A02 高带宽优化
+  type: vless
+  server: tw02.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A03 高带宽优化
+  type: vless
+  server: tw03.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A04 移动低延迟优化
+  type: vless
+  server: tw04.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A05 移动低延迟优化
+  type: vless
+  server: tw05.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A06 移动低延迟优化
+  type: vless
+  server: tw06.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A07 移动低延迟优化
+  type: vless
+  server: tw07.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A08 联通优化
+  type: vless
+  server: tw08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A09 联通优化
+  type: vless
+  server: tw09.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A10 联通优化
+  type: vless
+  server: tw10.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A11 电信低延迟优化
+  type: vless
+  server: twct01.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A12 电信低延迟优化
+  type: vless
+  server: twct02.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A13 电信低延迟优化
+  type: vless
+  server: twct03.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A14 移动低延迟优化
+  type: vless
+  server: twct04.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A15 移动低延迟优化
+  type: vless
+  server: twct05.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A16 移动低延迟优化
+  type: vless
+  server: twct06.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A17 移动低延迟优化
+  type: vless
+  server: twct07.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A18 联通优化
+  type: vless
+  server: twct08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A19 联通优化
+  type: vless
+  server: twct09.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A20 联通优化
+  type: vless
+  server: twct10.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A21 电信优化
+  type: vless
+  server: twgame01.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A22 电信优化
+  type: vless
+  server: twgame02.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A23 电信优化
+  type: vless
+  server: twgame03.graniterapids.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A24 移动低延迟优化
+  type: vless
+  server: twgame04.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A25 移动低延迟优化
+  type: vless
+  server: twgame05.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A26 移动低延迟优化
+  type: vless
+  server: twgame06.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A27 移动低延迟优化
+  type: vless
+  server: twgame07.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A28 联通优化
+  type: vless
+  server: twgame08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A29 联通优化
+  type: vless
+  server: twgame09.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 A30 联通优化
+  type: vless
+  server: twgame10.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A01 IEPL专线
+  type: vless
+  server: ge01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A02 IEPL专线
+  type: vless
+  server: ge02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A03 IEPL专线
+  type: vless
+  server: ge03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A04 IEPL专线
+  type: vless
+  server: ge04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A05 IEPL专线
+  type: vless
+  server: ge05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 德国 A06 IEPL专线
+  type: vless
+  server: ge06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A01 电信优化
+  type: vless
+  server: sgp01.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A02 电信优化
+  type: vless
+  server: sgp02.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A03 电信优化
+  type: vless
+  server: sgp03.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A04 移动优化
+  type: vless
+  server: sgp04.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A05 移动优化
+  type: vless
+  server: sgp05.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A06 移动优化
+  type: vless
+  server: sgp06.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A07 联通优化
+  type: vless
+  server: sgp07.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A08 联通优化
+  type: vless
+  server: sgp08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A09 联通优化
+  type: vless
+  server: sgp09.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A10 联通优化
+  type: vless
+  server: sgp10.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A01 移动路由 高带宽优化
+  type: vless
+  server: jp01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A02 移动路由 高带宽优化
+  type: vless
+  server: jp02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A03 电信优化路由
+  type: vless
+  server: jp03.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A04 电信优化路由
+  type: vless
+  server: jp04.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A05 电信优化路由
+  type: vless
+  server: jp05.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A06 移动优化路由
+  type: vless
+  server: jp06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A07 移动优化路由
+  type: vless
+  server: jp07.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A08 联通优化路由
+  type: vless
+  server: jp08.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A09 联通优化路由
+  type: vless
+  server: jp09.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A10 联通优化路由
+  type: vless
+  server: jp10.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A11 移动路由 高带宽优化
+  type: vless
+  server: jp11.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A12 移动路由 高带宽优化
+  type: vless
+  server: jp12.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A13 电信优化路由
+  type: vless
+  server: jp13.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A14 电信优化路由
+  type: vless
+  server: jp14.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A15 电信优化路由
+  type: vless
+  server: jp15.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A16 IPV6双栈本地路由
+  type: vless
+  server: jp16.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A17 IPV6双栈本地路由
+  type: vless
+  server: jp17.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A18 IPV6双栈本地路由
+  type: vless
+  server: jp18.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A19 IPV6双栈本地路由
+  type: vless
+  server: jp19.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A20 IPV6双栈本地路由
+  type: vless
+  server: jp20.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A21 移动路由 高带宽优化
+  type: vless
+  server: hr01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A22 移动路由 高带宽优化
+  type: vless
+  server: hr02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A23 电信高带宽优化
+  type: vless
+  server: hr03.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A24 电信高带宽优化
+  type: vless
+  server: hr04.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A25 电信高带宽优化
+  type: vless
+  server: hr05.accuhearts.com
+  port: 1400
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A26 移动优化路由
+  type: vless
+  server: hr06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A27 移动优化路由
+  type: vless
+  server: hr07.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A28 联通路由 延迟优化
+  type: vless
+  server: hr08.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A29 联通路由 延迟优化
+  type: vless
+  server: hr09.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A30 联通路由 延迟优化
+  type: vless
+  server: hr10.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A01 IEPL专线
+  type: vless
+  server: fr01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A02 IEPL专线
+  type: vless
+  server: fr02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A03 IEPL专线
+  type: vless
+  server: fr03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A04 IEPL专线
+  type: vless
+  server: fr04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A05 IEPL专线
+  type: vless
+  server: fr05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A06 IEPL专线
+  type: vless
+  server: fr06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A01 IEPL专线
+  type: vless
+  server: au01.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A02 IEPL专线
+  type: vless
+  server: au02.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A03 IEPL专线
+  type: vless
+  server: au03.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A04 IEPL专线
+  type: vless
+  server: au04.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A05 IEPL专线
+  type: vless
+  server: au05.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 澳大利亚 A06 IEPL专线
+  type: vless
+  server: au06.bsxis.org
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A01 IPv6双栈 Gemini
+  type: vless
+  server: us01.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A02 IPv6双栈 Gemini
+  type: vless
+  server: us02.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A03 IPv6双栈 Gemini
+  type: vless
+  server: us03.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A04 Gemini 电信优化
+  type: vless
+  server: us04.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A05 Gemini 电信优化
+  type: vless
+  server: us05.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A06 Gemini 电信优化
+  type: vless
+  server: us06.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A07 Gemini 联通优化
+  type: vless
+  server: us07.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A08 Gemini 联通优化
+  type: vless
+  server: us08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A09 Gemini 移动优化
+  type: vless
+  server: us09.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A10 Gemini 移动优化
+  type: vless
+  server: us10.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A11 Gemini 电信优化
+  type: vless
+  server: us11.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A12 Gemini 电信优化
+  type: vless
+  server: us12.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A13 Gemini 移动优化
+  type: vless
+  server: us13.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A14 Gemini 移动优化
+  type: vless
+  server: us14.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A15 Gemini 移动优化
+  type: vless
+  server: us15.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A16 低延迟游戏加速 限速5M
+  type: vless
+  server: us16.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A17 低延迟游戏加速 限速5M
+  type: vless
+  server: us17.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A18 低延迟游戏加速 限速5M
+  type: vless
+  server: us18.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A19 低延迟游戏加速 限速5M
+  type: vless
+  server: us19.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 美国 A20 低延迟游戏加速 限速5M
+  type: vless
+  server: us20.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A01 IEPL专线
+  type: vless
+  server: uk01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A02 IEPL专线
+  type: vless
+  server: uk02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A03 IEPL专线
+  type: vless
+  server: uk03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A04 IEPL专线
+  type: vless
+  server: uk04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A05 IEPL专线
+  type: vless
+  server: uk05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 英国 A06 IEPL专线
+  type: vless
+  server: uk06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A01 移动+联通 BGP低延迟优化
+  type: vless
+  server: kr01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A02 移动+联通 BGP低延迟优化
+  type: vless
+  server: kr02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A03 电信+联通 BGP低延迟优化
+  type: vless
+  server: kr03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A04 电信+联通 BGP低延迟优化
+  type: vless
+  server: kr04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A05 电信+联通 BGP高带宽优化
+  type: vless
+  server: kr05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A06 电信+联通 BGP高带宽优化
+  type: vless
+  server: kr06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A01 联通优化
+  type: vless
+  server: hk01.accuhearts.com
+  port: 65535
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A02 联通优化
+  type: vless
+  server: hk02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A03 联通优化
+  type: vless
+  server: hk03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A04 移动优化
+  type: vless
+  server: hk04.accuhearts.com
+  port: 65535
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A05 移动优化
+  type: vless
+  server: hk05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A06 移动优化
+  type: vless
+  server: hk06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A07 电信优化
+  type: vless
+  server: hk07.accuhearts.com
+  port: 65535
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A08 电信优化
+  type: vless
+  server: hk08.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A09 电信优化
+  type: vless
+  server: hk09.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A10 电信优化
+  type: vless
+  server: hk10.accuhearts.com
+  port: 65535
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A11 移动优化
+  type: vless
+  server: pccw01.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A12 移动优化
+  type: vless
+  server: pccw02.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A13 移动优化
+  type: vless
+  server: pccw03.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw04.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw05.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw06.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw07.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw08.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A19 联通优化
+  type: vless
+  server: pccw09.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A20 联通优化
+  type: vless
+  server: pccw10.accuhearts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 国泰航空机上Wifi免认证
+  type: vless
+  server: 57.129.177.126
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cathaypacific.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A01 三网精品BGP
+  type: vless
+  server: bgp01.accuhearts.com
+  port: 1
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A02 三网精品BGP
+  type: vless
+  server: bgp02.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A03 三网精品BGP
+  type: vless
+  server: bgp03.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A04 三网精品BGP
+  type: vless
+  server: bgp04.accuhearts.com
+  port: 1
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A05 三网精品BGP
+  type: vless
+  server: bgp05.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A06 三网精品BGP
+  type: vless
+  server: bgp06.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A07 三网精品BGP
+  type: vless
+  server: bgp07.accuhearts.com
+  port: 1
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A08 三网精品BGP
+  type: vless
+  server: bgp08.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A09 三网精品BGP
+  type: vless
+  server: bgp09.accuhearts.com
+  port: 8080
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A10 三网精品BGP
+  type: vless
+  server: bgp10.accuhearts.com
+  port: 1
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+proxy-groups:
+- name: 🤖 ChatGPT-Muse
+  type: select
+  proxies:
+  - VPS-美国-LA-A (admin)
+  - 台湾 A01 高带宽优化
+  - 日本 A01 移动路由 高带宽优化
+  - 新加坡 A01 电信优化
+  - 加拿大 A01
+  - 印度 A01 IEPL专线
+  - 德国 A01 IEPL专线
+  - IPv6 日本 A01 移动宽带优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 1 官网 tcp.bet
+  - VPS-美国-LA-443通用
+  - VPS-美国-LA-B (friend-a)
+  - 美国 A05 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A04 Gemini 电信优化
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 🔰 手动选择
+- name: ♊ Gemini 专线
+  type: select
+  proxies:
+  - Gemini反代-us05.allmzk.org
+  - Gemini反代-us06.allmzk.org
+  - 🔰 手动选择
+- name: 🌊 国际媒体
+  type: select
+  proxies:
+  - 🔰 手动选择
+  - ♊ Gemini 专线
+  - 🤖 ChatGPT-Muse
+  - 🎯 Direct
+- name: 🔰 手动选择
+  type: select
+  proxies:
+  - 1 官网 tcp.bet
+  - IPv6 日本 A01 移动宽带优化
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A03 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A06 移动宽带优化
+  - 加拿大 A01
+  - 加拿大 A02
+  - 加拿大 A03 电信+联通 BGP低延迟优化
+  - 加拿大 A04 电信+联通 BGP低延迟优化
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 加拿大 A06 电信+联通 BGP高带宽优化
+  - 印度 A01 IEPL专线
+  - 印度 A02 IEPL专线
+  - 印度 A03 IEPL专线
+  - 印度 A04 IEPL专线
+  - 印度 A05 IEPL专线
+  - 印度 A06 IEPL专线
+  - 台湾 A01 高带宽优化
+  - 台湾 A02 高带宽优化
+  - 台湾 A03 高带宽优化
+  - 台湾 A04 移动低延迟优化
+  - 台湾 A05 移动低延迟优化
+  - 台湾 A06 移动低延迟优化
+  - 台湾 A07 移动低延迟优化
+  - 台湾 A08 联通优化
+  - 台湾 A09 联通优化
+  - 台湾 A10 联通优化
+  - 台湾 A11 电信低延迟优化
+  - 台湾 A12 电信低延迟优化
+  - 台湾 A13 电信低延迟优化
+  - 台湾 A14 移动低延迟优化
+  - 台湾 A15 移动低延迟优化
+  - 台湾 A16 移动低延迟优化
+  - 台湾 A17 移动低延迟优化
+  - 台湾 A18 联通优化
+  - 台湾 A19 联通优化
+  - 台湾 A20 联通优化
+  - 台湾 A21 电信优化
+  - 台湾 A22 电信优化
+  - 台湾 A23 电信优化
+  - 台湾 A24 移动低延迟优化
+  - 台湾 A25 移动低延迟优化
+  - 台湾 A26 移动低延迟优化
+  - 台湾 A27 移动低延迟优化
+  - 台湾 A28 联通优化
+  - 台湾 A29 联通优化
+  - 台湾 A30 联通优化
+  - 德国 A01 IEPL专线
+  - 德国 A02 IEPL专线
+  - 德国 A03 IEPL专线
+  - 德国 A04 IEPL专线
+  - 德国 A05 IEPL专线
+  - 德国 A06 IEPL专线
+  - 新加坡 A01 电信优化
+  - 新加坡 A02 电信优化
+  - 新加坡 A03 电信优化
+  - 新加坡 A04 移动优化
+  - 新加坡 A05 移动优化
+  - 新加坡 A06 移动优化
+  - 新加坡 A07 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A09 联通优化
+  - 新加坡 A10 联通优化
+  - 日本 A01 移动路由 高带宽优化
+  - 日本 A02 移动路由 高带宽优化
+  - 日本 A03 电信优化路由
+  - 日本 A04 电信优化路由
+  - 日本 A05 电信优化路由
+  - 日本 A06 移动优化路由
+  - 日本 A07 移动优化路由
+  - 日本 A08 联通优化路由
+  - 日本 A09 联通优化路由
+  - 日本 A10 联通优化路由
+  - 日本 A11 移动路由 高带宽优化
+  - 日本 A12 移动路由 高带宽优化
+  - 日本 A13 电信优化路由
+  - 日本 A14 电信优化路由
+  - 日本 A15 电信优化路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A17 IPV6双栈本地路由
+  - 日本 A18 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A21 移动路由 高带宽优化
+  - 日本 A22 移动路由 高带宽优化
+  - 日本 A23 电信高带宽优化
+  - 日本 A24 电信高带宽优化
+  - 日本 A25 电信高带宽优化
+  - 日本 A26 移动优化路由
+  - 日本 A27 移动优化路由
+  - 日本 A28 联通路由 延迟优化
+  - 日本 A29 联通路由 延迟优化
+  - 日本 A30 联通路由 延迟优化
+  - 法国 A01 IEPL专线
+  - 法国 A02 IEPL专线
+  - 法国 A03 IEPL专线
+  - 法国 A04 IEPL专线
+  - 法国 A05 IEPL专线
+  - 法国 A06 IEPL专线
+  - 澳大利亚 A01 IEPL专线
+  - 澳大利亚 A02 IEPL专线
+  - 澳大利亚 A03 IEPL专线
+  - 澳大利亚 A04 IEPL专线
+  - 澳大利亚 A05 IEPL专线
+  - 澳大利亚 A06 IEPL专线
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A04 Gemini 电信优化
+  - 美国 A05 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 英国 A01 IEPL专线
+  - 英国 A02 IEPL专线
+  - 英国 A03 IEPL专线
+  - 英国 A04 IEPL专线
+  - 英国 A05 IEPL专线
+  - 英国 A06 IEPL专线
+  - 韩国 A01 移动+联通 BGP低延迟优化
+  - 韩国 A02 移动+联通 BGP低延迟优化
+  - 韩国 A03 电信+联通 BGP低延迟优化
+  - 韩国 A04 电信+联通 BGP低延迟优化
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 韩国 A06 电信+联通 BGP高带宽优化
+  - 香港 A01 联通优化
+  - 香港 A02 联通优化
+  - 香港 A03 联通优化
+  - 香港 A04 移动优化
+  - 香港 A05 移动优化
+  - 香港 A06 移动优化
+  - 香港 A07 电信优化
+  - 香港 A08 电信优化
+  - 香港 A09 电信优化
+  - 香港 A10 电信优化
+  - 香港 A11 移动优化
+  - 香港 A12 移动优化
+  - 香港 A13 移动优化
+  - 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A19 联通优化
+  - 香港 A20 联通优化
+  - 国泰航空机上Wifi免认证
+  - 香港 A01 三网精品BGP
+  - 香港 A02 三网精品BGP
+  - 香港 A03 三网精品BGP
+  - 香港 A04 三网精品BGP
+  - 香港 A05 三网精品BGP
+  - 香港 A06 三网精品BGP
+  - 香港 A07 三网精品BGP
+  - 香港 A08 三网精品BGP
+  - 香港 A09 三网精品BGP
+  - 香港 A10 三网精品BGP
+- name: Ⓜ️ Microsoft
+  type: select
+  proxies:
+  - 🎯 Direct
+  - 🔰 手动选择
+  - 1 官网 tcp.bet
+  - IPv6 日本 A01 移动宽带优化
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A03 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A06 移动宽带优化
+  - 加拿大 A01
+  - 加拿大 A02
+  - 加拿大 A03 电信+联通 BGP低延迟优化
+  - 加拿大 A04 电信+联通 BGP低延迟优化
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 加拿大 A06 电信+联通 BGP高带宽优化
+  - 印度 A01 IEPL专线
+  - 印度 A02 IEPL专线
+  - 印度 A03 IEPL专线
+  - 印度 A04 IEPL专线
+  - 印度 A05 IEPL专线
+  - 印度 A06 IEPL专线
+  - 台湾 A01 高带宽优化
+  - 台湾 A02 高带宽优化
+  - 台湾 A03 高带宽优化
+  - 台湾 A04 移动低延迟优化
+  - 台湾 A05 移动低延迟优化
+  - 台湾 A06 移动低延迟优化
+  - 台湾 A07 移动低延迟优化
+  - 台湾 A08 联通优化
+  - 台湾 A09 联通优化
+  - 台湾 A10 联通优化
+  - 台湾 A11 电信低延迟优化
+  - 台湾 A12 电信低延迟优化
+  - 台湾 A13 电信低延迟优化
+  - 台湾 A14 移动低延迟优化
+  - 台湾 A15 移动低延迟优化
+  - 台湾 A16 移动低延迟优化
+  - 台湾 A17 移动低延迟优化
+  - 台湾 A18 联通优化
+  - 台湾 A19 联通优化
+  - 台湾 A20 联通优化
+  - 台湾 A21 电信优化
+  - 台湾 A22 电信优化
+  - 台湾 A23 电信优化
+  - 台湾 A24 移动低延迟优化
+  - 台湾 A25 移动低延迟优化
+  - 台湾 A26 移动低延迟优化
+  - 台湾 A27 移动低延迟优化
+  - 台湾 A28 联通优化
+  - 台湾 A29 联通优化
+  - 台湾 A30 联通优化
+  - 德国 A01 IEPL专线
+  - 德国 A02 IEPL专线
+  - 德国 A03 IEPL专线
+  - 德国 A04 IEPL专线
+  - 德国 A05 IEPL专线
+  - 德国 A06 IEPL专线
+  - 新加坡 A01 电信优化
+  - 新加坡 A02 电信优化
+  - 新加坡 A03 电信优化
+  - 新加坡 A04 移动优化
+  - 新加坡 A05 移动优化
+  - 新加坡 A06 移动优化
+  - 新加坡 A07 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A09 联通优化
+  - 新加坡 A10 联通优化
+  - 日本 A01 移动路由 高带宽优化
+  - 日本 A02 移动路由 高带宽优化
+  - 日本 A03 电信优化路由
+  - 日本 A04 电信优化路由
+  - 日本 A05 电信优化路由
+  - 日本 A06 移动优化路由
+  - 日本 A07 移动优化路由
+  - 日本 A08 联通优化路由
+  - 日本 A09 联通优化路由
+  - 日本 A10 联通优化路由
+  - 日本 A11 移动路由 高带宽优化
+  - 日本 A12 移动路由 高带宽优化
+  - 日本 A13 电信优化路由
+  - 日本 A14 电信优化路由
+  - 日本 A15 电信优化路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A17 IPV6双栈本地路由
+  - 日本 A18 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A21 移动路由 高带宽优化
+  - 日本 A22 移动路由 高带宽优化
+  - 日本 A23 电信高带宽优化
+  - 日本 A24 电信高带宽优化
+  - 日本 A25 电信高带宽优化
+  - 日本 A26 移动优化路由
+  - 日本 A27 移动优化路由
+  - 日本 A28 联通路由 延迟优化
+  - 日本 A29 联通路由 延迟优化
+  - 日本 A30 联通路由 延迟优化
+  - 法国 A01 IEPL专线
+  - 法国 A02 IEPL专线
+  - 法国 A03 IEPL专线
+  - 法国 A04 IEPL专线
+  - 法国 A05 IEPL专线
+  - 法国 A06 IEPL专线
+  - 澳大利亚 A01 IEPL专线
+  - 澳大利亚 A02 IEPL专线
+  - 澳大利亚 A03 IEPL专线
+  - 澳大利亚 A04 IEPL专线
+  - 澳大利亚 A05 IEPL专线
+  - 澳大利亚 A06 IEPL专线
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A04 Gemini 电信优化
+  - 美国 A05 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 英国 A01 IEPL专线
+  - 英国 A02 IEPL专线
+  - 英国 A03 IEPL专线
+  - 英国 A04 IEPL专线
+  - 英国 A05 IEPL专线
+  - 英国 A06 IEPL专线
+  - 韩国 A01 移动+联通 BGP低延迟优化
+  - 韩国 A02 移动+联通 BGP低延迟优化
+  - 韩国 A03 电信+联通 BGP低延迟优化
+  - 韩国 A04 电信+联通 BGP低延迟优化
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 韩国 A06 电信+联通 BGP高带宽优化
+  - 香港 A01 联通优化
+  - 香港 A02 联通优化
+  - 香港 A03 联通优化
+  - 香港 A04 移动优化
+  - 香港 A05 移动优化
+  - 香港 A06 移动优化
+  - 香港 A07 电信优化
+  - 香港 A08 电信优化
+  - 香港 A09 电信优化
+  - 香港 A10 电信优化
+  - 香港 A11 移动优化
+  - 香港 A12 移动优化
+  - 香港 A13 移动优化
+  - 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A19 联通优化
+  - 香港 A20 联通优化
+  - 国泰航空机上Wifi免认证
+  - 香港 A01 三网精品BGP
+  - 香港 A02 三网精品BGP
+  - 香港 A03 三网精品BGP
+  - 香港 A04 三网精品BGP
+  - 香港 A05 三网精品BGP
+  - 香港 A06 三网精品BGP
+  - 香港 A07 三网精品BGP
+  - 香港 A08 三网精品BGP
+  - 香港 A09 三网精品BGP
+  - 香港 A10 三网精品BGP
+- name: 🍎 Apple
+  type: select
+  proxies:
+  - 🎯 Direct
+  - 🔰 手动选择
+  - 1 官网 tcp.bet
+  - IPv6 日本 A01 移动宽带优化
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A03 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A06 移动宽带优化
+  - 加拿大 A01
+  - 加拿大 A02
+  - 加拿大 A03 电信+联通 BGP低延迟优化
+  - 加拿大 A04 电信+联通 BGP低延迟优化
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 加拿大 A06 电信+联通 BGP高带宽优化
+  - 印度 A01 IEPL专线
+  - 印度 A02 IEPL专线
+  - 印度 A03 IEPL专线
+  - 印度 A04 IEPL专线
+  - 印度 A05 IEPL专线
+  - 印度 A06 IEPL专线
+  - 台湾 A01 高带宽优化
+  - 台湾 A02 高带宽优化
+  - 台湾 A03 高带宽优化
+  - 台湾 A04 移动低延迟优化
+  - 台湾 A05 移动低延迟优化
+  - 台湾 A06 移动低延迟优化
+  - 台湾 A07 移动低延迟优化
+  - 台湾 A08 联通优化
+  - 台湾 A09 联通优化
+  - 台湾 A10 联通优化
+  - 台湾 A11 电信低延迟优化
+  - 台湾 A12 电信低延迟优化
+  - 台湾 A13 电信低延迟优化
+  - 台湾 A14 移动低延迟优化
+  - 台湾 A15 移动低延迟优化
+  - 台湾 A16 移动低延迟优化
+  - 台湾 A17 移动低延迟优化
+  - 台湾 A18 联通优化
+  - 台湾 A19 联通优化
+  - 台湾 A20 联通优化
+  - 台湾 A21 电信优化
+  - 台湾 A22 电信优化
+  - 台湾 A23 电信优化
+  - 台湾 A24 移动低延迟优化
+  - 台湾 A25 移动低延迟优化
+  - 台湾 A26 移动低延迟优化
+  - 台湾 A27 移动低延迟优化
+  - 台湾 A28 联通优化
+  - 台湾 A29 联通优化
+  - 台湾 A30 联通优化
+  - 德国 A01 IEPL专线
+  - 德国 A02 IEPL专线
+  - 德国 A03 IEPL专线
+  - 德国 A04 IEPL专线
+  - 德国 A05 IEPL专线
+  - 德国 A06 IEPL专线
+  - 新加坡 A01 电信优化
+  - 新加坡 A02 电信优化
+  - 新加坡 A03 电信优化
+  - 新加坡 A04 移动优化
+  - 新加坡 A05 移动优化
+  - 新加坡 A06 移动优化
+  - 新加坡 A07 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A09 联通优化
+  - 新加坡 A10 联通优化
+  - 日本 A01 移动路由 高带宽优化
+  - 日本 A02 移动路由 高带宽优化
+  - 日本 A03 电信优化路由
+  - 日本 A04 电信优化路由
+  - 日本 A05 电信优化路由
+  - 日本 A06 移动优化路由
+  - 日本 A07 移动优化路由
+  - 日本 A08 联通优化路由
+  - 日本 A09 联通优化路由
+  - 日本 A10 联通优化路由
+  - 日本 A11 移动路由 高带宽优化
+  - 日本 A12 移动路由 高带宽优化
+  - 日本 A13 电信优化路由
+  - 日本 A14 电信优化路由
+  - 日本 A15 电信优化路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A17 IPV6双栈本地路由
+  - 日本 A18 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A21 移动路由 高带宽优化
+  - 日本 A22 移动路由 高带宽优化
+  - 日本 A23 电信高带宽优化
+  - 日本 A24 电信高带宽优化
+  - 日本 A25 电信高带宽优化
+  - 日本 A26 移动优化路由
+  - 日本 A27 移动优化路由
+  - 日本 A28 联通路由 延迟优化
+  - 日本 A29 联通路由 延迟优化
+  - 日本 A30 联通路由 延迟优化
+  - 法国 A01 IEPL专线
+  - 法国 A02 IEPL专线
+  - 法国 A03 IEPL专线
+  - 法国 A04 IEPL专线
+  - 法国 A05 IEPL专线
+  - 法国 A06 IEPL专线
+  - 澳大利亚 A01 IEPL专线
+  - 澳大利亚 A02 IEPL专线
+  - 澳大利亚 A03 IEPL专线
+  - 澳大利亚 A04 IEPL专线
+  - 澳大利亚 A05 IEPL专线
+  - 澳大利亚 A06 IEPL专线
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A04 Gemini 电信优化
+  - 美国 A05 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 英国 A01 IEPL专线
+  - 英国 A02 IEPL专线
+  - 英国 A03 IEPL专线
+  - 英国 A04 IEPL专线
+  - 英国 A05 IEPL专线
+  - 英国 A06 IEPL专线
+  - 韩国 A01 移动+联通 BGP低延迟优化
+  - 韩国 A02 移动+联通 BGP低延迟优化
+  - 韩国 A03 电信+联通 BGP低延迟优化
+  - 韩国 A04 电信+联通 BGP低延迟优化
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 韩国 A06 电信+联通 BGP高带宽优化
+  - 香港 A01 联通优化
+  - 香港 A02 联通优化
+  - 香港 A03 联通优化
+  - 香港 A04 移动优化
+  - 香港 A05 移动优化
+  - 香港 A06 移动优化
+  - 香港 A07 电信优化
+  - 香港 A08 电信优化
+  - 香港 A09 电信优化
+  - 香港 A10 电信优化
+  - 香港 A11 移动优化
+  - 香港 A12 移动优化
+  - 香港 A13 移动优化
+  - 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A19 联通优化
+  - 香港 A20 联通优化
+  - 国泰航空机上Wifi免认证
+  - 香港 A01 三网精品BGP
+  - 香港 A02 三网精品BGP
+  - 香港 A03 三网精品BGP
+  - 香港 A04 三网精品BGP
+  - 香港 A05 三网精品BGP
+  - 香港 A06 三网精品BGP
+  - 香港 A07 三网精品BGP
+  - 香港 A08 三网精品BGP
+  - 香港 A09 三网精品BGP
+  - 香港 A10 三网精品BGP
+- name: 📺 BiliBili
+  type: select
+  proxies:
+  - 🎯 Direct
+  - 🔰 手动选择
+  - 1 官网 tcp.bet
+  - IPv6 日本 A01 移动宽带优化
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A03 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A06 移动宽带优化
+  - 加拿大 A01
+  - 加拿大 A02
+  - 加拿大 A03 电信+联通 BGP低延迟优化
+  - 加拿大 A04 电信+联通 BGP低延迟优化
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 加拿大 A06 电信+联通 BGP高带宽优化
+  - 印度 A01 IEPL专线
+  - 印度 A02 IEPL专线
+  - 印度 A03 IEPL专线
+  - 印度 A04 IEPL专线
+  - 印度 A05 IEPL专线
+  - 印度 A06 IEPL专线
+  - 台湾 A01 高带宽优化
+  - 台湾 A02 高带宽优化
+  - 台湾 A03 高带宽优化
+  - 台湾 A04 移动低延迟优化
+  - 台湾 A05 移动低延迟优化
+  - 台湾 A06 移动低延迟优化
+  - 台湾 A07 移动低延迟优化
+  - 台湾 A08 联通优化
+  - 台湾 A09 联通优化
+  - 台湾 A10 联通优化
+  - 台湾 A11 电信低延迟优化
+  - 台湾 A12 电信低延迟优化
+  - 台湾 A13 电信低延迟优化
+  - 台湾 A14 移动低延迟优化
+  - 台湾 A15 移动低延迟优化
+  - 台湾 A16 移动低延迟优化
+  - 台湾 A17 移动低延迟优化
+  - 台湾 A18 联通优化
+  - 台湾 A19 联通优化
+  - 台湾 A20 联通优化
+  - 台湾 A21 电信优化
+  - 台湾 A22 电信优化
+  - 台湾 A23 电信优化
+  - 台湾 A24 移动低延迟优化
+  - 台湾 A25 移动低延迟优化
+  - 台湾 A26 移动低延迟优化
+  - 台湾 A27 移动低延迟优化
+  - 台湾 A28 联通优化
+  - 台湾 A29 联通优化
+  - 台湾 A30 联通优化
+  - 德国 A01 IEPL专线
+  - 德国 A02 IEPL专线
+  - 德国 A03 IEPL专线
+  - 德国 A04 IEPL专线
+  - 德国 A05 IEPL专线
+  - 德国 A06 IEPL专线
+  - 新加坡 A01 电信优化
+  - 新加坡 A02 电信优化
+  - 新加坡 A03 电信优化
+  - 新加坡 A04 移动优化
+  - 新加坡 A05 移动优化
+  - 新加坡 A06 移动优化
+  - 新加坡 A07 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A09 联通优化
+  - 新加坡 A10 联通优化
+  - 日本 A01 移动路由 高带宽优化
+  - 日本 A02 移动路由 高带宽优化
+  - 日本 A03 电信优化路由
+  - 日本 A04 电信优化路由
+  - 日本 A05 电信优化路由
+  - 日本 A06 移动优化路由
+  - 日本 A07 移动优化路由
+  - 日本 A08 联通优化路由
+  - 日本 A09 联通优化路由
+  - 日本 A10 联通优化路由
+  - 日本 A11 移动路由 高带宽优化
+  - 日本 A12 移动路由 高带宽优化
+  - 日本 A13 电信优化路由
+  - 日本 A14 电信优化路由
+  - 日本 A15 电信优化路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A17 IPV6双栈本地路由
+  - 日本 A18 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A21 移动路由 高带宽优化
+  - 日本 A22 移动路由 高带宽优化
+  - 日本 A23 电信高带宽优化
+  - 日本 A24 电信高带宽优化
+  - 日本 A25 电信高带宽优化
+  - 日本 A26 移动优化路由
+  - 日本 A27 移动优化路由
+  - 日本 A28 联通路由 延迟优化
+  - 日本 A29 联通路由 延迟优化
+  - 日本 A30 联通路由 延迟优化
+  - 法国 A01 IEPL专线
+  - 法国 A02 IEPL专线
+  - 法国 A03 IEPL专线
+  - 法国 A04 IEPL专线
+  - 法国 A05 IEPL专线
+  - 法国 A06 IEPL专线
+  - 澳大利亚 A01 IEPL专线
+  - 澳大利亚 A02 IEPL专线
+  - 澳大利亚 A03 IEPL专线
+  - 澳大利亚 A04 IEPL专线
+  - 澳大利亚 A05 IEPL专线
+  - 澳大利亚 A06 IEPL专线
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A04 Gemini 电信优化
+  - 美国 A05 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 英国 A01 IEPL专线
+  - 英国 A02 IEPL专线
+  - 英国 A03 IEPL专线
+  - 英国 A04 IEPL专线
+  - 英国 A05 IEPL专线
+  - 英国 A06 IEPL专线
+  - 韩国 A01 移动+联通 BGP低延迟优化
+  - 韩国 A02 移动+联通 BGP低延迟优化
+  - 韩国 A03 电信+联通 BGP低延迟优化
+  - 韩国 A04 电信+联通 BGP低延迟优化
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 韩国 A06 电信+联通 BGP高带宽优化
+  - 香港 A01 联通优化
+  - 香港 A02 联通优化
+  - 香港 A03 联通优化
+  - 香港 A04 移动优化
+  - 香港 A05 移动优化
+  - 香港 A06 移动优化
+  - 香港 A07 电信优化
+  - 香港 A08 电信优化
+  - 香港 A09 电信优化
+  - 香港 A10 电信优化
+  - 香港 A11 移动优化
+  - 香港 A12 移动优化
+  - 香港 A13 移动优化
+  - 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A19 联通优化
+  - 香港 A20 联通优化
+  - 国泰航空机上Wifi免认证
+  - 香港 A01 三网精品BGP
+  - 香港 A02 三网精品BGP
+  - 香港 A03 三网精品BGP
+  - 香港 A04 三网精品BGP
+  - 香港 A05 三网精品BGP
+  - 香港 A06 三网精品BGP
+  - 香港 A07 三网精品BGP
+  - 香港 A08 三网精品BGP
+  - 香港 A09 三网精品BGP
+  - 香港 A10 三网精品BGP
+- name: 🎯 Direct
+  type: select
+  proxies:
+  - DIRECT
+- name: 🛑 Block
+  type: select
+  proxies:
+  - REJECT
+  - 🎯 Direct
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🔰 手动选择
+  - 🎯 Direct
+  - 1 官网 tcp.bet
+  - IPv6 日本 A01 移动宽带优化
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A03 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A06 移动宽带优化
+  - 加拿大 A01
+  - 加拿大 A02
+  - 加拿大 A03 电信+联通 BGP低延迟优化
+  - 加拿大 A04 电信+联通 BGP低延迟优化
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 加拿大 A06 电信+联通 BGP高带宽优化
+  - 印度 A01 IEPL专线
+  - 印度 A02 IEPL专线
+  - 印度 A03 IEPL专线
+  - 印度 A04 IEPL专线
+  - 印度 A05 IEPL专线
+  - 印度 A06 IEPL专线
+  - 台湾 A01 高带宽优化
+  - 台湾 A02 高带宽优化
+  - 台湾 A03 高带宽优化
+  - 台湾 A04 移动低延迟优化
+  - 台湾 A05 移动低延迟优化
+  - 台湾 A06 移动低延迟优化
+  - 台湾 A07 移动低延迟优化
+  - 台湾 A08 联通优化
+  - 台湾 A09 联通优化
+  - 台湾 A10 联通优化
+  - 台湾 A11 电信低延迟优化
+  - 台湾 A12 电信低延迟优化
+  - 台湾 A13 电信低延迟优化
+  - 台湾 A14 移动低延迟优化
+  - 台湾 A15 移动低延迟优化
+  - 台湾 A16 移动低延迟优化
+  - 台湾 A17 移动低延迟优化
+  - 台湾 A18 联通优化
+  - 台湾 A19 联通优化
+  - 台湾 A20 联通优化
+  - 台湾 A21 电信优化
+  - 台湾 A22 电信优化
+  - 台湾 A23 电信优化
+  - 台湾 A24 移动低延迟优化
+  - 台湾 A25 移动低延迟优化
+  - 台湾 A26 移动低延迟优化
+  - 台湾 A27 移动低延迟优化
+  - 台湾 A28 联通优化
+  - 台湾 A29 联通优化
+  - 台湾 A30 联通优化
+  - 德国 A01 IEPL专线
+  - 德国 A02 IEPL专线
+  - 德国 A03 IEPL专线
+  - 德国 A04 IEPL专线
+  - 德国 A05 IEPL专线
+  - 德国 A06 IEPL专线
+  - 新加坡 A01 电信优化
+  - 新加坡 A02 电信优化
+  - 新加坡 A03 电信优化
+  - 新加坡 A04 移动优化
+  - 新加坡 A05 移动优化
+  - 新加坡 A06 移动优化
+  - 新加坡 A07 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A09 联通优化
+  - 新加坡 A10 联通优化
+  - 日本 A01 移动路由 高带宽优化
+  - 日本 A02 移动路由 高带宽优化
+  - 日本 A03 电信优化路由
+  - 日本 A04 电信优化路由
+  - 日本 A05 电信优化路由
+  - 日本 A06 移动优化路由
+  - 日本 A07 移动优化路由
+  - 日本 A08 联通优化路由
+  - 日本 A09 联通优化路由
+  - 日本 A10 联通优化路由
+  - 日本 A11 移动路由 高带宽优化
+  - 日本 A12 移动路由 高带宽优化
+  - 日本 A13 电信优化路由
+  - 日本 A14 电信优化路由
+  - 日本 A15 电信优化路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A17 IPV6双栈本地路由
+  - 日本 A18 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A21 移动路由 高带宽优化
+  - 日本 A22 移动路由 高带宽优化
+  - 日本 A23 电信高带宽优化
+  - 日本 A24 电信高带宽优化
+  - 日本 A25 电信高带宽优化
+  - 日本 A26 移动优化路由
+  - 日本 A27 移动优化路由
+  - 日本 A28 联通路由 延迟优化
+  - 日本 A29 联通路由 延迟优化
+  - 日本 A30 联通路由 延迟优化
+  - 法国 A01 IEPL专线
+  - 法国 A02 IEPL专线
+  - 法国 A03 IEPL专线
+  - 法国 A04 IEPL专线
+  - 法国 A05 IEPL专线
+  - 法国 A06 IEPL专线
+  - 澳大利亚 A01 IEPL专线
+  - 澳大利亚 A02 IEPL专线
+  - 澳大利亚 A03 IEPL专线
+  - 澳大利亚 A04 IEPL专线
+  - 澳大利亚 A05 IEPL专线
+  - 澳大利亚 A06 IEPL专线
+  - 美国 A01 IPv6双栈 Gemini
+  - 美国 A02 IPv6双栈 Gemini
+  - 美国 A03 IPv6双栈 Gemini
+  - 美国 A04 Gemini 电信优化
+  - 美国 A05 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
+  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
+  - 美国 A09 Gemini 移动优化
+  - 美国 A10 Gemini 移动优化
+  - 美国 A11 Gemini 电信优化
+  - 美国 A12 Gemini 电信优化
+  - 美国 A13 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
+  - 美国 A15 Gemini 移动优化
+  - 美国 A16 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
+  - 美国 A18 低延迟游戏加速 限速5M
+  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A20 低延迟游戏加速 限速5M
+  - 英国 A01 IEPL专线
+  - 英国 A02 IEPL专线
+  - 英国 A03 IEPL专线
+  - 英国 A04 IEPL专线
+  - 英国 A05 IEPL专线
+  - 英国 A06 IEPL专线
+  - 韩国 A01 移动+联通 BGP低延迟优化
+  - 韩国 A02 移动+联通 BGP低延迟优化
+  - 韩国 A03 电信+联通 BGP低延迟优化
+  - 韩国 A04 电信+联通 BGP低延迟优化
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 韩国 A06 电信+联通 BGP高带宽优化
+  - 香港 A01 联通优化
+  - 香港 A02 联通优化
+  - 香港 A03 联通优化
+  - 香港 A04 移动优化
+  - 香港 A05 移动优化
+  - 香港 A06 移动优化
+  - 香港 A07 电信优化
+  - 香港 A08 电信优化
+  - 香港 A09 电信优化
+  - 香港 A10 电信优化
+  - 香港 A11 移动优化
+  - 香港 A12 移动优化
+  - 香港 A13 移动优化
+  - 香港 A14 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A16 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A17 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A19 联通优化
+  - 香港 A20 联通优化
+  - 国泰航空机上Wifi免认证
+  - 香港 A01 三网精品BGP
+  - 香港 A02 三网精品BGP
+  - 香港 A03 三网精品BGP
+  - 香港 A04 三网精品BGP
+  - 香港 A05 三网精品BGP
+  - 香港 A06 三网精品BGP
+  - 香港 A07 三网精品BGP
+  - 香港 A08 三网精品BGP
+  - 香港 A09 三网精品BGP
+  - 香港 A10 三网精品BGP
+rules:
+- DST-PORT,22,DIRECT
+- DOMAIN-SUFFIX,chatgpt.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,openai.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,oaistatic.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,oaiusercontent.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,oaicdn.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,sora.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,muse.ai,🤖 ChatGPT-Muse
+- DOMAIN-KEYWORD,metaclaw,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,c10r.facebook.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,anthropic.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,claude.ai,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,claudeusercontent.com,🤖 ChatGPT-Muse
+- DOMAIN-SUFFIX,gemini.google.com,♊ Gemini 专线
+- DOMAIN-SUFFIX,aistudio.google.com,♊ Gemini 专线
+- DOMAIN-SUFFIX,generativeai.google,♊ Gemini 专线
+- DOMAIN,generativelanguage.googleapis.com,♊ Gemini 专线
+- DOMAIN,cloudcode-pa.googleapis.com,♊ Gemini 专线
+- DOMAIN,daily-cloudcode-pa.googleapis.com,♊ Gemini 专线
+- DOMAIN,cloudaicompanion.googleapis.com,♊ Gemini 专线
+- PROCESS-NAME,Antigravity,♊ Gemini 专线
+- PROCESS-NAME,Antigravity Helper,♊ Gemini 专线
+- PROCESS-NAME,language_server,♊ Gemini 专线
+- PROCESS-PATH,/Applications/Antigravity.app/Contents/MacOS/Antigravity,♊ Gemini 专线
+- PROCESS-PATH,/Applications/Antigravity IDE.app/Contents/MacOS/Electron,♊ Gemini 专线
+- DOMAIN-KEYWORD,Thunder,🎯 Direct
+- DOMAIN-KEYWORD,XLLiveUD,🎯 Direct
+- DOMAIN-KEYWORD,aria2,🎯 Direct
+- DOMAIN-KEYWORD,miner,🎯 Direct
+- DOMAIN-KEYWORD,mining,🎯 Direct
+- DOMAIN-KEYWORD,monero,🎯 Direct
+- DOMAIN-KEYWORD,pool,🎯 Direct
+- DOMAIN-KEYWORD,xmr,🎯 Direct
+- DOMAIN-KEYWORD,xunlei,🎯 Direct
+- DOMAIN-KEYWORD,yunpan,🎯 Direct
+- DOMAIN-KEYWORD,1drv,🎯 Direct
+- DOMAIN-KEYWORD,onedrive,🎯 Direct
+- DOMAIN-KEYWORD,skydrive,🎯 Direct
+- DOMAIN-SUFFIX,acl4.ssr,🎯 Direct
+- DOMAIN-SUFFIX,ip6-localhost,🎯 Direct
+- DOMAIN-SUFFIX,ip6-loopback,🎯 Direct
+- DOMAIN-SUFFIX,internal,🎯 Direct
+- DOMAIN-SUFFIX,lan,🎯 Direct
+- DOMAIN-SUFFIX,local,🎯 Direct
+- DOMAIN-SUFFIX,localhost,🎯 Direct
+- IP-CIDR,0.0.0.0/8,🎯 Direct,no-resolve
+- IP-CIDR,10.0.0.0/8,🎯 Direct,no-resolve
+- IP-CIDR,100.64.0.0/10,🎯 Direct,no-resolve
+- IP-CIDR,127.0.0.0/8,🎯 Direct,no-resolve
+- IP-CIDR,169.254.0.0/16,🎯 Direct,no-resolve
+- IP-CIDR,172.16.0.0/12,🎯 Direct,no-resolve
+- IP-CIDR,192.168.0.0/16,🎯 Direct,no-resolve
+- IP-CIDR,198.18.0.0/16,🎯 Direct,no-resolve
+- IP-CIDR,224.0.0.0/4,🎯 Direct,no-resolve
+- IP-CIDR6,::1/128,🎯 Direct,no-resolve
+- IP-CIDR6,fc00::/7,🎯 Direct,no-resolve
+- IP-CIDR6,fe80::/10,🎯 Direct,no-resolve
+- IP-CIDR6,fd00::/8,🎯 Direct,no-resolve
+- DOMAIN,instant.arubanetworks.com,🎯 Direct
+- DOMAIN,setmeup.arubanetworks.com,🎯 Direct
+- DOMAIN,router.asus.com,🎯 Direct
+- DOMAIN,www.asusrouter.com,🎯 Direct
+- DOMAIN-SUFFIX,hiwifi.com,🎯 Direct
+- DOMAIN-SUFFIX,leike.cc,🎯 Direct
+- DOMAIN-SUFFIX,miwifi.com,🎯 Direct
+- DOMAIN-SUFFIX,my.router,🎯 Direct
+- DOMAIN-SUFFIX,p.to,🎯 Direct
+- DOMAIN-SUFFIX,peiluyou.com,🎯 Direct
+- DOMAIN-SUFFIX,phicomm.me,🎯 Direct
+- DOMAIN-SUFFIX,router.ctc,🎯 Direct
+- DOMAIN-SUFFIX,routerlogin.com,🎯 Direct
+- DOMAIN-SUFFIX,tendawifi.com,🎯 Direct
+- DOMAIN-SUFFIX,zte.home,🎯 Direct
+- DOMAIN-SUFFIX,tplogin.cn,🎯 Direct
+- DOMAIN-SUFFIX,wifi.cmcc,🎯 Direct
+- DOMAIN-SUFFIX,smtp,🎯 Direct
+- DOMAIN-SUFFIX,livefilestore.com,🎯 Direct
+- DOMAIN-SUFFIX,oneclient.sfx.ms,🎯 Direct
+- DOMAIN-SUFFIX,onedrive.com,🎯 Direct
+- DOMAIN-SUFFIX,onedrive.live.com,🎯 Direct
+- DOMAIN-SUFFIX,photos.live.com,🎯 Direct
+- DOMAIN-SUFFIX,sharepoint.com,🎯 Direct
+- DOMAIN-SUFFIX,sharepointonline.com,🎯 Direct
+- DOMAIN-SUFFIX,skydrive.wns.windows.com,🎯 Direct
+- DOMAIN-SUFFIX,spoprod-a.akamaihd.net,🎯 Direct
+- DOMAIN-SUFFIX,storage.live.com,🎯 Direct
+- DOMAIN-SUFFIX,storage.msn.com,🎯 Direct
+- DOMAIN-SUFFIX,aria.microsoft.com,🎯 Direct
+- DOMAIN-SUFFIX,microsoftpersonalcontent.com,🎯 Direct
+- DST-PORT,10300,🎯 Direct
+- DST-PORT,10343,🎯 Direct
+- DST-PORT,18080,🎯 Direct
+- DST-PORT,2222,🎯 Direct
+- DST-PORT,3333,🎯 Direct
+- DST-PORT,5555,🎯 Direct
+- DST-PORT,7777,🎯 Direct
+- DST-PORT,8333,🎯 Direct
+- DST-PORT,8888,🎯 Direct
+- DST-PORT,9000,🎯 Direct
+- DST-PORT,9999,🎯 Direct
+- PROCESS-NAME,DownloadService,🎯 Direct
+- PROCESS-NAME,Folx,🎯 Direct
+- PROCESS-NAME,Motrix,🎯 Direct
+- PROCESS-NAME,NetTransport,🎯 Direct
+- PROCESS-NAME,Thunder,🎯 Direct
+- PROCESS-NAME,Transmission,🎯 Direct
+- PROCESS-NAME,WebTorrent Helper,🎯 Direct
+- PROCESS-NAME,WebTorrent,🎯 Direct
+- PROCESS-NAME,Weiyun,🎯 Direct
+- PROCESS-NAME,aria2c,🎯 Direct
+- PROCESS-NAME,fdm,🎯 Direct
+- PROCESS-NAME,qbittorrent,🎯 Direct
+- PROCESS-NAME,uTorrent,🎯 Direct
+- PROCESS-NAME,baidunetdisk,🎯 Direct
+- PROCESS-NAME,OneDrive,🎯 Direct
+- PROCESS-NAME,OneDriveUpdater,🎯 Direct
+- DOMAIN,analytics.strava.com,🎯 Direct
+- DOMAIN,app.adjust.com,🎯 Direct
+- DOMAIN,blzddist1-a.akamaihd.net,🎯 Direct
+- DOMAIN,dl.google.com,🎯 Direct
+- DOMAIN,download.jetbrains.com,🎯 Direct
+- DOMAIN,images-cn.ssl-images-amazon.com,🎯 Direct
+- DOMAIN,msg.umeng.com,🎯 Direct
+- DOMAIN,msg.umengcloud.com,🎯 Direct
+- DOMAIN,mtalk.google.com,🎯 Direct
+- DOMAIN,officecdn-microsoft-com.akamaized.net,🎯 Direct
+- DOMAIN,speedtest.macpaw.com,🎯 Direct
+- DOMAIN,www-cdn.icloud.com.akadns.net,🎯 Direct
+- DOMAIN-SUFFIX,163yun.com,🎯 Direct
+- DOMAIN-SUFFIX,343480.com,🎯 Direct
+- DOMAIN-SUFFIX,360in.com,🎯 Direct
+- DOMAIN-SUFFIX,51ym.me,🎯 Direct
+- DOMAIN-SUFFIX,71.am.com,🎯 Direct
+- DOMAIN-SUFFIX,8686c.com,🎯 Direct
+- DOMAIN-SUFFIX,aaplimg.com,🎯 Direct
+- DOMAIN-SUFFIX,accuweather.com,🎯 Direct
+- DOMAIN-SUFFIX,acm.org,🎯 Direct
+- DOMAIN-SUFFIX,acs.org,🎯 Direct
+- DOMAIN-SUFFIX,aicoinstorge.com,🎯 Direct
+- DOMAIN-SUFFIX,aip.org,🎯 Direct
+- DOMAIN-SUFFIX,air-matters.com,🎯 Direct
+- DOMAIN-SUFFIX,air-matters.io,🎯 Direct
+- DOMAIN-SUFFIX,aixifan.com,🎯 Direct
+- DOMAIN-SUFFIX,akadns.net,🎯 Direct
+- DOMAIN-SUFFIX,alikunlun.com,🎯 Direct
+- DOMAIN-SUFFIX,amap.com,🎯 Direct
+- DOMAIN-SUFFIX,amd.com,🎯 Direct
+- DOMAIN-SUFFIX,ams.org,🎯 Direct
+- DOMAIN-SUFFIX,annualreviews.org,🎯 Direct
+- DOMAIN-SUFFIX,apple-cloudkit.com,🎯 Direct
+- DOMAIN-SUFFIX,apple.co,🎯 Direct
+- DOMAIN-SUFFIX,apple.com,🎯 Direct
+- DOMAIN-SUFFIX,appstore.com,🎯 Direct
+- DOMAIN-SUFFIX,aps.org,🎯 Direct
+- DOMAIN-SUFFIX,ascelibrary.org,🎯 Direct
+- DOMAIN-SUFFIX,asm.org,🎯 Direct
+- DOMAIN-SUFFIX,asme.org,🎯 Direct
+- DOMAIN-SUFFIX,astm.org,🎯 Direct
+- DOMAIN-SUFFIX,autonavi.com,🎯 Direct
+- DOMAIN-SUFFIX,awesome-hd.me,🎯 Direct
+- DOMAIN-SUFFIX,b612.net,🎯 Direct
+- DOMAIN-SUFFIX,battle.net,🎯 Direct
+- DOMAIN-SUFFIX,bdatu.com,🎯 Direct
+- DOMAIN-SUFFIX,beitaichufang.com,🎯 Direct
+- DOMAIN-SUFFIX,bjango.com,🎯 Direct
+- DOMAIN-SUFFIX,blizzard.com,🎯 Direct
+- DOMAIN-SUFFIX,bmj.com,🎯 Direct
+- DOMAIN-SUFFIX,booking.com,🎯 Direct
+- DOMAIN-SUFFIX,broadcasthe.net,🎯 Direct
+- DOMAIN-SUFFIX,bstatic.com,🎯 Direct
+- DOMAIN-SUFFIX,cailianpress.com,🎯 Direct
+- DOMAIN-SUFFIX,cambridge.org,🎯 Direct
+- DOMAIN-SUFFIX,cas.org,🎯 Direct
+- DOMAIN-SUFFIX,cdn-apple.com,🎯 Direct
+- DOMAIN-SUFFIX,chua.pro,🎯 Direct
+- DOMAIN-SUFFIX,chuimg.com,🎯 Direct
+- DOMAIN-SUFFIX,chunyu.mobi,🎯 Direct
+- DOMAIN-SUFFIX,clarivate.com,🎯 Direct
+- DOMAIN-SUFFIX,classix-unlimited.co.uk,🎯 Direct
+- DOMAIN-SUFFIX,cmbimg.com,🎯 Direct
+- DOMAIN-SUFFIX,cn,🎯 Direct
+- DOMAIN-SUFFIX,com-hs-hkdy.com,🎯 Direct
+- DOMAIN-SUFFIX,crashlytics.com,🎯 Direct
+- DOMAIN-SUFFIX,ctrip.com,🎯 Direct
+- DOMAIN-SUFFIX,didialift.com,🎯 Direct
+- DOMAIN-SUFFIX,didiglobal.com,🎯 Direct
+- DOMAIN-SUFFIX,dingtalk.com,🎯 Direct
+- DOMAIN-SUFFIX,dytt8.net,🎯 Direct
+- DOMAIN-SUFFIX,ebscohost.com,🎯 Direct
+- DOMAIN-SUFFIX,emerald.com,🎯 Direct
+- DOMAIN-SUFFIX,empornium.me,🎯 Direct
+- DOMAIN-SUFFIX,engineeringvillage.com,🎯 Direct
+- DOMAIN-SUFFIX,feiliao.com,🎯 Direct
+- DOMAIN-SUFFIX,futu5.com,🎯 Direct
+- DOMAIN-SUFFIX,futunn.com,🎯 Direct
+- DOMAIN-SUFFIX,gandi.net,🎯 Direct
+- DOMAIN-SUFFIX,gazellegames.net,🎯 Direct
+- DOMAIN-SUFFIX,geilicdn.com,🎯 Direct
+- DOMAIN-SUFFIX,googletraveladservices.com,🎯 Direct
+- DOMAIN-SUFFIX,hicloud.com,🎯 Direct
+- DOMAIN-SUFFIX,icetorrent.org,🎯 Direct
+- DOMAIN-SUFFIX,icevirtuallibrary.com,🎯 Direct
+- DOMAIN-SUFFIX,icloud-content.com,🎯 Direct
+- DOMAIN-SUFFIX,icloud.com,🎯 Direct
+- DOMAIN-SUFFIX,idqqimg.com,🎯 Direct
+- DOMAIN-SUFFIX,ieee.org,🎯 Direct
+- DOMAIN-SUFFIX,igamecj.com,🎯 Direct
+- DOMAIN-SUFFIX,imf.org,🎯 Direct
+- DOMAIN-SUFFIX,iop.org,🎯 Direct
+- DOMAIN-SUFFIX,ip-cdn.com,🎯 Direct
+- DOMAIN-SUFFIX,ip.la,🎯 Direct
+- DOMAIN-SUFFIX,ipip.net,🎯 Direct
+- DOMAIN-SUFFIX,ipv6-test.com,🎯 Direct
+- DOMAIN-SUFFIX,jamanetwork.com,🎯 Direct
+- DOMAIN-SUFFIX,java.com,🎯 Direct
+- DOMAIN-SUFFIX,jdpay.com,🎯 Direct
+- DOMAIN-SUFFIX,jhu.edu,🎯 Direct
+- DOMAIN-SUFFIX,jpopsuki.eu,🎯 Direct
+- DOMAIN-SUFFIX,jstor.org,🎯 Direct
+- DOMAIN-SUFFIX,jstucdn.com,🎯 Direct
+- DOMAIN-SUFFIX,karger.com,🎯 Direct
+- DOMAIN-SUFFIX,kaspersky-labs.com,🎯 Direct
+- DOMAIN-SUFFIX,keepcdn.com,🎯 Direct
+- DOMAIN-SUFFIX,libguides.com,🎯 Direct
+- DOMAIN-SUFFIX,licdn.com,🎯 Direct
+- DOMAIN-SUFFIX,livechina.com,🎯 Direct
+- DOMAIN-SUFFIX,lofter.com,🎯 Direct
+- DOMAIN-SUFFIX,madsrevolution.net,🎯 Direct
+- DOMAIN-SUFFIX,me.com,🎯 Direct
+- DOMAIN-SUFFIX,mobike.com,🎯 Direct
+- DOMAIN-SUFFIX,mpg.de,🎯 Direct
+- DOMAIN-SUFFIX,msecnd.net,🎯 Direct
+- DOMAIN-SUFFIX,mxhichina.com,🎯 Direct
+- DOMAIN-SUFFIX,myapp.com,🎯 Direct
+- DOMAIN-SUFFIX,myilibrary.com,🎯 Direct
+- DOMAIN-SUFFIX,mzstatic.com,🎯 Direct
+- DOMAIN-SUFFIX,nature.com,🎯 Direct
+- DOMAIN-SUFFIX,ncore.cc,🎯 Direct
+- DOMAIN-SUFFIX,netspeedtestmaster.com,🎯 Direct
+- DOMAIN-SUFFIX,nvidia.com,🎯 Direct
+- DOMAIN-SUFFIX,oecd-ilibrary.org,🎯 Direct
+- DOMAIN-SUFFIX,office365.com,🎯 Direct
+- DOMAIN-SUFFIX,oracle.com,🎯 Direct
+- DOMAIN-SUFFIX,osapublishing.org,🎯 Direct
+- DOMAIN-SUFFIX,oup.com,🎯 Direct
+- DOMAIN-SUFFIX,outlook.com,🎯 Direct
+- DOMAIN-SUFFIX,ovid.com,🎯 Direct
+- DOMAIN-SUFFIX,oxfordartonline.com,🎯 Direct
+- DOMAIN-SUFFIX,oxfordbibliographies.com,🎯 Direct
+- DOMAIN-SUFFIX,oxfordmusiconline.com,🎯 Direct
+- DOMAIN-SUFFIX,passthepopcorn.me,🎯 Direct
+- DOMAIN-SUFFIX,paypal.com,🎯 Direct
+- DOMAIN-SUFFIX,paypalobjects.com,🎯 Direct
+- DOMAIN-SUFFIX,pnas.org,🎯 Direct
+- DOMAIN-SUFFIX,privatehd.to,🎯 Direct
+- DOMAIN-SUFFIX,proquest.com,🎯 Direct
+- DOMAIN-SUFFIX,qdaily.com,🎯 Direct
+- DOMAIN-SUFFIX,qhimg.com,🎯 Direct
+- DOMAIN-SUFFIX,qhres.com,🎯 Direct
+- DOMAIN-SUFFIX,redacted.ch,🎯 Direct
+- DOMAIN-SUFFIX,rsc.org,🎯 Direct
+- DOMAIN-SUFFIX,s-microsoft.com,🎯 Direct
+- DOMAIN-SUFFIX,sagepub.com,🎯 Direct
+- DOMAIN-SUFFIX,sciencedirect.com,🎯 Direct
+- DOMAIN-SUFFIX,sciencemag.org,🎯 Direct
+- DOMAIN-SUFFIX,scopus.com,🎯 Direct
+- DOMAIN-SUFFIX,siam.org,🎯 Direct
+- DOMAIN-SUFFIX,spiedigitallibrary.org,🎯 Direct
+- DOMAIN-SUFFIX,springer.com,🎯 Direct
+- DOMAIN-SUFFIX,springerlink.com,🎯 Direct
+- DOMAIN-SUFFIX,steam-chat.com,🎯 Direct
+- DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,🎯 Direct
+- DOMAIN-SUFFIX,steamcontent.com,🎯 Direct
+- DOMAIN-SUFFIX,steamgames.com,🎯 Direct
+- DOMAIN-SUFFIX,steampowered.com,🎯 Direct
+- DOMAIN-SUFFIX,steamstat.us,🎯 Direct
+- DOMAIN-SUFFIX,steamstatic.com,🎯 Direct
+- DOMAIN-SUFFIX,steamusercontent.com,🎯 Direct
+- DOMAIN-SUFFIX,tandfonline.com,🎯 Direct
+- DOMAIN-SUFFIX,teamviewer.com,🎯 Direct
+- DOMAIN-SUFFIX,test-ipv6.com,🎯 Direct
+- DOMAIN-SUFFIX,udache.com,🎯 Direct
+- DOMAIN-SUFFIX,udacity.com,🎯 Direct
+- DOMAIN-SUFFIX,un.org,🎯 Direct
+- DOMAIN-SUFFIX,uni-bielefeld.de,🎯 Direct
+- DOMAIN-SUFFIX,v-56.com,🎯 Direct
+- DOMAIN-SUFFIX,visualstudio.com,🎯 Direct
+- DOMAIN-SUFFIX,vmware.com,🎯 Direct
+- DOMAIN-SUFFIX,weather.com,🎯 Direct
+- DOMAIN-SUFFIX,webofknowledge.com,🎯 Direct
+- DOMAIN-SUFFIX,westlaw.com,🎯 Direct
+- DOMAIN-SUFFIX,whatismyip.com,🎯 Direct
+- DOMAIN-SUFFIX,wiley.com,🎯 Direct
+- DOMAIN-SUFFIX,windows.com,🎯 Direct
+- DOMAIN-SUFFIX,windowsupdate.com,🎯 Direct
+- DOMAIN-SUFFIX,worldbank.org,🎯 Direct
+- DOMAIN-SUFFIX,worldscientific.com,🎯 Direct
+- DOMAIN-SUFFIX,xiami.com,🎯 Direct
+- DOMAIN-SUFFIX,xiami.net,🎯 Direct
+- DOMAIN-SUFFIX,ykimg.com,🎯 Direct
+- DOMAIN-SUFFIX,yunjiasu-cdn.net,🎯 Direct
+- DOMAIN-SUFFIX,zimuzu.io,🎯 Direct
+- DOMAIN-SUFFIX,zimuzu.tv,🎯 Direct
+- DOMAIN-SUFFIX,zmz2019.com,🎯 Direct
+- DOMAIN-SUFFIX,zmzapi.com,🎯 Direct
+- DOMAIN-SUFFIX,zmzapi.net,🎯 Direct
+- DOMAIN-SUFFIX,zmzfile.com,🎯 Direct
+- DOMAIN-KEYWORD,1drv,Ⓜ️ Microsoft
+- DOMAIN-KEYWORD,microsoft,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,aadrm.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,acompli.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,acompli.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,aka.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,akadns.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,aspnetcdn.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,assets-yammer.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,azure.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,azure.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,azureedge.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,azureiotcentral.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,azurerms.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,bing.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,bing.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,bingapis.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,cloudapp.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,cloudappsecurity.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,edgesuite.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,gfx.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,hotmail.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,live.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,live.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,lync.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msappproxy.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msauth.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msauthimages.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msecnd.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msedge.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msft.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msftauth.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msftauthimages.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msftidentity.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msidentity.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msn.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msocdn.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,msocsp.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,mstea.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,o365weve.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,oaspapps.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,office.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,office.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,office365.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,officeppe.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,omniroot.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,onedrive.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,onenote.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,onenote.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,onestore.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,outlook.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,outlookmobile.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,phonefactor.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,public-trust.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sfbassets.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sfx.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sharepoint.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sharepointonline.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,skype.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,skypeassets.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,skypeforbusiness.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,staffhub.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,svc.ms,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sway-cdn.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sway-extensions.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,sway.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,trafficmanager.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,uservoice.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,virtualearth.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,visualstudio.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,windows-ppe.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,windows.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,windows.net,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,windowsazure.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,windowsupdate.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,wunderlist.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,yammer.com,Ⓜ️ Microsoft
+- DOMAIN-SUFFIX,yammerusercontent.com,Ⓜ️ Microsoft
+- DOMAIN,apple.comscoreresearch.com,🍎 Apple
+- DOMAIN-SUFFIX,aaplimg.com,🍎 Apple
+- DOMAIN-SUFFIX,akadns.net,🍎 Apple
+- DOMAIN-SUFFIX,apple-cloudkit.com,🍎 Apple
+- DOMAIN-SUFFIX,apple-dns.net,🍎 Apple
+- DOMAIN-SUFFIX,apple-mapkit.com,🍎 Apple
+- DOMAIN-SUFFIX,apple.co,🍎 Apple
+- DOMAIN-SUFFIX,apple.com,🍎 Apple
+- DOMAIN-SUFFIX,apple.com.cn,🍎 Apple
+- DOMAIN-SUFFIX,apple.news,🍎 Apple
+- DOMAIN-SUFFIX,appstore.com,🍎 Apple
+- DOMAIN-SUFFIX,cdn-apple.com,🍎 Apple
+- DOMAIN-SUFFIX,crashlytics.com,🍎 Apple
+- DOMAIN-SUFFIX,icloud-content.com,🍎 Apple
+- DOMAIN-SUFFIX,icloud.com,🍎 Apple
+- DOMAIN-SUFFIX,icloud.com.cn,🍎 Apple
+- DOMAIN-SUFFIX,itunes.com,🍎 Apple
+- DOMAIN-SUFFIX,me.com,🍎 Apple
+- DOMAIN-SUFFIX,mzstatic.com,🍎 Apple
+- IP-CIDR,17.0.0.0/8,🍎 Apple,no-resolve
+- IP-CIDR,63.92.224.0/19,🍎 Apple,no-resolve
+- IP-CIDR,65.199.22.0/23,🍎 Apple,no-resolve
+- IP-CIDR,139.178.128.0/18,🍎 Apple,no-resolve
+- IP-CIDR,144.178.0.0/19,🍎 Apple,no-resolve
+- IP-CIDR,144.178.36.0/22,🍎 Apple,no-resolve
+- IP-CIDR,144.178.48.0/20,🍎 Apple,no-resolve
+- IP-CIDR,192.35.50.0/24,🍎 Apple,no-resolve
+- IP-CIDR,198.183.17.0/24,🍎 Apple,no-resolve
+- IP-CIDR,205.180.175.0/24,🍎 Apple,no-resolve
+- DOMAIN-SUFFIX,t.me,🌊 国际媒体
+- DOMAIN-SUFFIX,tdesktop.com,🌊 国际媒体
+- DOMAIN-SUFFIX,telegra.ph,🌊 国际媒体
+- DOMAIN-SUFFIX,telegram.me,🌊 国际媒体
+- DOMAIN-SUFFIX,telegram.org,🌊 国际媒体
+- DOMAIN-SUFFIX,telesco.pe,🌊 国际媒体
+- IP-CIDR,91.108.0.0/16,🌊 国际媒体,no-resolve
+- IP-CIDR,95.161.64.0/20,🌊 国际媒体,no-resolve
+- IP-CIDR,109.239.140.0/24,🌊 国际媒体,no-resolve
+- IP-CIDR,149.154.160.0/20,🌊 国际媒体,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,🌊 国际媒体,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,🌊 国际媒体,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,🌊 国际媒体,no-resolve
+- DOMAIN-SUFFIX,fast.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflix.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflix.net,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest0.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest1.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest2.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest3.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest4.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest5.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest6.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest7.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest8.com,🌊 国际媒体
+- DOMAIN-SUFFIX,netflixdnstest9.com,🌊 国际媒体
+- DOMAIN-SUFFIX,nflxext.com,🌊 国际媒体
+- DOMAIN-SUFFIX,nflximg.com,🌊 国际媒体
+- DOMAIN-SUFFIX,nflximg.net,🌊 国际媒体
+- DOMAIN-SUFFIX,nflxso.net,🌊 国际媒体
+- DOMAIN-SUFFIX,nflxvideo.net,🌊 国际媒体
+- IP-CIDR,8.41.4.0/24,🌊 国际媒体,no-resolve
+- IP-CIDR,23.246.0.0/18,🌊 国际媒体,no-resolve
+- IP-CIDR,37.77.184.0/21,🌊 国际媒体,no-resolve
+- IP-CIDR,45.57.0.0/17,🌊 国际媒体,no-resolve
+- IP-CIDR,64.120.128.0/17,🌊 国际媒体,no-resolve
+- IP-CIDR,66.197.128.0/17,🌊 国际媒体,no-resolve
+- IP-CIDR,69.53.224.0/19,🌊 国际媒体,no-resolve
+- IP-CIDR,108.175.32.0/20,🌊 国际媒体,no-resolve
+- IP-CIDR,185.2.220.0/22,🌊 国际媒体,no-resolve
+- IP-CIDR,185.9.188.0/22,🌊 国际媒体,no-resolve
+- IP-CIDR,192.173.64.0/18,🌊 国际媒体,no-resolve
+- IP-CIDR,198.38.96.0/19,🌊 国际媒体,no-resolve
+- IP-CIDR,198.45.48.0/20,🌊 国际媒体,no-resolve
+- IP-CIDR,207.45.72.0/22,🌊 国际媒体,no-resolve
+- IP-CIDR,208.75.76.0/22,🌊 国际媒体,no-resolve
+- DOMAIN,p-bstarstatic.akamaized.net,📺 BiliBili
+- DOMAIN,p.bstarstatic.com,📺 BiliBili
+- DOMAIN,upos-bstar-mirrorakam.akamaized.net,📺 BiliBili
+- DOMAIN,upos-bstar1-mirrorakam.akamaized.net,📺 BiliBili
+- DOMAIN,upos-hz-mirrorakam.akamaized.net,📺 BiliBili
+- DOMAIN,apiintl.biliapi.net,📺 BiliBili
+- DOMAIN-SUFFIX,acg.tv,📺 BiliBili
+- DOMAIN-SUFFIX,acgvideo.com,📺 BiliBili
+- DOMAIN-SUFFIX,b23.tv,📺 BiliBili
+- DOMAIN-SUFFIX,bigfun.cn,📺 BiliBili
+- DOMAIN-SUFFIX,bigfunapp.cn,📺 BiliBili
+- DOMAIN-SUFFIX,biliapi.com,📺 BiliBili
+- DOMAIN-SUFFIX,biliapi.net,📺 BiliBili
+- DOMAIN-SUFFIX,bilibili.co,📺 BiliBili
+- DOMAIN-SUFFIX,bilibili.com,📺 BiliBili
+- DOMAIN-SUFFIX,bilibili.tv,📺 BiliBili
+- DOMAIN-SUFFIX,biligame.com,📺 BiliBili
+- DOMAIN-SUFFIX,biligame.net,📺 BiliBili
+- DOMAIN-SUFFIX,biliintl.co,📺 BiliBili
+- DOMAIN-SUFFIX,bilivideo.cn,📺 BiliBili
+- DOMAIN-SUFFIX,bilivideo.com,📺 BiliBili
+- DOMAIN-SUFFIX,hdslb.com,📺 BiliBili
+- DOMAIN-SUFFIX,im9.com,📺 BiliBili
+- DOMAIN-SUFFIX,smtcdns.net,📺 BiliBili
+- IP-CIDR,45.43.32.234/32,📺 BiliBili,no-resolve
+- IP-CIDR,103.151.150.0/23,📺 BiliBili,no-resolve
+- IP-CIDR,119.29.29.29/32,📺 BiliBili,no-resolve
+- IP-CIDR,128.1.62.200/32,📺 BiliBili,no-resolve
+- IP-CIDR,128.1.62.201/32,📺 BiliBili,no-resolve
+- IP-CIDR,150.116.92.250/32,📺 BiliBili,no-resolve
+- IP-CIDR,164.52.33.178/32,📺 BiliBili,no-resolve
+- IP-CIDR,164.52.33.182/32,📺 BiliBili,no-resolve
+- IP-CIDR,164.52.76.18/32,📺 BiliBili,no-resolve
+- IP-CIDR,203.107.1.33/32,📺 BiliBili,no-resolve
+- IP-CIDR,203.107.1.34/32,📺 BiliBili,no-resolve
+- IP-CIDR,203.107.1.65/32,📺 BiliBili,no-resolve
+- IP-CIDR,203.107.1.66/32,📺 BiliBili,no-resolve
+- DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,🌊 国际媒体
+- DOMAIN,abematv.akamaized.net,🌊 国际媒体
+- DOMAIN,api.viu.now.com,🌊 国际媒体
+- DOMAIN,avodmp4s3ww-a.akamaihd.net,🌊 国际媒体
+- DOMAIN,bcbolt446c5271-a.akamaihd.net,🌊 国际媒体
+- DOMAIN,bcbolthboa-a.akamaihd.net,🌊 国际媒体
+- DOMAIN,cdn.registerdisney.go.com,🌊 国际媒体
+- DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,🌊 国际媒体
+- DOMAIN,d151l6v8er5bdm.cloudfront.net,🌊 国际媒体
+- DOMAIN,d1k2us671qcoau.cloudfront.net,🌊 国际媒体
+- DOMAIN,d1v5ir2lpwr8os.cloudfront.net,🌊 国际媒体
+- DOMAIN,d22qjgkvxw22r6.cloudfront.net,🌊 国际媒体
+- DOMAIN,d25xi40x97liuc.cloudfront.net,🌊 国际媒体
+- DOMAIN,d2anahhhmp1ffz.cloudfront.net,🌊 国际媒体
+- DOMAIN,d349g9zuie06uo.cloudfront.net,🌊 国际媒体
+- DOMAIN,d3c7rimkq79yfu.cloudfront.net,🌊 国际媒体
+- DOMAIN,dai3fd1oh325y.cloudfront.net,🌊 国际媒体
+- DOMAIN,dfp6rglgjqszk.cloudfront.net,🌊 国际媒体
+- DOMAIN,dmqdd6hw24ucf.cloudfront.net,🌊 国际媒体
+- DOMAIN,ds-linear-abematv.akamaized.net,🌊 国际媒体
+- DOMAIN,ds-vod-abematv.akamaized.net,🌊 国际媒体
+- DOMAIN,edge.api.brightcove.com,🌊 国际媒体
+- DOMAIN,gamer-cds.cdn.hinet.net,🌊 国际媒体
+- DOMAIN,gamer2-cds.cdn.hinet.net,🌊 国际媒体
+- DOMAIN,hamifans.emome.net,🌊 国际媒体
+- DOMAIN,hboasia1-i.akamaihd.net,🌊 国际媒体
+- DOMAIN,hboasia2-i.akamaihd.net,🌊 国际媒体
+- DOMAIN,hboasia3-i.akamaihd.net,🌊 国际媒体
+- DOMAIN,hboasia4-i.akamaihd.net,🌊 国际媒体
+- DOMAIN,hboasia5-i.akamaihd.net,🌊 国际媒体
+- DOMAIN,itvpnpmobile-a.akamaihd.net,🌊 国际媒体
+- DOMAIN,kktv-theater.kk.stream,🌊 国际媒体
+- DOMAIN,linear-abematv.akamaized.net,🌊 国际媒体
+- DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,🌊 国际媒体
+- DOMAIN,players.brightcove.net,🌊 国际媒体
+- DOMAIN,s3-ap-southeast-1.amazonaws.com,🌊 国际媒体
+- DOMAIN,youtubei.googleapis.com,🌊 国际媒体
+- DOMAIN-KEYWORD,-spotify-com,🌊 国际媒体
+- DOMAIN-KEYWORD,avoddashs,🌊 国际媒体
+- DOMAIN-KEYWORD,bbcfmt,🌊 国际媒体
+- DOMAIN-KEYWORD,spotify.com,🌊 国际媒体
+- DOMAIN-KEYWORD,uk-live,🌊 国际媒体
+- DOMAIN-KEYWORD,voddazn,🌊 国际媒体
+- DOMAIN-SUFFIX,5itv.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,abema.io,🌊 国际媒体
+- DOMAIN-SUFFIX,abema.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,ace-taffy.com,🌊 国际媒体
+- DOMAIN-SUFFIX,adomainforsub.org,🌊 国际媒体
+- DOMAIN-SUFFIX,adoptangelaboradvacotionclwonthorughconfrmcompimentdeseertaltar.org,🌊 国际媒体
+- DOMAIN-SUFFIX,aiv-cdn.net,🌊 国际媒体
+- DOMAIN-SUFFIX,aiv-delivery.net,🌊 国际媒体
+- DOMAIN-SUFFIX,amazonvideo.com,🌊 国际媒体
+- DOMAIN-SUFFIX,ameba.jp,🌊 国际媒体
+- DOMAIN-SUFFIX,av1.wtf,🌊 国际媒体
+- DOMAIN-SUFFIX,azabudai.org,🌊 国际媒体
+- DOMAIN-SUFFIX,bahamut.com.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,bamgrid.com,🌊 国际媒体
+- DOMAIN-SUFFIX,bbc.co.uk,🌊 国际媒体
+- DOMAIN-SUFFIX,bbci.co.uk,🌊 国际媒体
+- DOMAIN-SUFFIX,c4assets.com,🌊 国际媒体
+- DOMAIN-SUFFIX,channel4.com,🌊 国际媒体
+- DOMAIN-SUFFIX,channel5.com,🌊 国际媒体
+- DOMAIN-SUFFIX,clashcloud.net,🌊 国际媒体
+- DOMAIN-SUFFIX,dazn-api.com,🌊 国际媒体
+- DOMAIN-SUFFIX,dazn.com,🌊 国际媒体
+- DOMAIN-SUFFIX,deezer.com,🌊 国际媒体
+- DOMAIN-SUFFIX,disney-plus.net,🌊 国际媒体
+- DOMAIN-SUFFIX,disneyplus.com,🌊 国际媒体
+- DOMAIN-SUFFIX,dmc.nico,🌊 国际媒体
+- DOMAIN-SUFFIX,dssott.com,🌊 国际媒体
+- DOMAIN-SUFFIX,dzcdn.net,🌊 国际媒体
+- DOMAIN-SUFFIX,embarrassbizarrecaribbeanmillenniumcommitteeappearanassassinati.org,🌊 国际媒体
+- DOMAIN-SUFFIX,encoretvb.com,🌊 国际媒体
+- DOMAIN-SUFFIX,fox.com,🌊 国际媒体
+- DOMAIN-SUFFIX,foxdcg.com,🌊 国际媒体
+- DOMAIN-SUFFIX,gamer.com.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,googlevideo.com,🌊 国际媒体
+- DOMAIN-SUFFIX,happyon.jp,🌊 国际媒体
+- DOMAIN-SUFFIX,hayabusa.io,🌊 国际媒体
+- DOMAIN-SUFFIX,hbo.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hbogo.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hbogoasia.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hbogoasia.hk,🌊 国际媒体
+- DOMAIN-SUFFIX,hbonow.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hulu.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hulu.jp,🌊 国际媒体
+- DOMAIN-SUFFIX,huluim.com,🌊 国际媒体
+- DOMAIN-SUFFIX,hulustream.com,🌊 国际媒体
+- DOMAIN-SUFFIX,itv.com,🌊 国际媒体
+- DOMAIN-SUFFIX,itvstatic.com,🌊 国际媒体
+- DOMAIN-SUFFIX,joox.com,🌊 国际媒体
+- DOMAIN-SUFFIX,jtvnw.net,🌊 国际媒体
+- DOMAIN-SUFFIX,kfs.io,🌊 国际媒体
+- DOMAIN-SUFFIX,kkbox.com,🌊 国际媒体
+- DOMAIN-SUFFIX,kkbox.com.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,kktv.com.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,kktv.me,🌊 国际媒体
+- DOMAIN-SUFFIX,linetv.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,litv.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,my5.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,mytvsuper.com,🌊 国际媒体
+- DOMAIN-SUFFIX,nicovideo.jp,🌊 国际媒体
+- DOMAIN-SUFFIX,nimg.jp,🌊 国际媒体
+- DOMAIN-SUFFIX,nozomi.wtf,🌊 国际媒体
+- DOMAIN-SUFFIX,ocnttv.com,🌊 国际媒体
+- DOMAIN-SUFFIX,p-cdn.us,🌊 国际媒体
+- DOMAIN-SUFFIX,pandora.com,🌊 国际媒体
+- DOMAIN-SUFFIX,pbs.org,🌊 国际媒体
+- DOMAIN-SUFFIX,phncdn.com,🌊 国际媒体
+- DOMAIN-SUFFIX,pornhub.com,🌊 国际媒体
+- DOMAIN-SUFFIX,pornhubpremium.com,🌊 国际媒体
+- DOMAIN-SUFFIX,primevideo.com,🌊 国际媒体
+- DOMAIN-SUFFIX,pscdn.co,🌊 国际媒体
+- DOMAIN-SUFFIX,scdn.co,🌊 国际媒体
+- DOMAIN-SUFFIX,skyking.com.tw,🌊 国际媒体
+- DOMAIN-SUFFIX,sndcdn.com,🌊 国际媒体
+- DOMAIN-SUFFIX,socdm.com,🌊 国际媒体
+- DOMAIN-SUFFIX,soundcloud.com,🌊 国际媒体
+- DOMAIN-SUFFIX,spoti.fi,🌊 国际媒体
+- DOMAIN-SUFFIX,spotify.com,🌊 国际媒体
+- DOMAIN-SUFFIX,ssr.wtf,🌊 国际媒体
+- DOMAIN-SUFFIX,theplatform.com,🌊 国际媒体
+- DOMAIN-SUFFIX,tidal.com,🌊 国际媒体
+- DOMAIN-SUFFIX,ttvnw.net,🌊 国际媒体
+- DOMAIN-SUFFIX,tvb.com,🌊 国际媒体
+- DOMAIN-SUFFIX,twitch.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,twitchcdn.net,🌊 国际媒体
+- DOMAIN-SUFFIX,uplynk.com,🌊 国际媒体
+- DOMAIN-SUFFIX,viu.com,🌊 国际媒体
+- DOMAIN-SUFFIX,viu.tv,🌊 国际媒体
+- DOMAIN-SUFFIX,youtube.com,🌊 国际媒体
+- DOMAIN-SUFFIX,linkedin.com,🌊 国际媒体
+- DOMAIN-SUFFIX,1q2w3.fun,🛑 Block
+- DOMAIN-SUFFIX,abc.pema.cl,🛑 Block
+- DOMAIN-SUFFIX,acbp0020171456.page.tl,🛑 Block
+- DOMAIN-SUFFIX,ad-miner.com,🛑 Block
+- DOMAIN-SUFFIX,adminer.com,🛑 Block
+- DOMAIN-SUFFIX,aeros01.tk,🛑 Block
+- DOMAIN-SUFFIX,aeros02.tk,🛑 Block
+- DOMAIN-SUFFIX,aeros11.tk,🛑 Block
+- DOMAIN-SUFFIX,aeros12.tk,🛑 Block
+- DOMAIN-SUFFIX,afminer.com,🛑 Block
+- DOMAIN-SUFFIX,analytics.blue,🛑 Block
+- DOMAIN-SUFFIX,andlache.com,🛑 Block
+- DOMAIN-SUFFIX,anybest.pw,🛑 Block
+- DOMAIN-SUFFIX,api.browsermine.com,🛑 Block
+- DOMAIN-SUFFIX,api.inwemo.com,🛑 Block
+- DOMAIN-SUFFIX,api.miner.beeppool.org,🛑 Block
+- DOMAIN-SUFFIX,as.cfcdist.loan,🛑 Block
+- DOMAIN-SUFFIX,ashgrrwt.click,🛑 Block
+- DOMAIN-SUFFIX,authedmine.com,🛑 Block
+- DOMAIN-SUFFIX,authedmine.eu,🛑 Block
+- DOMAIN-SUFFIX,authedwebmine.cz,🛑 Block
+- DOMAIN-SUFFIX,autologica.ga,🛑 Block
+- DOMAIN-SUFFIX,axoncoho.tk,🛑 Block
+- DOMAIN-SUFFIX,bablace.com,🛑 Block
+- DOMAIN-SUFFIX,bafybeidravcab5p3acvthxtwosm4rfpl4yypwwm52s7sazgxaezfzn5xn4.ipfs.infura-ipfs.io,🛑 Block
+- DOMAIN-SUFFIX,baiduccdn1.com,🛑 Block
+- DOMAIN-SUFFIX,becanium.com,🛑 Block
+- DOMAIN-SUFFIX,berateveng.ru,🛑 Block
+- DOMAIN-SUFFIX,besocial.online,🛑 Block
+- DOMAIN-SUFFIX,bestcoinsignals.com,🛑 Block
+- DOMAIN-SUFFIX,besti.ga,🛑 Block
+- DOMAIN-SUFFIX,bestsrv.de,🛑 Block
+- DOMAIN-SUFFIX,bewaslac.com,🛑 Block
+- DOMAIN-SUFFIX,biberukalap.com,🛑 Block
+- DOMAIN-SUFFIX,binarybusiness.de,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-cashcard.com,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-cashcard.de,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-cashcard.eu,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-pay.eu,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-pocket.de,🛑 Block
+- DOMAIN-SUFFIX,bitcoin-pocket.eu,🛑 Block
+- DOMAIN-SUFFIX,bmcm.ml,🛑 Block
+- DOMAIN-SUFFIX,bmcm.pw,🛑 Block
+- DOMAIN-SUFFIX,bmnr.pw,🛑 Block
+- DOMAIN-SUFFIX,bmst.pw,🛑 Block
+- DOMAIN-SUFFIX,brominer.com,🛑 Block
+- DOMAIN-SUFFIX,browsermine.com,🛑 Block
+- DOMAIN-SUFFIX,candid.zone,🛑 Block
+- DOMAIN-SUFFIX,cashbeet.com,🛑 Block
+- DOMAIN-SUFFIX,cdn.adless.io,🛑 Block
+- DOMAIN-SUFFIX,cdn.cloudcoins.co,🛑 Block
+- DOMAIN-SUFFIX,cdn.minescripts.info,🛑 Block
+- DOMAIN-SUFFIX,cdn1.pebx.pl,🛑 Block
+- DOMAIN-SUFFIX,cdnjs.cloudflane.com,🛑 Block
+- DOMAIN-SUFFIX,cfcdist.gdn,🛑 Block
+- DOMAIN-SUFFIX,clgserv.pro,🛑 Block
+- DOMAIN-SUFFIX,cloud-miner.de,🛑 Block
+- DOMAIN-SUFFIX,cloud-miner.eu,🛑 Block
+- DOMAIN-SUFFIX,cloudcdn.gdn,🛑 Block
+- DOMAIN-SUFFIX,cloudflane.com,🛑 Block
+- DOMAIN-SUFFIX,cnhv.co,🛑 Block
+- DOMAIN-SUFFIX,cnt.statistic.date,🛑 Block
+- DOMAIN-SUFFIX,coin-have.com,🛑 Block
+- DOMAIN-SUFFIX,coinblind.com,🛑 Block
+- DOMAIN-SUFFIX,coinerra.com,🛑 Block
+- DOMAIN-SUFFIX,coinhiveproxy.com,🛑 Block
+- DOMAIN-SUFFIX,coinimp.com,🛑 Block
+- DOMAIN-SUFFIX,coinimp.net,🛑 Block
+- DOMAIN-SUFFIX,coinminingonline.com,🛑 Block
+- DOMAIN-SUFFIX,coinnebula.com,🛑 Block
+- DOMAIN-SUFFIX,coinpirate.cf,🛑 Block
+- DOMAIN-SUFFIX,coinpot.co,🛑 Block
+- DOMAIN-SUFFIX,coinrail.io,🛑 Block
+- DOMAIN-SUFFIX,contribute.to-support.me,🛑 Block
+- DOMAIN-SUFFIX,cryptaloot.pro,🛑 Block
+- DOMAIN-SUFFIX,crypto-loot.com,🛑 Block
+- DOMAIN-SUFFIX,crypto-webminer.com,🛑 Block
+- DOMAIN-SUFFIX,crypto.csgocpu.com,🛑 Block
+- DOMAIN-SUFFIX,cryptoloot.pro,🛑 Block
+- DOMAIN-SUFFIX,d.cpufan.club,🛑 Block
+- DOMAIN-SUFFIX,dark-utilities.me,🛑 Block
+- DOMAIN-SUFFIX,dark-utilities.pw,🛑 Block
+- DOMAIN-SUFFIX,dark-utilities.xyz,🛑 Block
+- DOMAIN-SUFFIX,de-mi-nis-ner.info,🛑 Block
+- DOMAIN-SUFFIX,de-ner-mi-nis4.info,🛑 Block
+- DOMAIN-SUFFIX,de-nis-ner-mi-5.info,🛑 Block
+- DOMAIN-SUFFIX,depttake.ga,🛑 Block
+- DOMAIN-SUFFIX,dev.cryptobara.com,🛑 Block
+- DOMAIN-SUFFIX,digger.cryptobara.com,🛑 Block
+- DOMAIN-SUFFIX,dl.browsermine.com,🛑 Block
+- DOMAIN-SUFFIX,donttbeevils.de,🛑 Block
+- DOMAIN-SUFFIX,dronml.ml,🛑 Block
+- DOMAIN-SUFFIX,easyhash.de,🛑 Block
+- DOMAIN-SUFFIX,eth-pocket.com,🛑 Block
+- DOMAIN-SUFFIX,eth-pocket.de,🛑 Block
+- DOMAIN-SUFFIX,eth-pocket.eu,🛑 Block
+- DOMAIN-SUFFIX,ethereum-cashcard.com,🛑 Block
+- DOMAIN-SUFFIX,ethereum-cashcard.de,🛑 Block
+- DOMAIN-SUFFIX,ethereum-cashcard.eu,🛑 Block
+- DOMAIN-SUFFIX,ethereum-pocket.com,🛑 Block
+- DOMAIN-SUFFIX,ethereum-pocket.de,🛑 Block
+- DOMAIN-SUFFIX,ethereum-pocket.eu,🛑 Block
+- DOMAIN-SUFFIX,ethtrader.de,🛑 Block
+- DOMAIN-SUFFIX,eu.cfcdist.loan,🛑 Block
+- DOMAIN-SUFFIX,eucsoft.com,🛑 Block
+- DOMAIN-SUFFIX,evilsbedont.de,🛑 Block
+- DOMAIN-SUFFIX,exdynsrv.com,🛑 Block
+- DOMAIN-SUFFIX,f1tbit.com,🛑 Block
+- DOMAIN-SUFFIX,flare-analytics.com,🛑 Block
+- DOMAIN-SUFFIX,flighty.win,🛑 Block
+- DOMAIN-SUFFIX,flightzy.date,🛑 Block
+- DOMAIN-SUFFIX,flightzy.win,🛑 Block
+- DOMAIN-SUFFIX,formulawire.com,🛑 Block
+- DOMAIN-SUFFIX,freecontent.date,🛑 Block
+- DOMAIN-SUFFIX,freecontent.science,🛑 Block
+- DOMAIN-SUFFIX,freecontent.stream,🛑 Block
+- DOMAIN-SUFFIX,freecontent.win,🛑 Block
+- DOMAIN-SUFFIX,g1thub.com,🛑 Block
+- DOMAIN-SUFFIX,ganymed.beeppool.org,🛑 Block
+- DOMAIN-SUFFIX,gasolina.ml,🛑 Block
+- DOMAIN-SUFFIX,go.bestmobiworld.com,🛑 Block
+- DOMAIN-SUFFIX,go.fastspot.io,🛑 Block
+- DOMAIN-SUFFIX,go.megabanners.cf,🛑 Block
+- DOMAIN-SUFFIX,goldoffer.online,🛑 Block
+- DOMAIN-SUFFIX,gramombird.com,🛑 Block
+- DOMAIN-SUFFIX,gridiogrid.com,🛑 Block
+- DOMAIN-SUFFIX,gxbrowser.net,🛑 Block
+- DOMAIN-SUFFIX,hashing.win,🛑 Block
+- DOMAIN-SUFFIX,hemnes.win,🛑 Block
+- DOMAIN-SUFFIX,hhb123.tk,🛑 Block
+- DOMAIN-SUFFIX,hide.ovh,🛑 Block
+- DOMAIN-SUFFIX,hive.tubetitties.com,🛑 Block
+- DOMAIN-SUFFIX,hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,hostingcloud.racing,🛑 Block
+- DOMAIN-SUFFIX,hostingcloud.trade,🛑 Block
+- DOMAIN-SUFFIX,hostingcloud.win,🛑 Block
+- DOMAIN-SUFFIX,igrid.org,🛑 Block
+- DOMAIN-SUFFIX,ijfcm7bu6ocerxsfq56ka3dtdanunyp4ytwk745b54agtravj2wr2qqd.onion.pet,🛑 Block
+- DOMAIN-SUFFIX,ininmacerad.pro,🛑 Block
+- DOMAIN-SUFFIX,intelserviceupdate.com,🛑 Block
+- DOMAIN-SUFFIX,jqcdn01.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,jqcdn03.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,jqcdn2.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,jquery-cdn.download,🛑 Block
+- DOMAIN-SUFFIX,jqwww.download,🛑 Block
+- DOMAIN-SUFFIX,js.nahnoji.cz,🛑 Block
+- DOMAIN-SUFFIX,jscdndel.com,🛑 Block
+- DOMAIN-SUFFIX,jscoinminer.com,🛑 Block
+- DOMAIN-SUFFIX,jshosting.party,🛑 Block
+- DOMAIN-SUFFIX,jshosting.win,🛑 Block
+- DOMAIN-SUFFIX,jurty.ml,🛑 Block
+- DOMAIN-SUFFIX,krb.devphp.org.ua,🛑 Block
+- DOMAIN-SUFFIX,laserveradedomaina.com,🛑 Block
+- DOMAIN-SUFFIX,ledhenone.com,🛑 Block
+- DOMAIN-SUFFIX,lightminer.co,🛑 Block
+- DOMAIN-SUFFIX,losital.ru,🛑 Block
+- DOMAIN-SUFFIX,machieved.com,🛑 Block
+- DOMAIN-SUFFIX,mail.ghmproperties.com,🛑 Block
+- DOMAIN-SUFFIX,mail.itseasy.com,🛑 Block
+- DOMAIN-SUFFIX,mail.shaferglazer.com,🛑 Block
+- DOMAIN-SUFFIX,mail.techniservinc.com,🛑 Block
+- DOMAIN-SUFFIX,mebablo.com,🛑 Block
+- DOMAIN-SUFFIX,mepirtedic.com,🛑 Block
+- DOMAIN-SUFFIX,mi-de-ner-nis3.info,🛑 Block
+- DOMAIN-SUFFIX,mine.blank.drawpad.org,🛑 Block
+- DOMAIN-SUFFIX,mine.nahnoji.cz,🛑 Block
+- DOMAIN-SUFFIX,mine.terorie.com,🛑 Block
+- DOMAIN-SUFFIX,mine.torrent.pw,🛑 Block
+- DOMAIN-SUFFIX,minemytraffic.com,🛑 Block
+- DOMAIN-SUFFIX,miner.beeppool.org,🛑 Block
+- DOMAIN-SUFFIX,miner.cryptobara.com,🛑 Block
+- DOMAIN-SUFFIX,miner.nablabee.com,🛑 Block
+- DOMAIN-SUFFIX,miner.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,minerad.com,🛑 Block
+- DOMAIN-SUFFIX,minero-proxy-01.now.sh,🛑 Block
+- DOMAIN-SUFFIX,minero-proxy-02.now.sh,🛑 Block
+- DOMAIN-SUFFIX,minero-proxy-03.now.sh,🛑 Block
+- DOMAIN-SUFFIX,minero.pw,🛑 Block
+- DOMAIN-SUFFIX,minescripts.info,🛑 Block
+- DOMAIN-SUFFIX,minexmr.stream,🛑 Block
+- DOMAIN-SUFFIX,minr.pw,🛑 Block
+- DOMAIN-SUFFIX,mm.zubovskaya-banya.ru,🛑 Block
+- DOMAIN-SUFFIX,mon-deu-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,mon-deu-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,mon-deu-3.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,mon-fra-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,mon-fra-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,mon-gbr-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,monero-miner.com,🛑 Block
+- DOMAIN-SUFFIX,monerominer.rocks,🛑 Block
+- DOMAIN-SUFFIX,money-maker-default.info,🛑 Block
+- DOMAIN-SUFFIX,mxcdn1.now.sh,🛑 Block
+- DOMAIN-SUFFIX,mxcdn2.now.sh,🛑 Block
+- DOMAIN-SUFFIX,my.domain,🛑 Block
+- DOMAIN-SUFFIX,nametraff.com,🛑 Block
+- DOMAIN-SUFFIX,nathetsof.com,🛑 Block
+- DOMAIN-SUFFIX,nch-software.info,🛑 Block
+- DOMAIN-SUFFIX,nerohut.com,🛑 Block
+- DOMAIN-SUFFIX,new.minr.pw,🛑 Block
+- DOMAIN-SUFFIX,nfwebminer.com,🛑 Block
+- DOMAIN-SUFFIX,niematego.tk,🛑 Block
+- DOMAIN-SUFFIX,nim.sh,🛑 Block
+- DOMAIN-SUFFIX,nimiq.icemining.ca,🛑 Block
+- DOMAIN-SUFFIX,nimiq.terorie.com,🛑 Block
+- DOMAIN-SUFFIX,nimiqpool.com,🛑 Block
+- DOMAIN-SUFFIX,nimwss-us-shark.lolopool.com,🛑 Block
+- DOMAIN-SUFFIX,ninaning.com,🛑 Block
+- DOMAIN-SUFFIX,nitrokod.com,🛑 Block
+- DOMAIN-SUFFIX,nmq.zxnexus.com,🛑 Block
+- DOMAIN-SUFFIX,node.nimiq.watch,🛑 Block
+- DOMAIN-SUFFIX,notmining.org,🛑 Block
+- DOMAIN-SUFFIX,npcdn1.now.sh,🛑 Block
+- DOMAIN-SUFFIX,nvidia-graphics.top,🛑 Block
+- DOMAIN-SUFFIX,nvidiacenter.com,🛑 Block
+- DOMAIN-SUFFIX,ocean2.authcaptcha.com,🛑 Block
+- DOMAIN-SUFFIX,offerreality.com,🛑 Block
+- DOMAIN-SUFFIX,ogrid.org,🛑 Block
+- DOMAIN-SUFFIX,okeyletsgo.ml,🛑 Block
+- DOMAIN-SUFFIX,p.estream.to,🛑 Block
+- DOMAIN-SUFFIX,panelsave.com,🛑 Block
+- DOMAIN-SUFFIX,panger-top.click,🛑 Block
+- DOMAIN-SUFFIX,papoto.com,🛑 Block
+- DOMAIN-SUFFIX,party-vqgdyvoycc.now.sh,🛑 Block
+- DOMAIN-SUFFIX,pearno.com,🛑 Block
+- DOMAIN-SUFFIX,pertholin.com,🛑 Block
+- DOMAIN-SUFFIX,play.estream.to,🛑 Block
+- DOMAIN-SUFFIX,play.estream.xyz,🛑 Block
+- DOMAIN-SUFFIX,play.gramombird.com,🛑 Block
+- DOMAIN-SUFFIX,play.istlandoll.com,🛑 Block
+- DOMAIN-SUFFIX,play.mine.gay-hotvideo.net,🛑 Block
+- DOMAIN-SUFFIX,play.nexioniect.com,🛑 Block
+- DOMAIN-SUFFIX,play.on.animeteatr.ru,🛑 Block
+- DOMAIN-SUFFIX,play.pampopholf.com,🛑 Block
+- DOMAIN-SUFFIX,play.play.estream.to,🛑 Block
+- DOMAIN-SUFFIX,play.play.estream.xyz,🛑 Block
+- DOMAIN-SUFFIX,play.tercabilis.info,🛑 Block
+- DOMAIN-SUFFIX,play.video2.stream.vidzi.tv,🛑 Block
+- DOMAIN-SUFFIX,play.vidzi.tv,🛑 Block
+- DOMAIN-SUFFIX,pool.hws.ru,🛑 Block
+- DOMAIN-SUFFIX,pr0gram.org,🛑 Block
+- DOMAIN-SUFFIX,premiumstats.xyz,🛑 Block
+- DOMAIN-SUFFIX,proofly.win,🛑 Block
+- DOMAIN-SUFFIX,proxy-can-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-deu-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-deu-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-fra-3.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-gbr-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-pol-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,proxy-pol-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,reauthenticator.com,🛑 Block
+- DOMAIN-SUFFIX,renhertfo.com,🛑 Block
+- DOMAIN-SUFFIX,roastedvolt.net,🛑 Block
+- DOMAIN-SUFFIX,rock.reauthenticator.com,🛑 Block
+- DOMAIN-SUFFIX,rock2.authcaptcha.com,🛑 Block
+- DOMAIN-SUFFIX,rocks.io,🛑 Block
+- DOMAIN-SUFFIX,s01.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s03.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s04.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s05.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s07.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s100.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s11.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s12.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s13.hostcontent.live,🛑 Block
+- DOMAIN-SUFFIX,s3.pampopholf.com,🛑 Block
+- DOMAIN-SUFFIX,sass2.authcaptcha.com,🛑 Block
+- DOMAIN-SUFFIX,scaleway.ovh,🛑 Block
+- DOMAIN-SUFFIX,sea2.authcaptcha.com,🛑 Block
+- DOMAIN-SUFFIX,seed-1.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-1.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-1.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-10.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-10.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-10.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-11.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-11.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-11.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-12.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-12.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-12.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-13.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-13.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-13.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-14.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-14.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-14.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-15.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-15.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-15.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-16.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-16.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-16.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-17.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-17.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-17.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-18.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-18.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-18.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-19.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-19.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-19.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-2.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-2.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-2.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-20.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-20.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-20.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-3.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-3.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-3.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-4.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-4.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-4.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-5.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-5.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-5.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-6.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-6.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-6.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-7.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-7.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-7.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-8.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-8.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-8.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-9.nimiq-network.com,🛑 Block
+- DOMAIN-SUFFIX,seed-9.nimiq.com,🛑 Block
+- DOMAIN-SUFFIX,seed-9.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-can-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-can-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-deu-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-deu-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-deu-3.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-deu-4.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-fra-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-fra-3.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-gbr-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-gbr-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-pol-1.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-pol-2.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-pol-3.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed-pol-4.inf.nimiq.network,🛑 Block
+- DOMAIN-SUFFIX,seed.nimiq.by,🛑 Block
+- DOMAIN-SUFFIX,seed.nimiq.jp,🛑 Block
+- DOMAIN-SUFFIX,seed.nimiqpool.com,🛑 Block
+- DOMAIN-SUFFIX,serie-vostfr.com,🛑 Block
+- DOMAIN-SUFFIX,serv1swork.com,🛑 Block
+- DOMAIN-SUFFIX,service4refresh.info,🛑 Block
+- DOMAIN-SUFFIX,silimbompom.com,🛑 Block
+- DOMAIN-SUFFIX,site.flashx.cc,🛑 Block
+- DOMAIN-SUFFIX,sparechange.io,🛑 Block
+- DOMAIN-SUFFIX,srcip.com,🛑 Block
+- DOMAIN-SUFFIX,srcips.com,🛑 Block
+- DOMAIN-SUFFIX,statdynamic.com,🛑 Block
+- DOMAIN-SUFFIX,static.sparechange.io,🛑 Block
+- DOMAIN-SUFFIX,staticsfs.host,🛑 Block
+- DOMAIN-SUFFIX,stone2.authcaptcha.com,🛑 Block
+- DOMAIN-SUFFIX,stonecalcom.com,🛑 Block
+- DOMAIN-SUFFIX,str1kee.com,🛑 Block
+- DOMAIN-SUFFIX,sunnimiq.cf,🛑 Block
+- DOMAIN-SUFFIX,sunnimiq5.cf,🛑 Block
+- DOMAIN-SUFFIX,sunnimiq6.cf,🛑 Block
+- DOMAIN-SUFFIX,swiftmining.win,🛑 Block
+- DOMAIN-SUFFIX,sxcdn02.now.sh,🛑 Block
+- DOMAIN-SUFFIX,sxcdn1.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,sxcdn4.now.sh,🛑 Block
+- DOMAIN-SUFFIX,sxcdn5.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,sxcdn6.now.sh,🛑 Block
+- DOMAIN-SUFFIX,test.minr.pw,🛑 Block
+- DOMAIN-SUFFIX,thewhizmarketing.com,🛑 Block
+- DOMAIN-SUFFIX,thewhizproducts.com,🛑 Block
+- DOMAIN-SUFFIX,thewise.com,🛑 Block
+- DOMAIN-SUFFIX,traffic.tc-clicks.com,🛑 Block
+- DOMAIN-SUFFIX,trustaproiam.de,🛑 Block
+- DOMAIN-SUFFIX,trusteverything.de,🛑 Block
+- DOMAIN-SUFFIX,tulip18.com,🛑 Block
+- DOMAIN-SUFFIX,uoldid.ru,🛑 Block
+- DOMAIN-SUFFIX,us.cfcdist.loan,🛑 Block
+- DOMAIN-SUFFIX,vceilinichego.ru,🛑 Block
+- DOMAIN-SUFFIX,verifier.live,🛑 Block
+- DOMAIN-SUFFIX,video.streaming.estream.to,🛑 Block
+- DOMAIN-SUFFIX,videoplayer2.xyz,🛑 Block
+- DOMAIN-SUFFIX,vkcdnservice.com,🛑 Block
+- DOMAIN-SUFFIX,vmi503011.contaboserver.net,🛑 Block
+- DOMAIN-SUFFIX,vuryua.ru,🛑 Block
+- DOMAIN-SUFFIX,webapi.salamantex.com,🛑 Block
+- DOMAIN-SUFFIX,webapi.staging.salamantex.com,🛑 Block
+- DOMAIN-SUFFIX,webassembly.stream,🛑 Block
+- DOMAIN-SUFFIX,webmine.cz,🛑 Block
+- DOMAIN-SUFFIX,webmine.pro,🛑 Block
+- DOMAIN-SUFFIX,webminepool.com,🛑 Block
+- DOMAIN-SUFFIX,webminerpool.com,🛑 Block
+- DOMAIN-SUFFIX,webmining.co,🛑 Block
+- DOMAIN-SUFFIX,webxmr.com,🛑 Block
+- DOMAIN-SUFFIX,wordc.ga,🛑 Block
+- DOMAIN-SUFFIX,wp-monero-miner.de,🛑 Block
+- DOMAIN-SUFFIX,wpcdn1.herokuapp.com,🛑 Block
+- DOMAIN-SUFFIX,wss.nablabee.com,🛑 Block
+- DOMAIN-SUFFIX,wss.rand.com.ru,🛑 Block
+- DOMAIN-SUFFIX,wtm.monitoringservice.co,🛑 Block
+- DOMAIN-SUFFIX,xmr.2miners.com,🛑 Block
+- DOMAIN-SUFFIX,xmr.cool,🛑 Block
+- DOMAIN-SUFFIX,zymerget.win,🛑 Block
+- DOMAIN-SUFFIX,googleapis.l.google.com,🛑 Block
+- DOMAIN-SUFFIX,clients.l.google.com,🛑 Block
+- DOMAIN-SUFFIX,maps.l.google.com,🛑 Block
+- DOMAIN-SUFFIX,cbks0.googleapis.com,🛑 Block
+- DOMAIN-SUFFIX,cbks1.googleapis.com,🛑 Block
+- DOMAIN-SUFFIX,cbks2.googleapis.com,🛑 Block
+- DOMAIN-SUFFIX,cbks3.googleapis.com,🛑 Block
+- DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com,🛑 Block
+- DOMAIN-SUFFIX,khm.l.google.com,🛑 Block
+- GEOIP,CN,🎯 Direct
+- GEOSITE,CN,🎯 Direct
+- MATCH,🐟 漏网之鱼

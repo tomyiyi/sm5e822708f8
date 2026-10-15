@@ -1,0 +1,88 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+- name: Gemini反代-142.252.100.64
+  type: vless
+  server: us04.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: Gemini反代-142.252.102.22
+  type: vless
+  server: us05.graniterapids.com
+  port: 1300
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: Gemini反代-142.252.102.32
+  type: vless
+  server: us08.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+proxy-groups:
+- name: 谷歌入口
+  type: select
+  proxies:
+  - Gemini反代优选
+  - Gemini反代-142.252.100.64
+  - Gemini反代-142.252.102.22
+  - Gemini反代-142.252.102.32
+- name: Gemini反代优选
+  type: url-test
+  url: https://www.google.com/
+  interval: 180
+  tolerance: 50
+  proxies:
+  - Gemini反代-142.252.100.64
+  - Gemini反代-142.252.102.22
+  - Gemini反代-142.252.102.32
+rules:
+- IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- DOMAIN-SUFFIX,gemini.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,generativelanguage.googleapis.com,Gemini反代优选
+- DOMAIN-SUFFIX,aistudio.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,makersuite.google.com,Gemini反代优选
+- DOMAIN-KEYWORD,gemini,Gemini反代优选
+- DOMAIN-SUFFIX,google.com,谷歌入口
+- DOMAIN-SUFFIX,googleapis.com,谷歌入口
+- DOMAIN-SUFFIX,gstatic.com,谷歌入口
+- GEOSITE,cn,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,Gemini反代优选

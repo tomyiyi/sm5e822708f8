@@ -1,0 +1,187 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "⚡️美西-极速-Hysteria2"
+    type: hysteria2
+    server: 107.150.27.20
+    port: 443
+    password: "TomYi-Hy2-8f92a1bc4e6d"
+    sni: subtomyi.duckdns.org
+    skip-cert-verify: false
+    fast-open: true
+
+  - name: "🛡️美西-稳定-Reality"
+    type: vless
+    server: 107.150.27.20
+    port: 8443
+    uuid: 3923271d-d8a3-482d-806a-d853694e3652
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: addons.mozilla.org
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: UHmGldkZZ0TlTmjaZUHdQBvyn0FvZOea-saYQPzQihQ
+      short-id: 0df9
+      support-x25519mlkem768: true
+
+# BEGIN IG-AUTO-PROXIES
+  - name: 台湾 A06 移动低延迟优化
+    type: vless
+    server: tw06.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 台湾 A14 移动低延迟优化
+    type: vless
+    server: twct04.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 美国 A03 IPv6双栈 Gemini
+    type: vless
+    server: us03.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 美国 A08 Gemini 联通优化
+    type: vless
+    server: us08.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 台湾 A28 联通优化
+    type: vless
+    server: twgame08.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+# END IG-AUTO-PROXIES
+
+proxy-groups:
+# BEGIN IG-AUTO-GROUP
+  - name: "📷IG·Pinterest 自动"
+    type: url-test
+    # 必须 https：美国A01 过不了明文 HTTP，用 http 健康检查会把它永久判死
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: false
+    proxies:
+      - "台湾 A06 移动低延迟优化"
+      - "台湾 A14 移动低延迟优化"
+      - "美国 A03 IPv6双栈 Gemini"
+      - "美国 A08 Gemini 联通优化"
+      - "台湾 A28 联通优化"
+# END IG-AUTO-GROUP
+  - name: PROXY
+    type: select
+    proxies:
+      - "📷IG·Pinterest 自动"
+      - "⚡️美西-极速-Hysteria2"
+      - "🛡️美西-稳定-Reality"
+      - 自动优选
+      - DIRECT
+
+  - name: 自动优选
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "⚡️美西-极速-Hysteria2"
+      - "🛡️美西-稳定-Reality"
+
+rules:
+  # 局域网直连
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOSITE,private,DIRECT,no-resolve
+
+  - DOMAIN-SUFFIX,instagram.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,cdninstagram.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,ig.me,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,instagr.am,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,facebook.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,fbcdn.net,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,facebook.net,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,accountkit.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,threads.net,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,threads.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,pinterest.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,pinimg.com,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,pinterest.co.uk,📷IG·Pinterest 自动
+  - DOMAIN-SUFFIX,pinterest.de,📷IG·Pinterest 自动
+
+  # 国内主流域名后缀直连
+  - DOMAIN-SUFFIX,cn,DIRECT
+
+  # 国内常见生态服务直连（微信、淘宝、支付宝、抖音、百度等）
+  - DOMAIN-KEYWORD,baidu,DIRECT
+  - DOMAIN-KEYWORD,bilibili,DIRECT
+  - DOMAIN-KEYWORD,alipay,DIRECT
+  - DOMAIN-KEYWORD,taobao,DIRECT
+  - DOMAIN-KEYWORD,qq,DIRECT
+  - DOMAIN-KEYWORD,tencent,DIRECT
+  - DOMAIN-KEYWORD,wechat,DIRECT
+  - DOMAIN-KEYWORD,jd,DIRECT
+  - DOMAIN-KEYWORD,bytedance,DIRECT
+  - DOMAIN-KEYWORD,douyin,DIRECT
+  - DOMAIN-KEYWORD,zhihu,DIRECT
+  - DOMAIN-KEYWORD,163,DIRECT
+  - DOMAIN-KEYWORD,sina,DIRECT
+  - DOMAIN-KEYWORD,weibo,DIRECT
+  - DOMAIN-KEYWORD,csdn,DIRECT
+  - DOMAIN-KEYWORD,alicdn,DIRECT
+  - DOMAIN-KEYWORD,bdstatic,DIRECT
+
+  # 中国大陆域名与地理 IP 直连
+  - GEOSITE,category-games@cn,DIRECT
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT
+
+  # 兜底：所有境外流量走代理
+  - MATCH,PROXY
