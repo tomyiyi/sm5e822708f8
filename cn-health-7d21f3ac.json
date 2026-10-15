@@ -1,0 +1,43 @@
+{
+ "checked_at": "2026-10-15T05:22:24Z",
+ "checked_at_epoch": 1792041744,
+ "vantage": "CN-domestic",
+ "nodes": {
+  "美国 A01 IPv6双栈 Gemini": {
+   "ok": true,
+   "delay": 913
+  },
+  "美国 A02 IPv6双栈 Gemini": {
+   "ok": true,
+   "delay": 1285
+  },
+  "美国 A03 IPv6双栈 Gemini": {
+   "ok": true,
+   "delay": 1367
+  },
+  "美国 A04 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A05 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A08 Gemini 联通优化": {
+   "ok": true,
+   "delay": 1823
+  },
+  "美国 A14 Gemini 移动优化": {
+   "ok": true,
+   "delay": 2036
+  },
+  "美国 A18 低延迟游戏加速 限速5M": {
+   "ok": true,
+   "delay": 1301
+  },
+  "美国 A20 低延迟游戏加速 限速5M": {
+   "ok": true,
+   "delay": 995
+  }
+ }
+}
