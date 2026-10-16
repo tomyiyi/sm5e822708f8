@@ -108,6 +108,20 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
+- name: 美国 A14 Gemini 移动优化
+  type: vless
+  server: us14.graniterapids.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
 - name: 美国 A18 低延迟游戏加速 限速5M
   type: vless
   server: us18.graniterapids.com
@@ -142,6 +156,7 @@ proxy-groups:
   proxies:
   - 美国 A07 Gemini 联通优化
   - 美国 A10 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
   - DIRECT
 - name: ✈️ Gemini 专属出口(7IP)
   type: select
@@ -165,6 +180,7 @@ proxy-groups:
   proxies:
   - 美国 A07 Gemini 联通优化
   - 美国 A10 Gemini 移动优化
+  - 美国 A14 Gemini 移动优化
 rules:
 - DST-PORT,22,DIRECT
 - DOMAIN-SUFFIX,gemini.google.com,♊ Gemini 稳定组
