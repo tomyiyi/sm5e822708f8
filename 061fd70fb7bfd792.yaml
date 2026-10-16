@@ -80,20 +80,6 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 美国 A07 Gemini 联通优化
-  type: vless
-  server: us07.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
 - name: 美国 A08 Gemini 联通优化
   type: vless
   server: us08.graniterapids.com
@@ -154,14 +140,13 @@ proxy-groups:
 - name: ♊ Gemini 稳定组
   type: select
   proxies:
-  - 美国 A07 Gemini 联通优化
   - 美国 A08 Gemini 联通优化
   - 美国 A14 Gemini 移动优化
   - DIRECT
 - name: ✈️ Gemini 专属出口(7IP)
   type: select
   proxies:
-  - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
 - name: 🚫 黑名单节点(勿用)
   type: select
   proxies:
@@ -178,7 +163,6 @@ proxy-groups:
 - name: Gemini反代优选
   type: select
   proxies:
-  - 美国 A07 Gemini 联通优化
   - 美国 A08 Gemini 联通优化
   - 美国 A14 Gemini 移动优化
 rules:
