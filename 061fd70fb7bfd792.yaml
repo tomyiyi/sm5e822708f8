@@ -2553,6 +2553,7 @@ proxy-groups:
   type: select
   proxies:
   - 美国 A04 Gemini 电信优化
+  - 美国 A06 Gemini 电信优化
   - 美国 A08 Gemini 联通优化
   - 美国 A14 Gemini 移动优化
   - DIRECT
