@@ -183,6 +183,9 @@ proxy-groups:
   - 美国 A14 Gemini 移动优化
 rules:
 - DST-PORT,22,DIRECT
+- IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
+- DOMAIN-SUFFIX,is.domainforsub.work,DIRECT
+- DOMAIN-SUFFIX,dl.tomyi.cn,DIRECT
 - DOMAIN-SUFFIX,gemini.google.com,♊ Gemini 稳定组
 - DOMAIN-SUFFIX,aistudio.google.com,♊ Gemini 稳定组
 - DOMAIN-SUFFIX,generativeai.google,♊ Gemini 稳定组
