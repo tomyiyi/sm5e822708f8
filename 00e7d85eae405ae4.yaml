@@ -5,7 +5,7 @@ log-level: info
 proxies:
 - name: Gemini反代-142.252.102.22
   type: vless
-  server: us04.graniterapids.com
+  server: us11.graniterapids.com
   port: 1300
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
