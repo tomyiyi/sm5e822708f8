@@ -3,20 +3,6 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: Gemini反代-142.252.102.22
-  type: vless
-  server: us11.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
 - name: Gemini反代-142.252.102.32
   type: vless
   server: us08.graniterapids.com
@@ -36,7 +22,6 @@ proxy-groups:
   type: select
   proxies:
   - Gemini反代优选
-  - Gemini反代-142.252.102.22
   - Gemini反代-142.252.102.32
 - name: Gemini反代优选
   type: url-test
@@ -44,7 +29,6 @@ proxy-groups:
   interval: 180
   tolerance: 50
   proxies:
-  - Gemini反代-142.252.102.22
   - Gemini反代-142.252.102.32
 rules:
 - IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
