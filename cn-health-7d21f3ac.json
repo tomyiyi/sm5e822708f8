@@ -1,91 +1,91 @@
 {
- "checked_at": "2026-10-21T00:48:04Z",
- "checked_at_epoch": 1792543684,
+ "checked_at": "2026-10-21T04:31:00Z",
+ "checked_at_epoch": 1792557060,
  "vantage": "CN-domestic",
  "nodes": {
   "美国 A01 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1235
+   "delay": 2809
   },
   "美国 A02 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1170
+   "delay": 4018
   },
   "美国 A03 IPv6双栈 Gemini": {
-   "ok": true,
-   "delay": 982
+   "ok": false,
+   "delay": null
   },
   "美国 A04 Gemini 电信优化": {
-   "ok": true,
-   "delay": 5021
+   "ok": false,
+   "delay": null
   },
   "美国 A05 Gemini 电信优化": {
-   "ok": true,
-   "delay": 1136
+   "ok": false,
+   "delay": null
   },
   "美国 A06 Gemini 电信优化": {
-   "ok": true,
-   "delay": 1214
+   "ok": false,
+   "delay": null
   },
   "美国 A07 Gemini 联通优化": {
    "ok": true,
-   "delay": 1614
+   "delay": 3430
   },
   "美国 A08 Gemini 联通优化": {
    "ok": true,
-   "delay": 1013
+   "delay": 1600
   },
   "美国 A09 Gemini 移动优化": {
    "ok": true,
-   "delay": 1617
+   "delay": 1798
   },
   "美国 A10 Gemini 移动优化": {
    "ok": true,
-   "delay": 885
+   "delay": 1196
   },
   "美国 A11 Gemini 电信优化": {
    "ok": false,
    "delay": null
   },
   "美国 A12 Gemini 电信优化": {
-   "ok": true,
-   "delay": 991
+   "ok": false,
+   "delay": null
   },
   "美国 A13 Gemini 移动优化": {
    "ok": true,
-   "delay": 1728
+   "delay": 1865
   },
   "美国 A14 Gemini 移动优化": {
    "ok": true,
-   "delay": 970
+   "delay": 2034
   },
   "美国 A15 Gemini 移动优化": {
    "ok": true,
-   "delay": 1686
+   "delay": 1739
   },
   "⚡️美西-极速-Hysteria2": {
    "ok": true,
-   "delay": 549
+   "delay": 592
   },
   "🛡️美西-稳定-Reality": {
    "ok": true,
-   "delay": 550
+   "delay": 609
   },
   "台湾 A14 移动低延迟优化": {
    "ok": true,
-   "delay": 3407
+   "delay": 1770
   },
   "台湾 A15 移动低延迟优化": {
    "ok": true,
-   "delay": 1886
+   "delay": 1892
   },
   "台湾 A28 联通优化": {
    "ok": true,
-   "delay": 1534
+   "delay": 1797
   },
   "日本 A19 IPV6双栈本地路由": {
-   "ok": true,
-   "delay": 1285
+   "ok": false,
+   "delay": null
   }
  }
 }
