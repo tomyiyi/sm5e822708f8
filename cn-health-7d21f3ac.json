@@ -1,19 +1,19 @@
 {
- "checked_at": "2026-10-21T04:31:00Z",
- "checked_at_epoch": 1792557060,
+ "checked_at": "2026-10-22T00:50:00Z",
+ "checked_at_epoch": 1792630200,
  "vantage": "CN-domestic",
  "nodes": {
   "美国 A01 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 2809
+   "delay": 930
   },
   "美国 A02 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 4018
+   "delay": 875
   },
   "美国 A03 IPv6双栈 Gemini": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 767
   },
   "美国 A04 Gemini 电信优化": {
    "ok": false,
@@ -29,19 +29,19 @@
   },
   "美国 A07 Gemini 联通优化": {
    "ok": true,
-   "delay": 3430
+   "delay": 1905
   },
   "美国 A08 Gemini 联通优化": {
    "ok": true,
-   "delay": 1600
+   "delay": 813
   },
   "美国 A09 Gemini 移动优化": {
    "ok": true,
-   "delay": 1798
+   "delay": 1450
   },
   "美国 A10 Gemini 移动优化": {
    "ok": true,
-   "delay": 1196
+   "delay": 799
   },
   "美国 A11 Gemini 电信优化": {
    "ok": false,
@@ -53,39 +53,35 @@
   },
   "美国 A13 Gemini 移动优化": {
    "ok": true,
-   "delay": 1865
+   "delay": 1426
   },
   "美国 A14 Gemini 移动优化": {
    "ok": true,
-   "delay": 2034
+   "delay": 769
   },
   "美国 A15 Gemini 移动优化": {
    "ok": true,
-   "delay": 1739
+   "delay": 1480
   },
   "⚡️美西-极速-Hysteria2": {
    "ok": true,
-   "delay": 592
+   "delay": 915
   },
   "🛡️美西-稳定-Reality": {
    "ok": true,
-   "delay": 609
+   "delay": 858
   },
   "台湾 A14 移动低延迟优化": {
    "ok": true,
-   "delay": 1770
+   "delay": 1218
   },
   "台湾 A15 移动低延迟优化": {
    "ok": true,
-   "delay": 1892
+   "delay": 1213
   },
   "台湾 A28 联通优化": {
    "ok": true,
-   "delay": 1797
-  },
-  "日本 A19 IPV6双栈本地路由": {
-   "ok": false,
-   "delay": null
+   "delay": 1272
   }
  }
 }
