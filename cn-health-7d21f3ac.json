@@ -1,91 +1,87 @@
 {
- "checked_at": "2026-10-24T04:31:16Z",
- "checked_at_epoch": 1792816276,
+ "checked_at": "2026-10-24T22:30:34Z",
+ "checked_at_epoch": 1792881034,
  "vantage": "CN-domestic",
  "nodes": {
   "美国 A01 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 3737
+   "delay": 866
   },
   "美国 A02 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 3087
+   "delay": 875
   },
   "美国 A03 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1806
+   "delay": 774
   },
   "美国 A04 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 876
   },
   "美国 A05 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 913
   },
   "美国 A06 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 831
   },
   "美国 A07 Gemini 联通优化": {
    "ok": true,
-   "delay": 2710
+   "delay": 1565
   },
   "美国 A08 Gemini 联通优化": {
    "ok": true,
-   "delay": 2147
+   "delay": 1101
   },
   "美国 A09 Gemini 移动优化": {
    "ok": true,
-   "delay": 2592
+   "delay": 1515
   },
   "美国 A10 Gemini 移动优化": {
-   "ok": true,
-   "delay": 1970
+   "ok": false,
+   "delay": null
   },
   "美国 A11 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 823
   },
   "美国 A12 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 817
   },
   "美国 A13 Gemini 移动优化": {
    "ok": true,
-   "delay": 2903
+   "delay": 1510
   },
   "美国 A14 Gemini 移动优化": {
-   "ok": true,
-   "delay": 2062
+   "ok": false,
+   "delay": null
   },
   "美国 A15 Gemini 移动优化": {
    "ok": true,
-   "delay": 2529
+   "delay": 1520
   },
   "⚡️美西-极速-Hysteria2": {
    "ok": true,
-   "delay": 4211
+   "delay": 855
   },
   "🛡️美西-稳定-Reality": {
    "ok": true,
-   "delay": 2650
+   "delay": 865
   },
   "台湾 A28 联通优化": {
    "ok": true,
-   "delay": 4109
+   "delay": 4236
   },
   "台湾 A24 移动低延迟优化": {
    "ok": true,
-   "delay": 5415
+   "delay": 1243
   },
   "台湾 A15 移动低延迟优化": {
    "ok": true,
-   "delay": 2572
-  },
-  "香港 A13 移动优化": {
-   "ok": true,
-   "delay": 1528
+   "delay": 1245
   }
  }
 }
