@@ -1,87 +1,87 @@
 {
- "checked_at": "2026-10-25T10:30:43Z",
- "checked_at_epoch": 1792924243,
+ "checked_at": "2026-10-25T16:31:05Z",
+ "checked_at_epoch": 1792945865,
  "vantage": "CN-domestic",
  "nodes": {
   "美国 A01 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 951
+   "delay": 1355
   },
   "美国 A02 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1049
+   "delay": 2574
   },
   "美国 A03 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1061
+   "delay": 2056
   },
   "美国 A04 Gemini 电信优化": {
    "ok": true,
-   "delay": 1097
+   "delay": 1281
   },
   "美国 A05 Gemini 电信优化": {
    "ok": true,
-   "delay": 998
+   "delay": 1410
   },
   "美国 A06 Gemini 电信优化": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 1520
   },
   "美国 A07 Gemini 联通优化": {
    "ok": true,
-   "delay": 1973
+   "delay": 2793
   },
   "美国 A08 Gemini 联通优化": {
-   "ok": true,
-   "delay": 2061
+   "ok": false,
+   "delay": null
   },
   "美国 A09 Gemini 移动优化": {
    "ok": true,
-   "delay": 1615
+   "delay": 3054
   },
   "美国 A10 Gemini 移动优化": {
-   "ok": true,
-   "delay": 1542
+   "ok": false,
+   "delay": null
   },
   "美国 A11 Gemini 电信优化": {
    "ok": true,
-   "delay": 1228
+   "delay": 2677
   },
   "美国 A12 Gemini 电信优化": {
    "ok": true,
-   "delay": 1194
+   "delay": 1522
   },
   "美国 A13 Gemini 移动优化": {
    "ok": true,
-   "delay": 1792
+   "delay": 4824
   },
   "美国 A14 Gemini 移动优化": {
    "ok": true,
-   "delay": 2086
+   "delay": 1187
   },
   "美国 A15 Gemini 移动优化": {
    "ok": true,
-   "delay": 2093
+   "delay": 2813
   },
   "⚡️美西-极速-Hysteria2": {
    "ok": true,
-   "delay": 1041
+   "delay": 2441
   },
   "🛡️美西-稳定-Reality": {
    "ok": true,
-   "delay": 1037
+   "delay": 1467
   },
   "台湾 A28 联通优化": {
    "ok": true,
-   "delay": 1610
+   "delay": 2228
   },
   "台湾 A24 移动低延迟优化": {
    "ok": true,
-   "delay": 2281
+   "delay": 3352
   },
   "台湾 A15 移动低延迟优化": {
    "ok": true,
-   "delay": 1348
+   "delay": 2646
   }
  }
 }
