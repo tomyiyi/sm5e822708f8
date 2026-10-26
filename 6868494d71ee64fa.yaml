@@ -30,20 +30,6 @@ proxies:
       support-x25519mlkem768: true
 
 # BEGIN IG-AUTO-PROXIES
-  - name: 美国 A02 IPv6双栈 Gemini
-    type: vless
-    server: us02.graniterapids.com
-    port: 443
-    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 台湾 A28 联通优化
     type: vless
     server: twgame08.graniterapids.com
@@ -100,6 +86,20 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
+  - name: 美国 A02 IPv6双栈 Gemini
+    type: vless
+    server: us02.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
 # END IG-AUTO-PROXIES
 
 proxy-groups:
@@ -112,11 +112,11 @@ proxy-groups:
     tolerance: 50
     lazy: false
     proxies:
-      - "美国 A02 IPv6双栈 Gemini"
       - "台湾 A28 联通优化"
       - "台湾 A24 移动低延迟优化"
       - "台湾 A15 移动低延迟优化"
       - "美国 A10 Gemini 移动优化"
+      - "美国 A02 IPv6双栈 Gemini"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
