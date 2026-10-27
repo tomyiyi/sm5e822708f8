@@ -70,7 +70,7 @@ proxies:
     support-x25519mlkem768: true
 - name: 1 官网 tcp.bet
   type: vless
-  server: 51.222.9.117
+  server: 148.113.144.107
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -2553,7 +2553,6 @@ proxy-groups:
   type: select
   proxies:
   - 美国 A04 Gemini 电信优化
-  - 美国 A07 Gemini 联通优化
   - 美国 A09 Gemini 移动优化
   - 美国 A16 低延迟游戏加速 限速5M
   - 美国 A17 低延迟游戏加速 限速5M
