@@ -110,7 +110,7 @@ proxies:
     short-id: 1bc2c1ef1c
 - name: 1 官网 tcp.bet
   type: vless
-  server: 51.222.9.117
+  server: 148.113.144.107
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
