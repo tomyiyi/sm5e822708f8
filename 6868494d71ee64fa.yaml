@@ -72,9 +72,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A02 IPv6双栈 Gemini
+  - name: 台湾 A20 联通优化
     type: vless
-    server: us02.graniterapids.com
+    server: twct10.graniterapids.com
     port: 443
     uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
     udp: true
@@ -86,9 +86,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 台湾 A20 联通优化
+  - name: 日本 A27 移动优化路由
     type: vless
-    server: twct10.graniterapids.com
+    server: hr07.accuhearts.com
     port: 443
     uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
     udp: true
@@ -115,8 +115,8 @@ proxy-groups:
       - "台湾 A24 移动低延迟优化"
       - "台湾 A15 移动低延迟优化"
       - "美国 A10 Gemini 移动优化"
-      - "美国 A02 IPv6双栈 Gemini"
       - "台湾 A20 联通优化"
+      - "日本 A27 移动优化路由"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
