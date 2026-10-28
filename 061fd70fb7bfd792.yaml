@@ -2556,7 +2556,7 @@ proxy-groups:
   - 美国 A07 Gemini 联通优化
   - 美国 A09 Gemini 移动优化
   - 美国 A16 低延迟游戏加速 限速5M
-  - 美国 A19 低延迟游戏加速 限速5M
+  - 美国 A17 低延迟游戏加速 限速5M
   - DIRECT
 - name: 🐟 漏网之鱼
   type: select
