@@ -17,9 +17,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: Gemini反代-209.146.116.238
+- name: Gemini反代-142.252.102.32
   type: vless
-  server: us01.graniterapids.com
+  server: us02.graniterapids.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -37,7 +37,7 @@ proxy-groups:
   proxies:
   - Gemini反代优选
   - Gemini反代-142.252.101.178
-  - Gemini反代-209.146.116.238
+  - Gemini反代-142.252.102.32
 - name: Gemini反代优选
   type: url-test
   url: https://www.google.com/
@@ -45,7 +45,7 @@ proxy-groups:
   tolerance: 50
   proxies:
   - Gemini反代-142.252.101.178
-  - Gemini反代-209.146.116.238
+  - Gemini反代-142.252.102.32
 rules:
 - IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
