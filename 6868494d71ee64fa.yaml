@@ -44,20 +44,6 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A10 Gemini 移动优化
-    type: vless
-    server: us10.graniterapids.com
-    port: 443
-    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 台湾 A20 联通优化
     type: vless
     server: twct10.graniterapids.com
@@ -100,6 +86,20 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
+  - name: 美国 A20 低延迟游戏加速 限速5M
+    type: vless
+    server: us20.graniterapids.com
+    port: 443
+    uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
 # END IG-AUTO-PROXIES
 
 proxy-groups:
@@ -113,15 +113,29 @@ proxy-groups:
     lazy: false
     proxies:
       - "台湾 A15 移动低延迟优化"
-      - "美国 A10 Gemini 移动优化"
       - "台湾 A20 联通优化"
       - "美国 A02 IPv6双栈 Gemini"
       - "台湾 A27 移动低延迟优化"
+      - "美国 A20 低延迟游戏加速 限速5M"
+  - name: "🌍日常·清洗节点"
+    type: url-test
+    # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    lazy: false
+    proxies:
+      - "台湾 A15 移动低延迟优化"
+      - "台湾 A20 联通优化"
+      - "美国 A02 IPv6双栈 Gemini"
+      - "台湾 A27 移动低延迟优化"
+      - "美国 A20 低延迟游戏加速 限速5M"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
     proxies:
       - "📷IG·Pinterest 自动"
+      - "🌍日常·清洗节点"
       - "⚡️美西-极速-Hysteria2"
       - "🛡️美西-稳定-Reality"
       - 自动优选
@@ -141,6 +155,71 @@ rules:
   - GEOIP,private,DIRECT,no-resolve
   - GEOSITE,private,DIRECT,no-resolve
 
+  # download/streaming/big files go via VPS (source quota low, save it; match by domain, not bytes)
+  - DOMAIN-SUFFIX,youtube.com,自动优选
+  - DOMAIN-SUFFIX,googlevideo.com,自动优选
+  - DOMAIN-SUFFIX,ytimg.com,自动优选
+  - DOMAIN-SUFFIX,netflix.com,自动优选
+  - DOMAIN-SUFFIX,nflxvideo.net,自动优选
+  - DOMAIN-SUFFIX,nflximg.net,自动优选
+  - DOMAIN-SUFFIX,nflxso.net,自动优选
+  - DOMAIN-SUFFIX,disneyplus.com,自动优选
+  - DOMAIN-SUFFIX,disney-plus.net,自动优选
+  - DOMAIN-SUFFIX,hulu.com,自动优选
+  - DOMAIN-SUFFIX,huluim.com,自动优选
+  - DOMAIN-SUFFIX,twitch.tv,自动优选
+  - DOMAIN-SUFFIX,twitchcdn.net,自动优选
+  - DOMAIN-SUFFIX,tiktok.com,自动优选
+  - DOMAIN-SUFFIX,tiktokcdn.com,自动优选
+  - DOMAIN-SUFFIX,tiktokv.com,自动优选
+  - DOMAIN-SUFFIX,vimeo.com,自动优选
+  - DOMAIN-SUFFIX,vimeocdn.com,自动优选
+  - DOMAIN-SUFFIX,dailymotion.com,自动优选
+  - DOMAIN-SUFFIX,dmcdn.net,自动优选
+  - DOMAIN-SUFFIX,play.google.com,自动优选
+  - DOMAIN-SUFFIX,drive.google.com,自动优选
+  - DOMAIN-SUFFIX,windowsupdate.com,自动优选
+  - DOMAIN-SUFFIX,download.microsoft.com,自动优选
+  - DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,自动优选
+  - DOMAIN-SUFFIX,officecdn.microsoft.com,自动优选
+  - DOMAIN-SUFFIX,itunes.apple.com,自动优选
+  - DOMAIN-SUFFIX,apps.apple.com,自动优选
+  - DOMAIN-SUFFIX,mzstatic.com,自动优选
+  - DOMAIN-SUFFIX,swcdn.apple.com,自动优选
+  - DOMAIN-SUFFIX,swdist.apple.com,自动优选
+  - DOMAIN-SUFFIX,githubusercontent.com,自动优选
+  - DOMAIN-SUFFIX,huggingface.co,自动优选
+  - DOMAIN-SUFFIX,hf.co,自动优选
+  - DOMAIN-SUFFIX,steamcontent.com,自动优选
+  - DOMAIN-SUFFIX,steamstatic.com,自动优选
+  - DOMAIN-SUFFIX,steampowered.com,自动优选
+  - DOMAIN-SUFFIX,mega.nz,自动优选
+  - DOMAIN-SUFFIX,sourceforge.net,自动优选
+
+  # daily foreign sites go via cleaned nodes (same members as IG group)
+  - DOMAIN-SUFFIX,google.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,googleapis.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,gstatic.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,openai.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,chatgpt.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,oaistatic.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,oaiusercontent.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,x.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,twitter.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,reddit.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,wikipedia.org,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,github.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,gitlab.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,stackoverflow.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,medium.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,discord.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,telegram.org,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,notion.so,🌍日常·清洗节点
+
+  - DOMAIN-SUFFIX,dl.google.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,gvt1.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,gvt2.com,🌍日常·清洗节点
+  - DOMAIN-SUFFIX,gvt3.com,🌍日常·清洗节点
   - DOMAIN-SUFFIX,instagram.com,📷IG·Pinterest 自动
   - DOMAIN-SUFFIX,cdninstagram.com,📷IG·Pinterest 自动
   - DOMAIN-SUFFIX,ig.me,📷IG·Pinterest 自动
