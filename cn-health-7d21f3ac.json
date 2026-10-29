@@ -1,87 +1,67 @@
 {
- "checked_at": "2026-10-25T23:20:58Z",
- "checked_at_epoch": 1792970458,
+ "checked_at": "2026-10-29T04:30:53Z",
+ "checked_at_epoch": 1793248253,
  "vantage": "CN-domestic",
  "nodes": {
   "美国 A01 IPv6双栈 Gemini": {
-   "ok": false,
-   "delay": null
+   "ok": true,
+   "delay": 2557
   },
   "美国 A02 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1200
+   "delay": 1368
   },
   "美国 A03 IPv6双栈 Gemini": {
    "ok": true,
-   "delay": 1041
+   "delay": 1448
   },
   "美国 A04 Gemini 电信优化": {
-   "ok": true,
-   "delay": 793
-  },
-  "美国 A05 Gemini 电信优化": {
-   "ok": true,
-   "delay": 822
-  },
-  "美国 A06 Gemini 电信优化": {
-   "ok": true,
-   "delay": 947
-  },
-  "美国 A07 Gemini 联通优化": {
-   "ok": true,
-   "delay": 1621
-  },
-  "美国 A08 Gemini 联通优化": {
-   "ok": true,
-   "delay": 860
-  },
-  "美国 A09 Gemini 移动优化": {
-   "ok": true,
-   "delay": 2137
-  },
-  "美国 A10 Gemini 移动优化": {
-   "ok": true,
-   "delay": 902
-  },
-  "美国 A11 Gemini 电信优化": {
-   "ok": true,
-   "delay": 822
-  },
-  "美国 A12 Gemini 电信优化": {
-   "ok": true,
-   "delay": 800
-  },
-  "美国 A13 Gemini 移动优化": {
-   "ok": true,
-   "delay": 1465
-  },
-  "美国 A14 Gemini 移动优化": {
    "ok": false,
    "delay": null
   },
+  "美国 A05 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A06 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A07 Gemini 联通优化": {
+   "ok": true,
+   "delay": 2045
+  },
+  "美国 A08 Gemini 联通优化": {
+   "ok": true,
+   "delay": 2133
+  },
+  "美国 A09 Gemini 移动优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A10 Gemini 移动优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A11 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A12 Gemini 电信优化": {
+   "ok": false,
+   "delay": null
+  },
+  "美国 A13 Gemini 移动优化": {
+   "ok": true,
+   "delay": 2141
+  },
+  "美国 A14 Gemini 移动优化": {
+   "ok": true,
+   "delay": 2117
+  },
   "美国 A15 Gemini 移动优化": {
-   "ok": true,
-   "delay": 1926
-  },
-  "⚡️美西-极速-Hysteria2": {
-   "ok": true,
-   "delay": 1080
-  },
-  "🛡️美西-稳定-Reality": {
-   "ok": true,
-   "delay": 887
-  },
-  "台湾 A28 联通优化": {
-   "ok": true,
-   "delay": 1307
-  },
-  "台湾 A24 移动低延迟优化": {
-   "ok": true,
-   "delay": 1343
-  },
-  "台湾 A15 移动低延迟优化": {
-   "ok": true,
-   "delay": 1257
+   "ok": false,
+   "delay": null
   }
  }
 }
