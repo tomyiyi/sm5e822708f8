@@ -1192,9 +1192,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A19 低延迟游戏加速 限速5M
+  - name: 美国 A20 低延迟游戏加速 限速5M
     type: vless
-    server: us19.graniterapids.com
+    server: us20.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1301,7 +1301,7 @@ proxy-groups:
       - "IPv6 日本 A03 移动宽带优化"
       - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
-      - "美国 A19 低延迟游戏加速 限速5M"
+      - "美国 A20 低延迟游戏加速 限速5M"
   - name: "🌍日常·清洗节点"
     type: url-test
     # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
@@ -1393,7 +1393,7 @@ proxy-groups:
       - "IPv6 日本 A03 移动宽带优化"
       - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
-      - "美国 A19 低延迟游戏加速 限速5M"
+      - "美国 A20 低延迟游戏加速 限速5M"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
