@@ -632,216 +632,6 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 日本 A01 移动路由 高带宽优化
-    type: vless
-    server: jp01.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A02 移动路由 高带宽优化
-    type: vless
-    server: jp02.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A06 移动优化路由
-    type: vless
-    server: jp06.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A07 移动优化路由
-    type: vless
-    server: jp07.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A11 移动路由 高带宽优化
-    type: vless
-    server: jp11.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A12 移动路由 高带宽优化
-    type: vless
-    server: jp12.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A16 IPV6双栈本地路由
-    type: vless
-    server: jp16.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A17 IPV6双栈本地路由
-    type: vless
-    server: jp17.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A18 IPV6双栈本地路由
-    type: vless
-    server: jp18.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A19 IPV6双栈本地路由
-    type: vless
-    server: jp19.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A20 IPV6双栈本地路由
-    type: vless
-    server: jp20.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A21 移动路由 高带宽优化
-    type: vless
-    server: hr01.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A22 移动路由 高带宽优化
-    type: vless
-    server: hr02.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A26 移动优化路由
-    type: vless
-    server: hr06.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A27 移动优化路由
-    type: vless
-    server: hr07.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 法国 A01 IEPL专线
     type: vless
     server: fr01.accuhearts.com
@@ -915,34 +705,6 @@ proxies:
   - name: 法国 A06 IEPL专线
     type: vless
     server: fr06.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 美国 A13 Gemini 移动优化
-    type: vless
-    server: us13.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 美国 A14 Gemini 移动优化
-    type: vless
-    server: us14.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1136,9 +898,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A06 移动宽带优化
+  - name: IPv6 日本 A02 移动宽带优化
     type: vless
-    server: diz06.graniterapids.com
+    server: diz02.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1150,9 +912,65 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A03 移动宽带优化
+  - name: 美国 A20 低延迟游戏加速 限速5M
     type: vless
-    server: diz03.graniterapids.com
+    server: us20.graniterapids.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 日本 A21 移动路由 高带宽优化
+    type: vless
+    server: hr01.accuhearts.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 日本 A22 移动路由 高带宽优化
+    type: vless
+    server: hr02.accuhearts.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: IPv6 日本 A05 移动宽带优化
+    type: vless
+    server: diz05.graniterapids.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: IPv6 日本 A04 移动宽带优化
+    type: vless
+    server: diz04.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1178,9 +996,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A02 移动宽带优化
+  - name: 美国 A03 IPv6双栈 Gemini
     type: vless
-    server: diz02.graniterapids.com
+    server: us03.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1192,9 +1010,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A20 低延迟游戏加速 限速5M
+  - name: 新加坡 A06 移动优化
     type: vless
-    server: us20.graniterapids.com
+    server: sgp06.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1261,29 +1079,12 @@ proxy-groups:
       - "新加坡 A08 联通优化"
       - "新加坡 A09 联通优化"
       - "新加坡 A10 联通优化"
-      - "日本 A01 移动路由 高带宽优化"
-      - "日本 A02 移动路由 高带宽优化"
-      - "日本 A06 移动优化路由"
-      - "日本 A07 移动优化路由"
-      - "日本 A11 移动路由 高带宽优化"
-      - "日本 A12 移动路由 高带宽优化"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A17 IPV6双栈本地路由"
-      - "日本 A18 IPV6双栈本地路由"
-      - "日本 A19 IPV6双栈本地路由"
-      - "日本 A20 IPV6双栈本地路由"
-      - "日本 A21 移动路由 高带宽优化"
-      - "日本 A22 移动路由 高带宽优化"
-      - "日本 A26 移动优化路由"
-      - "日本 A27 移动优化路由"
       - "法国 A01 IEPL专线"
       - "法国 A02 IEPL专线"
       - "法国 A03 IEPL专线"
       - "法国 A04 IEPL专线"
       - "法国 A05 IEPL专线"
       - "法国 A06 IEPL专线"
-      - "美国 A13 Gemini 移动优化"
-      - "美国 A14 Gemini 移动优化"
       - "英国 A01 IEPL专线"
       - "英国 A02 IEPL专线"
       - "英国 A03 IEPL专线"
@@ -1297,11 +1098,15 @@ proxy-groups:
       - "韩国 A05 电信+联通 BGP高带宽优化"
       - "韩国 A06 电信+联通 BGP高带宽优化"
       - "国泰航空机上Wifi免认证"
-      - "IPv6 日本 A06 移动宽带优化"
-      - "IPv6 日本 A03 移动宽带优化"
-      - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
       - "美国 A20 低延迟游戏加速 限速5M"
+      - "日本 A21 移动路由 高带宽优化"
+      - "日本 A22 移动路由 高带宽优化"
+      - "IPv6 日本 A05 移动宽带优化"
+      - "IPv6 日本 A04 移动宽带优化"
+      - "IPv6 日本 A01 移动宽带优化"
+      - "美国 A03 IPv6双栈 Gemini"
+      - "新加坡 A06 移动优化"
   - name: "🌍日常·清洗节点"
     type: url-test
     # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
@@ -1353,29 +1158,12 @@ proxy-groups:
       - "新加坡 A08 联通优化"
       - "新加坡 A09 联通优化"
       - "新加坡 A10 联通优化"
-      - "日本 A01 移动路由 高带宽优化"
-      - "日本 A02 移动路由 高带宽优化"
-      - "日本 A06 移动优化路由"
-      - "日本 A07 移动优化路由"
-      - "日本 A11 移动路由 高带宽优化"
-      - "日本 A12 移动路由 高带宽优化"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A17 IPV6双栈本地路由"
-      - "日本 A18 IPV6双栈本地路由"
-      - "日本 A19 IPV6双栈本地路由"
-      - "日本 A20 IPV6双栈本地路由"
-      - "日本 A21 移动路由 高带宽优化"
-      - "日本 A22 移动路由 高带宽优化"
-      - "日本 A26 移动优化路由"
-      - "日本 A27 移动优化路由"
       - "法国 A01 IEPL专线"
       - "法国 A02 IEPL专线"
       - "法国 A03 IEPL专线"
       - "法国 A04 IEPL专线"
       - "法国 A05 IEPL专线"
       - "法国 A06 IEPL专线"
-      - "美国 A13 Gemini 移动优化"
-      - "美国 A14 Gemini 移动优化"
       - "英国 A01 IEPL专线"
       - "英国 A02 IEPL专线"
       - "英国 A03 IEPL专线"
@@ -1389,11 +1177,15 @@ proxy-groups:
       - "韩国 A05 电信+联通 BGP高带宽优化"
       - "韩国 A06 电信+联通 BGP高带宽优化"
       - "国泰航空机上Wifi免认证"
-      - "IPv6 日本 A06 移动宽带优化"
-      - "IPv6 日本 A03 移动宽带优化"
-      - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
       - "美国 A20 低延迟游戏加速 限速5M"
+      - "日本 A21 移动路由 高带宽优化"
+      - "日本 A22 移动路由 高带宽优化"
+      - "IPv6 日本 A05 移动宽带优化"
+      - "IPv6 日本 A04 移动宽带优化"
+      - "IPv6 日本 A01 移动宽带优化"
+      - "美国 A03 IPv6双栈 Gemini"
+      - "新加坡 A06 移动优化"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
