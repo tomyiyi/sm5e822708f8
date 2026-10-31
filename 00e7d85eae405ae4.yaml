@@ -1,51 +1,9 @@
 mixed-port: 7890
 allow-lan: false
 mode: rule
-log-level: error
+log-level: info
 proxies:
-- name: 美国 A04 Gemini 电信优化
-  type: vless
-  server: us04.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A05 Gemini 电信优化
-  type: vless
-  server: us05.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A06 Gemini 电信优化
-  type: vless
-  server: us06.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A09 Gemini 移动优化
+- name: Gemini反代-209.146.116.238
   type: vless
   server: us09.graniterapids.com
   port: 443
@@ -59,23 +17,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 美国 A10 Gemini 移动优化
+- name: Gemini反代-142.252.102.198
   type: vless
-  server: us10.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A11 Gemini 电信优化
-  type: vless
-  server: us11.graniterapids.com
+  server: us04.graniterapids.com
   port: 1300
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -87,79 +31,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 美国 A12 Gemini 电信优化
+- name: Gemini反代-142.252.102.105
   type: vless
-  server: us12.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A13 Gemini 移动优化
-  type: vless
-  server: us13.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A14 Gemini 移动优化
-  type: vless
-  server: us14.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A15 Gemini 移动优化
-  type: vless
-  server: us15.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A17 低延迟游戏加速 限速5M
-  type: vless
-  server: us17.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 美国 A19 低延迟游戏加速 限速5M
-  type: vless
-  server: us19.graniterapids.com
+  server: us07.graniterapids.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -172,49 +46,43 @@ proxies:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
 proxy-groups:
-- name: US-GEMINI-VERIFIED
-  type: url-test
-  proxies:
-  - 美国 A04 Gemini 电信优化
-  - 美国 A05 Gemini 电信优化
-  - 美国 A06 Gemini 电信优化
-  - 美国 A09 Gemini 移动优化
-  - 美国 A10 Gemini 移动优化
-  - 美国 A11 Gemini 电信优化
-  - 美国 A12 Gemini 电信优化
-  - 美国 A13 Gemini 移动优化
-  - 美国 A14 Gemini 移动优化
-  - 美国 A15 Gemini 移动优化
-  - 美国 A17 低延迟游戏加速 限速5M
-  - 美国 A19 低延迟游戏加速 限速5M
-  url: https://gemini.google.com/
-  interval: 300
-  tolerance: 100
-- name: GOOGLE-US-STABLE
+- name: 谷歌入口
   type: select
   proxies:
-  - US-GEMINI-VERIFIED
+  - Gemini反代优选
+  - Gemini反代-209.146.116.238
+  - Gemini反代-142.252.102.198
+  - Gemini反代-142.252.102.105
+- name: Gemini反代优选
+  type: url-test
+  url: https://www.google.com/
+  interval: 180
+  tolerance: 50
+  proxies:
+  - Gemini反代-209.146.116.238
+  - Gemini反代-142.252.102.198
+  - Gemini反代-142.252.102.105
 rules:
 - IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
-- GEOIP,private,DIRECT,no-resolve
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
 - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-- DOMAIN-SUFFIX,local,DIRECT
-- DOMAIN-SUFFIX,localhost,DIRECT
-- DOMAIN-SUFFIX,gemini.google.com,GOOGLE-US-STABLE
-- DOMAIN-SUFFIX,aistudio.google.com,GOOGLE-US-STABLE
-- DOMAIN,generativelanguage.googleapis.com,GOOGLE-US-STABLE
-- DOMAIN,cloudcode-pa.googleapis.com,GOOGLE-US-STABLE
-- DOMAIN,daily-cloudcode-pa.googleapis.com,GOOGLE-US-STABLE
-- DOMAIN,cloudaicompanion.googleapis.com,GOOGLE-US-STABLE
-- DOMAIN-SUFFIX,openai.com,US-GEMINI-VERIFIED
-- DOMAIN-SUFFIX,chatgpt.com,US-GEMINI-VERIFIED
-- DOMAIN-SUFFIX,anthropic.com,US-GEMINI-VERIFIED
-- DOMAIN-SUFFIX,claude.ai,US-GEMINI-VERIFIED
-- DOMAIN-SUFFIX,github.com,US-GEMINI-VERIFIED
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- DOMAIN-SUFFIX,gemini.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,generativelanguage.googleapis.com,Gemini反代优选
+- DOMAIN-SUFFIX,aistudio.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com,Gemini反代优选
+- DOMAIN-SUFFIX,makersuite.google.com,Gemini反代优选
+- DOMAIN-KEYWORD,gemini,Gemini反代优选
+- DOMAIN-SUFFIX,google.com,谷歌入口
+- DOMAIN-SUFFIX,googleapis.com,谷歌入口
+- DOMAIN-SUFFIX,gstatic.com,谷歌入口
 - GEOSITE,cn,DIRECT
-- DOMAIN-SUFFIX,cn,DIRECT
 - GEOIP,CN,DIRECT
-- MATCH,US-GEMINI-VERIFIED
+- MATCH,Gemini反代优选
