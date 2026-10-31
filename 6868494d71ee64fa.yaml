@@ -772,34 +772,6 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 日本 A21 移动路由 高带宽优化
-    type: vless
-    server: hr01.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A22 移动路由 高带宽优化
-    type: vless
-    server: hr02.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 美国 A03 IPv6双栈 Gemini
     type: vless
     server: us03.graniterapids.com
@@ -898,6 +870,34 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
+  - name: 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+    type: vless
+    server: pccw08.accuhearts.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 香港 A09 三网精品BGP
+    type: vless
+    server: bgp09.accuhearts.com
+    port: 8080
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
 # END IG-AUTO-PROXIES
 
 proxy-groups:
@@ -963,8 +963,6 @@ proxy-groups:
       - "韩国 A06 电信+联通 BGP高带宽优化"
       - "国泰航空机上Wifi免认证"
       - "美国 A20 低延迟游戏加速 限速5M"
-      - "日本 A21 移动路由 高带宽优化"
-      - "日本 A22 移动路由 高带宽优化"
       - "美国 A03 IPv6双栈 Gemini"
       - "香港 A03 联通优化"
       - "IPv6 日本 A03 移动宽带优化"
@@ -972,6 +970,8 @@ proxy-groups:
       - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
       - "美国 A05 Gemini 电信优化"
+      - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
+      - "香港 A09 三网精品BGP"
   - name: "🌍日常·清洗节点"
     type: url-test
     # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
@@ -1033,8 +1033,6 @@ proxy-groups:
       - "韩国 A06 电信+联通 BGP高带宽优化"
       - "国泰航空机上Wifi免认证"
       - "美国 A20 低延迟游戏加速 限速5M"
-      - "日本 A21 移动路由 高带宽优化"
-      - "日本 A22 移动路由 高带宽优化"
       - "美国 A03 IPv6双栈 Gemini"
       - "香港 A03 联通优化"
       - "IPv6 日本 A03 移动宽带优化"
@@ -1042,6 +1040,8 @@ proxy-groups:
       - "IPv6 日本 A01 移动宽带优化"
       - "IPv6 日本 A02 移动宽带优化"
       - "美国 A05 Gemini 电信优化"
+      - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
+      - "香港 A09 三网精品BGP"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
