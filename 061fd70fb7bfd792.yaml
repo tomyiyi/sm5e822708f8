@@ -2552,6 +2552,7 @@ proxy-groups:
 - name: ♊ Gemini 稳定组
   type: select
   proxies:
+  - 美国 A07 Gemini 联通优化
   - 美国 A13 Gemini 移动优化
   - DIRECT
 - name: 🐟 漏网之鱼
