@@ -800,37 +800,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 日本 A30 联通路由 延迟优化
-    type: vless
-    server: hr10.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 新加坡 A07 联通优化
     type: vless
     server: sgp07.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A28 联通路由 延迟优化
-    type: vless
-    server: hr08.accuhearts.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -898,10 +870,10 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 日本 A16 IPV6双栈本地路由
+  - name: 香港 A09 三网精品BGP
     type: vless
-    server: jp16.accuhearts.com
-    port: 443
+    server: bgp09.accuhearts.com
+    port: 8080
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
     network: tcp
@@ -912,23 +884,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 日本 A18 IPV6双栈本地路由
+  - name: 美国 A17 低延迟游戏加速 限速5M
     type: vless
-    server: jp18.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A20 IPV6双栈本地路由
-    type: vless
-    server: jp20.accuhearts.com
+    server: us17.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -954,10 +912,10 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 香港 A09 三网精品BGP
+  - name: 日本 A30 联通路由 延迟优化
     type: vless
-    server: bgp09.accuhearts.com
-    port: 8080
+    server: hr10.accuhearts.com
+    port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
     network: tcp
@@ -968,9 +926,9 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A17 低延迟游戏加速 限速5M
+  - name: IPv6 日本 A01 移动宽带优化
     type: vless
-    server: us17.graniterapids.com
+    server: diz01.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -1049,19 +1007,16 @@ proxy-groups:
       - "美国 A05 Gemini 电信优化"
       - "日本 A27 移动优化路由"
       - "日本 A06 移动优化路由"
-      - "日本 A30 联通路由 延迟优化"
       - "新加坡 A07 联通优化"
-      - "日本 A28 联通路由 延迟优化"
       - "新加坡 A04 移动优化"
       - "新加坡 A10 联通优化"
       - "IPv6 日本 A05 移动宽带优化"
       - "IPv6 日本 A04 移动宽带优化"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A18 IPV6双栈本地路由"
-      - "日本 A20 IPV6双栈本地路由"
-      - "美国 A10 Gemini 移动优化"
       - "香港 A09 三网精品BGP"
       - "美国 A17 低延迟游戏加速 限速5M"
+      - "美国 A10 Gemini 移动优化"
+      - "日本 A30 联通路由 延迟优化"
+      - "IPv6 日本 A01 移动宽带优化"
   - name: "🌍日常·清洗节点"
     type: url-test
     # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
@@ -1125,19 +1080,16 @@ proxy-groups:
       - "美国 A05 Gemini 电信优化"
       - "日本 A27 移动优化路由"
       - "日本 A06 移动优化路由"
-      - "日本 A30 联通路由 延迟优化"
       - "新加坡 A07 联通优化"
-      - "日本 A28 联通路由 延迟优化"
       - "新加坡 A04 移动优化"
       - "新加坡 A10 联通优化"
       - "IPv6 日本 A05 移动宽带优化"
       - "IPv6 日本 A04 移动宽带优化"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A18 IPV6双栈本地路由"
-      - "日本 A20 IPV6双栈本地路由"
-      - "美国 A10 Gemini 移动优化"
       - "香港 A09 三网精品BGP"
       - "美国 A17 低延迟游戏加速 限速5M"
+      - "美国 A10 Gemini 移动优化"
+      - "日本 A30 联通路由 延迟优化"
+      - "IPv6 日本 A01 移动宽带优化"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
