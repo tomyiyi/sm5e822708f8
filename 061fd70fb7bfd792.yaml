@@ -2493,6 +2493,7 @@ proxy-groups:
   type: select
   proxies:
   - 美国 A07 Gemini 联通优化
+  - 美国 A08 Gemini 联通优化
   - DIRECT
 - name: 🐟 漏网之鱼
   type: select
