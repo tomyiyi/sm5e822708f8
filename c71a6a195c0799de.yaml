@@ -390,7 +390,7 @@ proxies:
     short-id: 1bc2c1ef1c
 - name: 台湾 E02 联通优化
   type: vless
-  server: tw01.earfts.com
+  server: tw02.earfts.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
