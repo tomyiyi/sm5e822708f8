@@ -374,9 +374,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 台湾 A01 高带宽优化
+- name: 台湾 E01 高带宽优化
   type: vless
-  server: tw01.graniterapids.com
+  server: tw01.earfts.com
   port: 1200
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -388,37 +388,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 台湾 A02 高带宽优化
+- name: 台湾 E02 联通优化
   type: vless
-  server: tw02.graniterapids.com
-  port: 1200
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A03 高带宽优化
-  type: vless
-  server: tw03.graniterapids.com
-  port: 1200
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A04 移动低延迟优化
-  type: vless
-  server: tw04.graniterapids.com
+  server: tw01.earfts.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -430,9 +402,9 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 台湾 A05 移动低延迟优化
+- name: 台湾 E03 电信优化
   type: vless
-  server: tw05.graniterapids.com
+  server: tw03.earfts.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -444,345 +416,37 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 台湾 A06 移动低延迟优化
+- name: 台湾 E04 移动优化
+  type: vless
+  server: tw04.earfts.com
+  port: 443
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 E05 高带宽优化
+  type: vless
+  server: tw05.earfts.com
+  port: 1200
+  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 E06 低延迟优化
   type: vless
   server: tw06.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A07 移动低延迟优化
-  type: vless
-  server: tw07.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A08 联通优化
-  type: vless
-  server: tw08.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A09 联通优化
-  type: vless
-  server: tw09.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A10 联通优化
-  type: vless
-  server: tw10.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A11 电信低延迟优化
-  type: vless
-  server: twct01.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A12 电信低延迟优化
-  type: vless
-  server: twct02.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A13 电信低延迟优化
-  type: vless
-  server: twct03.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A14 移动低延迟优化
-  type: vless
-  server: twct04.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A15 移动低延迟优化
-  type: vless
-  server: twct05.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A16 移动低延迟优化
-  type: vless
-  server: twct06.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A17 移动低延迟优化
-  type: vless
-  server: twct07.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A18 联通优化
-  type: vless
-  server: twct08.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A19 联通优化
-  type: vless
-  server: twct09.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A20 联通优化
-  type: vless
-  server: twct10.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A21 电信优化
-  type: vless
-  server: twgame01.graniterapids.com
-  port: 1200
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A22 电信优化
-  type: vless
-  server: twgame02.graniterapids.com
-  port: 1200
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A23 电信优化
-  type: vless
-  server: twgame03.graniterapids.com
-  port: 1200
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A24 移动低延迟优化
-  type: vless
-  server: twgame04.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A25 移动低延迟优化
-  type: vless
-  server: twgame05.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A26 移动低延迟优化
-  type: vless
-  server: twgame06.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A27 移动低延迟优化
-  type: vless
-  server: twgame07.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A28 联通优化
-  type: vless
-  server: twgame08.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A29 联通优化
-  type: vless
-  server: twgame09.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
-  udp: true
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.apple.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: 台湾 A30 联通优化
-  type: vless
-  server: twgame10.graniterapids.com
   port: 443
   uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
   udp: true
@@ -1648,7 +1312,7 @@ proxies:
   reality-opts:
     public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
     short-id: 1bc2c1ef1c
-- name: 美国 E01 联通优化
+- name: 美国 E02 联通优化
   type: vless
   server: us02.earfts.com
   port: 443
@@ -2269,7 +1933,6 @@ proxy-groups:
   type: select
   proxies:
   - VPS-美国-LA-A (admin)
-  - 台湾 A01 高带宽优化
   - 日本 A01 移动路由 高带宽优化
   - 新加坡 A01 电信优化
   - 加拿大 A01
@@ -2315,36 +1978,12 @@ proxy-groups:
   - 印度 A04 IEPL专线
   - 印度 A05 IEPL专线
   - 印度 A06 IEPL专线
-  - 台湾 A01 高带宽优化
-  - 台湾 A02 高带宽优化
-  - 台湾 A03 高带宽优化
-  - 台湾 A04 移动低延迟优化
-  - 台湾 A05 移动低延迟优化
-  - 台湾 A06 移动低延迟优化
-  - 台湾 A07 移动低延迟优化
-  - 台湾 A08 联通优化
-  - 台湾 A09 联通优化
-  - 台湾 A10 联通优化
-  - 台湾 A11 电信低延迟优化
-  - 台湾 A12 电信低延迟优化
-  - 台湾 A13 电信低延迟优化
-  - 台湾 A14 移动低延迟优化
-  - 台湾 A15 移动低延迟优化
-  - 台湾 A16 移动低延迟优化
-  - 台湾 A17 移动低延迟优化
-  - 台湾 A18 联通优化
-  - 台湾 A19 联通优化
-  - 台湾 A20 联通优化
-  - 台湾 A21 电信优化
-  - 台湾 A22 电信优化
-  - 台湾 A23 电信优化
-  - 台湾 A24 移动低延迟优化
-  - 台湾 A25 移动低延迟优化
-  - 台湾 A26 移动低延迟优化
-  - 台湾 A27 移动低延迟优化
-  - 台湾 A28 联通优化
-  - 台湾 A29 联通优化
-  - 台湾 A30 联通优化
+  - 台湾 E01 高带宽优化
+  - 台湾 E02 联通优化
+  - 台湾 E03 电信优化
+  - 台湾 E04 移动优化
+  - 台湾 E05 高带宽优化
+  - 台湾 E06 低延迟优化
   - 德国 A01 IEPL专线
   - 德国 A02 IEPL专线
   - 德国 A03 IEPL专线
@@ -2406,7 +2045,7 @@ proxy-groups:
   - 美国 E01 IPv6双栈 Gemini
   - 美国 E01 电信优化
   - 美国 E01 移动优化
-  - 美国 E01 联通优化
+  - 美国 E02 联通优化
   - 英国 A01 IEPL专线
   - 英国 A02 IEPL专线
   - 英国 A03 IEPL专线
@@ -2474,36 +2113,12 @@ proxy-groups:
   - 印度 A04 IEPL专线
   - 印度 A05 IEPL专线
   - 印度 A06 IEPL专线
-  - 台湾 A01 高带宽优化
-  - 台湾 A02 高带宽优化
-  - 台湾 A03 高带宽优化
-  - 台湾 A04 移动低延迟优化
-  - 台湾 A05 移动低延迟优化
-  - 台湾 A06 移动低延迟优化
-  - 台湾 A07 移动低延迟优化
-  - 台湾 A08 联通优化
-  - 台湾 A09 联通优化
-  - 台湾 A10 联通优化
-  - 台湾 A11 电信低延迟优化
-  - 台湾 A12 电信低延迟优化
-  - 台湾 A13 电信低延迟优化
-  - 台湾 A14 移动低延迟优化
-  - 台湾 A15 移动低延迟优化
-  - 台湾 A16 移动低延迟优化
-  - 台湾 A17 移动低延迟优化
-  - 台湾 A18 联通优化
-  - 台湾 A19 联通优化
-  - 台湾 A20 联通优化
-  - 台湾 A21 电信优化
-  - 台湾 A22 电信优化
-  - 台湾 A23 电信优化
-  - 台湾 A24 移动低延迟优化
-  - 台湾 A25 移动低延迟优化
-  - 台湾 A26 移动低延迟优化
-  - 台湾 A27 移动低延迟优化
-  - 台湾 A28 联通优化
-  - 台湾 A29 联通优化
-  - 台湾 A30 联通优化
+  - 台湾 E01 高带宽优化
+  - 台湾 E02 联通优化
+  - 台湾 E03 电信优化
+  - 台湾 E04 移动优化
+  - 台湾 E05 高带宽优化
+  - 台湾 E06 低延迟优化
   - 德国 A01 IEPL专线
   - 德国 A02 IEPL专线
   - 德国 A03 IEPL专线
@@ -2565,7 +2180,7 @@ proxy-groups:
   - 美国 E01 IPv6双栈 Gemini
   - 美国 E01 电信优化
   - 美国 E01 移动优化
-  - 美国 E01 联通优化
+  - 美国 E02 联通优化
   - 英国 A01 IEPL专线
   - 英国 A02 IEPL专线
   - 英国 A03 IEPL专线
@@ -2633,36 +2248,12 @@ proxy-groups:
   - 印度 A04 IEPL专线
   - 印度 A05 IEPL专线
   - 印度 A06 IEPL专线
-  - 台湾 A01 高带宽优化
-  - 台湾 A02 高带宽优化
-  - 台湾 A03 高带宽优化
-  - 台湾 A04 移动低延迟优化
-  - 台湾 A05 移动低延迟优化
-  - 台湾 A06 移动低延迟优化
-  - 台湾 A07 移动低延迟优化
-  - 台湾 A08 联通优化
-  - 台湾 A09 联通优化
-  - 台湾 A10 联通优化
-  - 台湾 A11 电信低延迟优化
-  - 台湾 A12 电信低延迟优化
-  - 台湾 A13 电信低延迟优化
-  - 台湾 A14 移动低延迟优化
-  - 台湾 A15 移动低延迟优化
-  - 台湾 A16 移动低延迟优化
-  - 台湾 A17 移动低延迟优化
-  - 台湾 A18 联通优化
-  - 台湾 A19 联通优化
-  - 台湾 A20 联通优化
-  - 台湾 A21 电信优化
-  - 台湾 A22 电信优化
-  - 台湾 A23 电信优化
-  - 台湾 A24 移动低延迟优化
-  - 台湾 A25 移动低延迟优化
-  - 台湾 A26 移动低延迟优化
-  - 台湾 A27 移动低延迟优化
-  - 台湾 A28 联通优化
-  - 台湾 A29 联通优化
-  - 台湾 A30 联通优化
+  - 台湾 E01 高带宽优化
+  - 台湾 E02 联通优化
+  - 台湾 E03 电信优化
+  - 台湾 E04 移动优化
+  - 台湾 E05 高带宽优化
+  - 台湾 E06 低延迟优化
   - 德国 A01 IEPL专线
   - 德国 A02 IEPL专线
   - 德国 A03 IEPL专线
@@ -2724,7 +2315,7 @@ proxy-groups:
   - 美国 E01 IPv6双栈 Gemini
   - 美国 E01 电信优化
   - 美国 E01 移动优化
-  - 美国 E01 联通优化
+  - 美国 E02 联通优化
   - 英国 A01 IEPL专线
   - 英国 A02 IEPL专线
   - 英国 A03 IEPL专线
@@ -2792,36 +2383,12 @@ proxy-groups:
   - 印度 A04 IEPL专线
   - 印度 A05 IEPL专线
   - 印度 A06 IEPL专线
-  - 台湾 A01 高带宽优化
-  - 台湾 A02 高带宽优化
-  - 台湾 A03 高带宽优化
-  - 台湾 A04 移动低延迟优化
-  - 台湾 A05 移动低延迟优化
-  - 台湾 A06 移动低延迟优化
-  - 台湾 A07 移动低延迟优化
-  - 台湾 A08 联通优化
-  - 台湾 A09 联通优化
-  - 台湾 A10 联通优化
-  - 台湾 A11 电信低延迟优化
-  - 台湾 A12 电信低延迟优化
-  - 台湾 A13 电信低延迟优化
-  - 台湾 A14 移动低延迟优化
-  - 台湾 A15 移动低延迟优化
-  - 台湾 A16 移动低延迟优化
-  - 台湾 A17 移动低延迟优化
-  - 台湾 A18 联通优化
-  - 台湾 A19 联通优化
-  - 台湾 A20 联通优化
-  - 台湾 A21 电信优化
-  - 台湾 A22 电信优化
-  - 台湾 A23 电信优化
-  - 台湾 A24 移动低延迟优化
-  - 台湾 A25 移动低延迟优化
-  - 台湾 A26 移动低延迟优化
-  - 台湾 A27 移动低延迟优化
-  - 台湾 A28 联通优化
-  - 台湾 A29 联通优化
-  - 台湾 A30 联通优化
+  - 台湾 E01 高带宽优化
+  - 台湾 E02 联通优化
+  - 台湾 E03 电信优化
+  - 台湾 E04 移动优化
+  - 台湾 E05 高带宽优化
+  - 台湾 E06 低延迟优化
   - 德国 A01 IEPL专线
   - 德国 A02 IEPL专线
   - 德国 A03 IEPL专线
@@ -2883,7 +2450,7 @@ proxy-groups:
   - 美国 E01 IPv6双栈 Gemini
   - 美国 E01 电信优化
   - 美国 E01 移动优化
-  - 美国 E01 联通优化
+  - 美国 E02 联通优化
   - 英国 A01 IEPL专线
   - 英国 A02 IEPL专线
   - 英国 A03 IEPL专线
@@ -2960,36 +2527,12 @@ proxy-groups:
   - 印度 A04 IEPL专线
   - 印度 A05 IEPL专线
   - 印度 A06 IEPL专线
-  - 台湾 A01 高带宽优化
-  - 台湾 A02 高带宽优化
-  - 台湾 A03 高带宽优化
-  - 台湾 A04 移动低延迟优化
-  - 台湾 A05 移动低延迟优化
-  - 台湾 A06 移动低延迟优化
-  - 台湾 A07 移动低延迟优化
-  - 台湾 A08 联通优化
-  - 台湾 A09 联通优化
-  - 台湾 A10 联通优化
-  - 台湾 A11 电信低延迟优化
-  - 台湾 A12 电信低延迟优化
-  - 台湾 A13 电信低延迟优化
-  - 台湾 A14 移动低延迟优化
-  - 台湾 A15 移动低延迟优化
-  - 台湾 A16 移动低延迟优化
-  - 台湾 A17 移动低延迟优化
-  - 台湾 A18 联通优化
-  - 台湾 A19 联通优化
-  - 台湾 A20 联通优化
-  - 台湾 A21 电信优化
-  - 台湾 A22 电信优化
-  - 台湾 A23 电信优化
-  - 台湾 A24 移动低延迟优化
-  - 台湾 A25 移动低延迟优化
-  - 台湾 A26 移动低延迟优化
-  - 台湾 A27 移动低延迟优化
-  - 台湾 A28 联通优化
-  - 台湾 A29 联通优化
-  - 台湾 A30 联通优化
+  - 台湾 E01 高带宽优化
+  - 台湾 E02 联通优化
+  - 台湾 E03 电信优化
+  - 台湾 E04 移动优化
+  - 台湾 E05 高带宽优化
+  - 台湾 E06 低延迟优化
   - 德国 A01 IEPL专线
   - 德国 A02 IEPL专线
   - 德国 A03 IEPL专线
@@ -3051,7 +2594,7 @@ proxy-groups:
   - 美国 E01 IPv6双栈 Gemini
   - 美国 E01 电信优化
   - 美国 E01 移动优化
-  - 美国 E01 联通优化
+  - 美国 E02 联通优化
   - 英国 A01 IEPL专线
   - 英国 A02 IEPL专线
   - 英国 A03 IEPL专线
