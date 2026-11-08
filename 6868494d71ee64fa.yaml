@@ -2,508 +2,598 @@ mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - localhost.ptlogin2.qq.com
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 1.1.1.1
+  - 8.8.8.8
+  fallback:
+  - https://1.1.1.1/dns-query
+  - https://8.8.8.8/dns-query
+  nameserver-policy:
+    geosite:cn:
+    - 223.5.5.5
+    - 119.29.29.29
 proxies:
-  - name: "⚡️美西-极速-Hysteria2"
-    type: hysteria2
-    server: 107.150.27.20
-    port: 443
-    password: "TomYi-Hy2-8f92a1bc4e6d"
-    sni: subtomyi.duckdns.org
-    skip-cert-verify: false
-    fast-open: true
-
-  - name: "🛡️美西-稳定-Reality"
-    type: vless
-    server: 107.150.27.20
-    port: 8443
-    uuid: 3923271d-d8a3-482d-806a-d853694e3652
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: addons.mozilla.org
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: UHmGldkZZ0TlTmjaZUHdQBvyn0FvZOea-saYQPzQihQ
-      short-id: 0df9
-      support-x25519mlkem768: true
-
-# BEGIN IG-AUTO-PROXIES
-  - name: 加拿大 A05 电信+联通 BGP高带宽优化
-    type: vless
-    server: ca05.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 国泰航空机上Wifi免认证
-    type: vless
-    server: 57.129.177.126
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.cathaypacific.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 新加坡 A09 联通优化
-    type: vless
-    server: sgp09.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 新加坡 A08 联通优化
-    type: vless
-    server: sgp08.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 新加坡 A04 移动优化
-    type: vless
-    server: sgp04.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A20 IPV6双栈本地路由
-    type: vless
-    server: jp20.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A16 IPV6双栈本地路由
-    type: vless
-    server: jp16.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A19 IPV6双栈本地路由
-    type: vless
-    server: jp19.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 韩国 A05 电信+联通 BGP高带宽优化
-    type: vless
-    server: kr05.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
-    type: vless
-    server: pccw08.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 香港 A06 三网精品BGP
-    type: vless
-    server: bgp06.accuhearts.com
-    port: 8080
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A05 移动宽带优化
-    type: vless
-    server: diz05.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A04 移动宽带优化
-    type: vless
-    server: diz04.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 法国 A06 IEPL专线
-    type: vless
-    server: fr06.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 台湾 B03 电信优化
-    type: vless
-    server: tw03.bofua.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
-    type: vless
-    server: pccw05.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A02 移动宽带优化
-    type: vless
-    server: diz02.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: IPv6 日本 A01 移动宽带优化
-    type: vless
-    server: diz01.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-# END IG-AUTO-PROXIES
-
+- name: 美国-快速
+  type: hysteria2
+  server: 107.150.27.20
+  port: 443
+  password: TomYi-Hy2-8f92a1bc4e6d
+  sni: subtomyi.duckdns.org
+  skip-cert-verify: false
+  fast-open: true
+- name: 美国-稳定
+  type: vless
+  server: 107.150.27.20
+  port: 8443
+  uuid: 3923271d-d8a3-482d-806a-d853694e3652
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: addons.mozilla.org
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UHmGldkZZ0TlTmjaZUHdQBvyn0FvZOea-saYQPzQihQ
+    short-id: 0df9
+    support-x25519mlkem768: true
+- name: 加拿大 A05 电信+联通 BGP高带宽优化
+  type: vless
+  server: ca05.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 国泰航空机上Wifi免认证
+  type: vless
+  server: 57.129.177.126
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cathaypacific.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A09 联通优化
+  type: vless
+  server: sgp09.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A08 联通优化
+  type: vless
+  server: sgp08.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 新加坡 A04 移动优化
+  type: vless
+  server: sgp04.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A20 IPV6双栈本地路由
+  type: vless
+  server: jp20.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A16 IPV6双栈本地路由
+  type: vless
+  server: jp16.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 日本 A19 IPV6双栈本地路由
+  type: vless
+  server: jp19.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 韩国 A05 电信+联通 BGP高带宽优化
+  type: vless
+  server: kr05.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw08.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A06 三网精品BGP
+  type: vless
+  server: bgp06.accuhearts.com
+  port: 8080
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A05 移动宽带优化
+  type: vless
+  server: diz05.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A04 移动宽带优化
+  type: vless
+  server: diz04.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 法国 A06 IEPL专线
+  type: vless
+  server: fr06.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 台湾 B03 电信优化
+  type: vless
+  server: tw03.bofua.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  type: vless
+  server: pccw05.accuhearts.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A02 移动宽带优化
+  type: vless
+  server: diz02.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
+- name: IPv6 日本 A01 移动宽带优化
+  type: vless
+  server: diz01.graniterapids.com
+  port: 443
+  uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+  udp: true
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+    short-id: 1bc2c1ef1c
 proxy-groups:
-# BEGIN IG-AUTO-GROUP
-  - name: "📷IG·Pinterest 自动"
-    type: url-test
-    # 必须 https：美国A01 过不了明文 HTTP，用 http 健康检查会把它永久判死
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    lazy: false
-    proxies:
-      - "加拿大 A05 电信+联通 BGP高带宽优化"
-      - "国泰航空机上Wifi免认证"
-      - "新加坡 A09 联通优化"
-      - "新加坡 A08 联通优化"
-      - "新加坡 A04 移动优化"
-      - "日本 A20 IPV6双栈本地路由"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A19 IPV6双栈本地路由"
-      - "韩国 A05 电信+联通 BGP高带宽优化"
-      - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
-      - "香港 A06 三网精品BGP"
-      - "IPv6 日本 A05 移动宽带优化"
-      - "IPv6 日本 A04 移动宽带优化"
-      - "法国 A06 IEPL专线"
-      - "台湾 B03 电信优化"
-      - "香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
-      - "IPv6 日本 A02 移动宽带优化"
-      - "IPv6 日本 A01 移动宽带优化"
-  - name: "🌍日常·清洗节点"
-    type: url-test
-    # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    lazy: false
-    proxies:
-      - "加拿大 A05 电信+联通 BGP高带宽优化"
-      - "国泰航空机上Wifi免认证"
-      - "新加坡 A09 联通优化"
-      - "新加坡 A08 联通优化"
-      - "新加坡 A04 移动优化"
-      - "日本 A20 IPV6双栈本地路由"
-      - "日本 A16 IPV6双栈本地路由"
-      - "日本 A19 IPV6双栈本地路由"
-      - "韩国 A05 电信+联通 BGP高带宽优化"
-      - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
-      - "香港 A06 三网精品BGP"
-      - "IPv6 日本 A05 移动宽带优化"
-      - "IPv6 日本 A04 移动宽带优化"
-      - "法国 A06 IEPL专线"
-      - "台湾 B03 电信优化"
-      - "香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
-      - "IPv6 日本 A02 移动宽带优化"
-      - "IPv6 日本 A01 移动宽带优化"
-# END IG-AUTO-GROUP
-  - name: PROXY
-    type: select
-    proxies:
-      - "📷IG·Pinterest 自动"
-      - "🌍日常·清洗节点"
-      - "⚡️美西-极速-Hysteria2"
-      - "🛡️美西-稳定-Reality"
-      - 自动优选
-      - DIRECT
-
-  - name: 自动优选
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "⚡️美西-极速-Hysteria2"
-      - "🛡️美西-稳定-Reality"
-
+- name: 📷IG·Pinterest 自动
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  lazy: false
+  proxies:
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 国泰航空机上Wifi免认证
+  - 新加坡 A09 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A04 移动优化
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A06 三网精品BGP
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - 法国 A06 IEPL专线
+  - 台湾 B03 电信优化
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A01 移动宽带优化
+- name: 🌍日常·清洗节点
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  lazy: false
+  proxies:
+  - 加拿大 A05 电信+联通 BGP高带宽优化
+  - 国泰航空机上Wifi免认证
+  - 新加坡 A09 联通优化
+  - 新加坡 A08 联通优化
+  - 新加坡 A04 移动优化
+  - 日本 A20 IPV6双栈本地路由
+  - 日本 A16 IPV6双栈本地路由
+  - 日本 A19 IPV6双栈本地路由
+  - 韩国 A05 电信+联通 BGP高带宽优化
+  - 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - 香港 A06 三网精品BGP
+  - IPv6 日本 A05 移动宽带优化
+  - IPv6 日本 A04 移动宽带优化
+  - 法国 A06 IEPL专线
+  - 台湾 B03 电信优化
+  - 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+  - IPv6 日本 A02 移动宽带优化
+  - IPv6 日本 A01 移动宽带优化
+- name: PROXY
+  type: select
+  proxies:
+  - 📷IG·Pinterest 自动
+  - 🌍日常·清洗节点
+  - 美国-快速
+  - 美国-稳定
+  - 自动优选
+  - DIRECT
+- name: 自动优选
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 美国-快速
+  - 美国-稳定
 rules:
-  # 局域网直连
-  - GEOIP,private,DIRECT,no-resolve
-  - GEOSITE,private,DIRECT,no-resolve
-
-  # download/streaming/big files go via VPS (source quota low, save it; match by domain, not bytes)
-  - DOMAIN-SUFFIX,youtube.com,自动优选
-  - DOMAIN-SUFFIX,googlevideo.com,自动优选
-  - DOMAIN-SUFFIX,ytimg.com,自动优选
-  - DOMAIN-SUFFIX,netflix.com,自动优选
-  - DOMAIN-SUFFIX,nflxvideo.net,自动优选
-  - DOMAIN-SUFFIX,nflximg.net,自动优选
-  - DOMAIN-SUFFIX,nflxso.net,自动优选
-  - DOMAIN-SUFFIX,disneyplus.com,自动优选
-  - DOMAIN-SUFFIX,disney-plus.net,自动优选
-  - DOMAIN-SUFFIX,hulu.com,自动优选
-  - DOMAIN-SUFFIX,huluim.com,自动优选
-  - DOMAIN-SUFFIX,twitch.tv,自动优选
-  - DOMAIN-SUFFIX,twitchcdn.net,自动优选
-  - DOMAIN-SUFFIX,tiktok.com,自动优选
-  - DOMAIN-SUFFIX,tiktokcdn.com,自动优选
-  - DOMAIN-SUFFIX,tiktokv.com,自动优选
-  - DOMAIN-SUFFIX,vimeo.com,自动优选
-  - DOMAIN-SUFFIX,vimeocdn.com,自动优选
-  - DOMAIN-SUFFIX,dailymotion.com,自动优选
-  - DOMAIN-SUFFIX,dmcdn.net,自动优选
-  - DOMAIN-SUFFIX,play.google.com,自动优选
-  - DOMAIN-SUFFIX,drive.google.com,自动优选
-  - DOMAIN-SUFFIX,windowsupdate.com,自动优选
-  - DOMAIN-SUFFIX,download.microsoft.com,自动优选
-  - DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,自动优选
-  - DOMAIN-SUFFIX,officecdn.microsoft.com,自动优选
-  - DOMAIN-SUFFIX,itunes.apple.com,自动优选
-  - DOMAIN-SUFFIX,apps.apple.com,自动优选
-  - DOMAIN-SUFFIX,mzstatic.com,自动优选
-  - DOMAIN-SUFFIX,swcdn.apple.com,自动优选
-  - DOMAIN-SUFFIX,swdist.apple.com,自动优选
-  - DOMAIN-SUFFIX,githubusercontent.com,自动优选
-  - DOMAIN-SUFFIX,huggingface.co,自动优选
-  - DOMAIN-SUFFIX,hf.co,自动优选
-  - DOMAIN-SUFFIX,steamcontent.com,自动优选
-  - DOMAIN-SUFFIX,steamstatic.com,自动优选
-  - DOMAIN-SUFFIX,steampowered.com,自动优选
-  - DOMAIN-SUFFIX,mega.nz,自动优选
-  - DOMAIN-SUFFIX,sourceforge.net,自动优选
-
-  # daily foreign sites go via cleaned nodes (same members as IG group)
-  - DOMAIN-SUFFIX,google.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,googleapis.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,gstatic.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,openai.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,chatgpt.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,oaistatic.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,oaiusercontent.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,x.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,twitter.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,reddit.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,wikipedia.org,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,github.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,gitlab.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,stackoverflow.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,medium.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,discord.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,telegram.org,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,notion.so,🌍日常·清洗节点
-
-  - DOMAIN-SUFFIX,dl.google.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,gvt1.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,gvt2.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,gvt3.com,🌍日常·清洗节点
-  - DOMAIN-SUFFIX,instagram.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,cdninstagram.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,ig.me,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,instagr.am,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,facebook.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,fbcdn.net,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,facebook.net,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,accountkit.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,threads.net,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,threads.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,pinterest.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,pinimg.com,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,pinterest.co.uk,📷IG·Pinterest 自动
-  - DOMAIN-SUFFIX,pinterest.de,📷IG·Pinterest 自动
-
-  # 国内主流域名后缀直连
-  - DOMAIN-SUFFIX,cn,DIRECT
-  - DOMAIN-SUFFIX,com.cn,DIRECT
-  - DOMAIN-SUFFIX,net.cn,DIRECT
-  - DOMAIN-SUFFIX,org.cn,DIRECT
-  - DOMAIN-SUFFIX,edu.cn,DIRECT
-  - DOMAIN-SUFFIX,gov.cn,DIRECT
-
-  # 国内常见生态服务直连（微信、淘宝、支付宝、抖音、百度等）
-  - DOMAIN-KEYWORD,baidu,DIRECT
-  - DOMAIN-KEYWORD,bilibili,DIRECT
-  - DOMAIN-KEYWORD,alipay,DIRECT
-  - DOMAIN-KEYWORD,taobao,DIRECT
-  - DOMAIN-KEYWORD,qq,DIRECT
-  - DOMAIN-KEYWORD,tencent,DIRECT
-  - DOMAIN-KEYWORD,wechat,DIRECT
-  - DOMAIN-KEYWORD,weixin,DIRECT
-  - DOMAIN-KEYWORD,jd,DIRECT
-  - DOMAIN-KEYWORD,bytedance,DIRECT
-  - DOMAIN-KEYWORD,douyin,DIRECT
-  - DOMAIN-KEYWORD,zhihu,DIRECT
-  - DOMAIN-KEYWORD,163,DIRECT
-  - DOMAIN-KEYWORD,sina,DIRECT
-  - DOMAIN-KEYWORD,weibo,DIRECT
-  - DOMAIN-KEYWORD,csdn,DIRECT
-  - DOMAIN-KEYWORD,alicdn,DIRECT
-  - DOMAIN-KEYWORD,bdstatic,DIRECT
-  - DOMAIN-KEYWORD,xiaohongshu,DIRECT
-  - DOMAIN-KEYWORD,xhs,DIRECT
-  - DOMAIN-KEYWORD,meituan,DIRECT
-  - DOMAIN-KEYWORD,dianping,DIRECT
-  - DOMAIN-KEYWORD,ele,DIRECT
-  - DOMAIN-KEYWORD,didi,DIRECT
-  - DOMAIN-KEYWORD,kuaishou,DIRECT
-  - DOMAIN-KEYWORD,xiaomi,DIRECT
-  - DOMAIN-KEYWORD,mi,DIRECT
-  - DOMAIN-KEYWORD,huawei,DIRECT
-  - DOMAIN-KEYWORD,oppo,DIRECT
-  - DOMAIN-KEYWORD,vivo,DIRECT
-  - DOMAIN-KEYWORD,pinduoduo,DIRECT
-  - DOMAIN-KEYWORD,pdd,DIRECT
-  - DOMAIN-KEYWORD,ctrip,DIRECT
-  - DOMAIN-KEYWORD,fliggy,DIRECT
-  - DOMAIN-KEYWORD,aliyun,DIRECT
-  - DOMAIN-KEYWORD,alibaba,DIRECT
-  - DOMAIN-KEYWORD,dingtalk,DIRECT
-  - DOMAIN-KEYWORD,youku,DIRECT
-  - DOMAIN-KEYWORD,iqiyi,DIRECT
-  - DOMAIN-KEYWORD,mgtv,DIRECT
-  - DOMAIN-KEYWORD,sohu,DIRECT
-  - DOMAIN-KEYWORD,360,DIRECT
-  - DOMAIN-KEYWORD,so,DIRECT
-  - DOMAIN-KEYWORD,amap,DIRECT
-  - DOMAIN-KEYWORD,gaode,DIRECT
-  - DOMAIN-KEYWORD,12306,DIRECT
-  - DOMAIN-KEYWORD,china,DIRECT
-
-  # 中国大陆域名与地理 IP 直连
-  - GEOSITE,category-games@cn,DIRECT
-  - GEOSITE,cn,DIRECT
-  - GEOIP,CN,DIRECT
-
-  # 兜底：未匹配的境外流量走 VPS 入口（5000G/月充足，不烧清洗节点配额）
-  - MATCH,自动优选
+- GEOIP,private,DIRECT,no-resolve
+- GEOSITE,private,DIRECT,no-resolve
+- DOMAIN-SUFFIX,youtube.com,自动优选
+- DOMAIN-SUFFIX,googlevideo.com,自动优选
+- DOMAIN-SUFFIX,ytimg.com,自动优选
+- DOMAIN-SUFFIX,netflix.com,自动优选
+- DOMAIN-SUFFIX,nflxvideo.net,自动优选
+- DOMAIN-SUFFIX,nflximg.net,自动优选
+- DOMAIN-SUFFIX,nflxso.net,自动优选
+- DOMAIN-SUFFIX,disneyplus.com,自动优选
+- DOMAIN-SUFFIX,disney-plus.net,自动优选
+- DOMAIN-SUFFIX,hulu.com,自动优选
+- DOMAIN-SUFFIX,huluim.com,自动优选
+- DOMAIN-SUFFIX,twitch.tv,自动优选
+- DOMAIN-SUFFIX,twitchcdn.net,自动优选
+- DOMAIN-SUFFIX,tiktok.com,自动优选
+- DOMAIN-SUFFIX,tiktokcdn.com,自动优选
+- DOMAIN-SUFFIX,tiktokv.com,自动优选
+- DOMAIN-SUFFIX,vimeo.com,自动优选
+- DOMAIN-SUFFIX,vimeocdn.com,自动优选
+- DOMAIN-SUFFIX,dailymotion.com,自动优选
+- DOMAIN-SUFFIX,dmcdn.net,自动优选
+- DOMAIN-SUFFIX,play.google.com,自动优选
+- DOMAIN-SUFFIX,drive.google.com,自动优选
+- DOMAIN-SUFFIX,windowsupdate.com,自动优选
+- DOMAIN-SUFFIX,download.microsoft.com,自动优选
+- DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,自动优选
+- DOMAIN-SUFFIX,officecdn.microsoft.com,自动优选
+- DOMAIN-SUFFIX,itunes.apple.com,自动优选
+- DOMAIN-SUFFIX,apps.apple.com,自动优选
+- DOMAIN-SUFFIX,mzstatic.com,自动优选
+- DOMAIN-SUFFIX,swcdn.apple.com,自动优选
+- DOMAIN-SUFFIX,swdist.apple.com,自动优选
+- DOMAIN-SUFFIX,githubusercontent.com,自动优选
+- DOMAIN-SUFFIX,huggingface.co,自动优选
+- DOMAIN-SUFFIX,hf.co,自动优选
+- DOMAIN-SUFFIX,steamcontent.com,自动优选
+- DOMAIN-SUFFIX,steamstatic.com,自动优选
+- DOMAIN-SUFFIX,steampowered.com,自动优选
+- DOMAIN-SUFFIX,mega.nz,自动优选
+- DOMAIN-SUFFIX,sourceforge.net,自动优选
+- DOMAIN-SUFFIX,google.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,googleapis.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,gstatic.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,openai.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,chatgpt.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,oaistatic.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,oaiusercontent.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,x.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,twitter.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,reddit.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,wikipedia.org,🌍日常·清洗节点
+- DOMAIN-SUFFIX,github.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,gitlab.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,stackoverflow.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,medium.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,discord.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,telegram.org,🌍日常·清洗节点
+- DOMAIN-SUFFIX,notion.so,🌍日常·清洗节点
+- DOMAIN-SUFFIX,dl.google.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,gvt1.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,gvt2.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,gvt3.com,🌍日常·清洗节点
+- DOMAIN-SUFFIX,instagram.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,cdninstagram.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,ig.me,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,instagr.am,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,facebook.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,fbcdn.net,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,facebook.net,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,accountkit.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,threads.net,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,threads.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,pinterest.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,pinimg.com,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,pinterest.co.uk,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,pinterest.de,📷IG·Pinterest 自动
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-SUFFIX,com.cn,DIRECT
+- DOMAIN-SUFFIX,net.cn,DIRECT
+- DOMAIN-SUFFIX,org.cn,DIRECT
+- DOMAIN-SUFFIX,edu.cn,DIRECT
+- DOMAIN-SUFFIX,gov.cn,DIRECT
+- DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,wx.qq.com,DIRECT
+- DOMAIN-SUFFIX,wechat.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,weibo.cn,DIRECT
+- DOMAIN-SUFFIX,sina.com.cn,DIRECT
+- DOMAIN-SUFFIX,xiaohongshu.com,DIRECT
+- DOMAIN-SUFFIX,xhs.com,DIRECT
+- DOMAIN-SUFFIX,douyin.com,DIRECT
+- DOMAIN-SUFFIX,douyincdn.com,DIRECT
+- DOMAIN-SUFFIX,kuaishou.com,DIRECT
+- DOMAIN-SUFFIX,kwai.com,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,zhimg.com,DIRECT
+- DOMAIN-SUFFIX,douban.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,hdslb.com,DIRECT
+- DOMAIN-SUFFIX,hupu.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,pinduoduo.com,DIRECT
+- DOMAIN-SUFFIX,meituan.com,DIRECT
+- DOMAIN-SUFFIX,meituan.net,DIRECT
+- DOMAIN-SUFFIX,dianping.com,DIRECT
+- DOMAIN-SUFFIX,ele.me,DIRECT
+- DOMAIN-SUFFIX,vip.com,DIRECT
+- DOMAIN-SUFFIX,suning.com,DIRECT
+- DOMAIN-SUFFIX,dewu.com,DIRECT
+- DOMAIN-SUFFIX,ctrip.com,DIRECT
+- DOMAIN-SUFFIX,trip.com,DIRECT
+- DOMAIN-SUFFIX,fliggy.com,DIRECT
+- DOMAIN-SUFFIX,ly.com,DIRECT
+- DOMAIN-SUFFIX,didi.com,DIRECT
+- DOMAIN-SUFFIX,amap.com,DIRECT
+- DOMAIN-SUFFIX,gaode.com,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,qiyi.com,DIRECT
+- DOMAIN-SUFFIX,v.qq.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,tudou.com,DIRECT
+- DOMAIN-SUFFIX,mgtv.com,DIRECT
+- DOMAIN-SUFFIX,migu.cn,DIRECT
+- DOMAIN-SUFFIX,sohu.com,DIRECT
+- DOMAIN-SUFFIX,kugou.com,DIRECT
+- DOMAIN-SUFFIX,kuwo.cn,DIRECT
+- DOMAIN-SUFFIX,toutiao.com,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,netease.com,DIRECT
+- DOMAIN-SUFFIX,thepaper.cn,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,alipay.cn,DIRECT
+- DOMAIN-SUFFIX,unionpay.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,dingtalk.com,DIRECT
+- DOMAIN-SUFFIX,feishu.cn,DIRECT
+- DOMAIN-SUFFIX,wps.cn,DIRECT
+- DOMAIN-SUFFIX,wps.com,DIRECT
+- DOMAIN-SUFFIX,aliyun.com,DIRECT
+- DOMAIN-SUFFIX,cloud.tencent.com,DIRECT
+- DOMAIN-SUFFIX,huaweicloud.com,DIRECT
+- DOMAIN-SUFFIX,mi.com,DIRECT
+- DOMAIN-SUFFIX,xiaomi.com,DIRECT
+- DOMAIN-SUFFIX,huawei.com,DIRECT
+- DOMAIN-SUFFIX,oppo.com,DIRECT
+- DOMAIN-SUFFIX,vivo.com,DIRECT
+- DOMAIN-SUFFIX,lenovo.com,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-KEYWORD,bilibili,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-KEYWORD,qq,DIRECT
+- DOMAIN-KEYWORD,tencent,DIRECT
+- DOMAIN-KEYWORD,wechat,DIRECT
+- DOMAIN-KEYWORD,weixin,DIRECT
+- DOMAIN-KEYWORD,jd,DIRECT
+- DOMAIN-KEYWORD,bytedance,DIRECT
+- DOMAIN-KEYWORD,douyin,DIRECT
+- DOMAIN-KEYWORD,zhihu,DIRECT
+- DOMAIN-KEYWORD,163,DIRECT
+- DOMAIN-KEYWORD,sina,DIRECT
+- DOMAIN-KEYWORD,weibo,DIRECT
+- DOMAIN-KEYWORD,csdn,DIRECT
+- DOMAIN-KEYWORD,alicdn,DIRECT
+- DOMAIN-KEYWORD,bdstatic,DIRECT
+- DOMAIN-KEYWORD,xiaohongshu,DIRECT
+- DOMAIN-KEYWORD,xhs,DIRECT
+- DOMAIN-KEYWORD,meituan,DIRECT
+- DOMAIN-KEYWORD,dianping,DIRECT
+- DOMAIN-KEYWORD,ele,DIRECT
+- DOMAIN-KEYWORD,didi,DIRECT
+- DOMAIN-KEYWORD,kuaishou,DIRECT
+- DOMAIN-KEYWORD,xiaomi,DIRECT
+- DOMAIN-KEYWORD,mi,DIRECT
+- DOMAIN-KEYWORD,huawei,DIRECT
+- DOMAIN-KEYWORD,oppo,DIRECT
+- DOMAIN-KEYWORD,vivo,DIRECT
+- DOMAIN-KEYWORD,pinduoduo,DIRECT
+- DOMAIN-KEYWORD,pdd,DIRECT
+- DOMAIN-KEYWORD,ctrip,DIRECT
+- DOMAIN-KEYWORD,fliggy,DIRECT
+- DOMAIN-KEYWORD,aliyun,DIRECT
+- DOMAIN-KEYWORD,alibaba,DIRECT
+- DOMAIN-KEYWORD,dingtalk,DIRECT
+- DOMAIN-KEYWORD,youku,DIRECT
+- DOMAIN-KEYWORD,iqiyi,DIRECT
+- DOMAIN-KEYWORD,mgtv,DIRECT
+- DOMAIN-KEYWORD,sohu,DIRECT
+- DOMAIN-KEYWORD,360,DIRECT
+- DOMAIN-KEYWORD,so,DIRECT
+- DOMAIN-KEYWORD,amap,DIRECT
+- DOMAIN-KEYWORD,gaode,DIRECT
+- DOMAIN-KEYWORD,12306,DIRECT
+- DOMAIN-KEYWORD,china,DIRECT
+- DOMAIN-SUFFIX,alicdn.com,DIRECT
+- DOMAIN-SUFFIX,bdstatic.com,DIRECT
+- DOMAIN-SUFFIX,qunar.com,DIRECT
+- DOMAIN-SUFFIX,ixigua.com,DIRECT
+- DOMAIN-SUFFIX,ximalaya.com,DIRECT
+- DOMAIN-SUFFIX,goofish.com,DIRECT
+- DOMAIN-SUFFIX,95516.com,DIRECT
+- DOMAIN-SUFFIX,oneplus.com,DIRECT
+- DOMAIN-SUFFIX,meizu.com,DIRECT
+- DOMAIN-SUFFIX,shimo.im,DIRECT
+- DOMAIN-SUFFIX,hema.com,DIRECT
+- DOMAIN-SUFFIX,ddmall.com,DIRECT
+- DOMAIN-SUFFIX,boc.cn,DIRECT
+- DOMAIN-SUFFIX,ccb.com,DIRECT
+- DOMAIN-SUFFIX,abchina.com,DIRECT
+- DOMAIN-SUFFIX,bankcomm.com,DIRECT
+- DOMAIN-SUFFIX,95516.net,DIRECT
+- DOMAIN-SUFFIX,huoshan.com,DIRECT
+- DOMAIN-KEYWORD,qunar,DIRECT
+- DOMAIN-KEYWORD,ixigua,DIRECT
+- DOMAIN-KEYWORD,ximalaya,DIRECT
+- DOMAIN-KEYWORD,goofish,DIRECT
+- DOMAIN-KEYWORD,oneplus,DIRECT
+- DOMAIN-KEYWORD,meizu,DIRECT
+- GEOSITE,category-games@cn,DIRECT
+- GEOSITE,cn,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,自动优选
