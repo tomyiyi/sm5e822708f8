@@ -156,20 +156,6 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 台湾 A27 移动低延迟优化
-    type: vless
-    server: twgame07.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®
     type: vless
     server: pccw08.accuhearts.com
@@ -188,34 +174,6 @@ proxies:
     type: vless
     server: bgp06.accuhearts.com
     port: 8080
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 台湾 A11 电信低延迟优化
-    type: vless
-    server: twct01.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 台湾 A20 联通优化
-    type: vless
-    server: twct10.graniterapids.com
-    port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
     network: tcp
@@ -254,65 +212,65 @@ proxies:
     reality-opts:
       public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
       short-id: 1bc2c1ef1c
-  - name: 美国 A18 低延迟游戏加速 限速5M
-    type: vless
-    server: us18.graniterapids.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A07 移动优化路由
-    type: vless
-    server: jp07.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A30 联通路由 延迟优化
-    type: vless
-    server: hr10.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
-  - name: 日本 A28 联通路由 延迟优化
-    type: vless
-    server: hr08.accuhearts.com
-    port: 443
-    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
-    udp: true
-    network: tcp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-      short-id: 1bc2c1ef1c
   - name: 法国 A06 IEPL专线
     type: vless
     server: fr06.accuhearts.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 台湾 B03 电信优化
+    type: vless
+    server: tw03.bofua.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: 香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®
+    type: vless
+    server: pccw05.accuhearts.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: IPv6 日本 A02 移动宽带优化
+    type: vless
+    server: diz02.graniterapids.com
+    port: 443
+    uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
+    udp: true
+    network: tcp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
+      short-id: 1bc2c1ef1c
+  - name: IPv6 日本 A01 移动宽带优化
+    type: vless
+    server: diz01.graniterapids.com
     port: 443
     uuid: 8bf40124-4001-495d-bbc2-34d749ccc5b5
     udp: true
@@ -345,18 +303,15 @@ proxy-groups:
       - "日本 A16 IPV6双栈本地路由"
       - "日本 A19 IPV6双栈本地路由"
       - "韩国 A05 电信+联通 BGP高带宽优化"
-      - "台湾 A27 移动低延迟优化"
       - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
       - "香港 A06 三网精品BGP"
-      - "台湾 A11 电信低延迟优化"
-      - "台湾 A20 联通优化"
       - "IPv6 日本 A05 移动宽带优化"
       - "IPv6 日本 A04 移动宽带优化"
-      - "美国 A18 低延迟游戏加速 限速5M"
-      - "日本 A07 移动优化路由"
-      - "日本 A30 联通路由 延迟优化"
-      - "日本 A28 联通路由 延迟优化"
       - "法国 A06 IEPL专线"
+      - "台湾 B03 电信优化"
+      - "香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
+      - "IPv6 日本 A02 移动宽带优化"
+      - "IPv6 日本 A01 移动宽带优化"
   - name: "🌍日常·清洗节点"
     type: url-test
     # 日常国外网站走清洗节点：与 IG 组同一批成员，由同一轮补位维护
@@ -374,18 +329,15 @@ proxy-groups:
       - "日本 A16 IPV6双栈本地路由"
       - "日本 A19 IPV6双栈本地路由"
       - "韩国 A05 电信+联通 BGP高带宽优化"
-      - "台湾 A27 移动低延迟优化"
       - "香港 A18 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
       - "香港 A06 三网精品BGP"
-      - "台湾 A11 电信低延迟优化"
-      - "台湾 A20 联通优化"
       - "IPv6 日本 A05 移动宽带优化"
       - "IPv6 日本 A04 移动宽带优化"
-      - "美国 A18 低延迟游戏加速 限速5M"
-      - "日本 A07 移动优化路由"
-      - "日本 A30 联通路由 延迟优化"
-      - "日本 A28 联通路由 延迟优化"
       - "法国 A06 IEPL专线"
+      - "台湾 B03 电信优化"
+      - "香港 A15 IPLC专线 Tomorin Network©️ 高松灯中国优化®"
+      - "IPv6 日本 A02 移动宽带优化"
+      - "IPv6 日本 A01 移动宽带优化"
 # END IG-AUTO-GROUP
   - name: PROXY
     type: select
@@ -493,6 +445,11 @@ rules:
 
   # 国内主流域名后缀直连
   - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-SUFFIX,com.cn,DIRECT
+  - DOMAIN-SUFFIX,net.cn,DIRECT
+  - DOMAIN-SUFFIX,org.cn,DIRECT
+  - DOMAIN-SUFFIX,edu.cn,DIRECT
+  - DOMAIN-SUFFIX,gov.cn,DIRECT
 
   # 国内常见生态服务直连（微信、淘宝、支付宝、抖音、百度等）
   - DOMAIN-KEYWORD,baidu,DIRECT
@@ -502,6 +459,7 @@ rules:
   - DOMAIN-KEYWORD,qq,DIRECT
   - DOMAIN-KEYWORD,tencent,DIRECT
   - DOMAIN-KEYWORD,wechat,DIRECT
+  - DOMAIN-KEYWORD,weixin,DIRECT
   - DOMAIN-KEYWORD,jd,DIRECT
   - DOMAIN-KEYWORD,bytedance,DIRECT
   - DOMAIN-KEYWORD,douyin,DIRECT
@@ -512,11 +470,40 @@ rules:
   - DOMAIN-KEYWORD,csdn,DIRECT
   - DOMAIN-KEYWORD,alicdn,DIRECT
   - DOMAIN-KEYWORD,bdstatic,DIRECT
+  - DOMAIN-KEYWORD,xiaohongshu,DIRECT
+  - DOMAIN-KEYWORD,xhs,DIRECT
+  - DOMAIN-KEYWORD,meituan,DIRECT
+  - DOMAIN-KEYWORD,dianping,DIRECT
+  - DOMAIN-KEYWORD,ele,DIRECT
+  - DOMAIN-KEYWORD,didi,DIRECT
+  - DOMAIN-KEYWORD,kuaishou,DIRECT
+  - DOMAIN-KEYWORD,xiaomi,DIRECT
+  - DOMAIN-KEYWORD,mi,DIRECT
+  - DOMAIN-KEYWORD,huawei,DIRECT
+  - DOMAIN-KEYWORD,oppo,DIRECT
+  - DOMAIN-KEYWORD,vivo,DIRECT
+  - DOMAIN-KEYWORD,pinduoduo,DIRECT
+  - DOMAIN-KEYWORD,pdd,DIRECT
+  - DOMAIN-KEYWORD,ctrip,DIRECT
+  - DOMAIN-KEYWORD,fliggy,DIRECT
+  - DOMAIN-KEYWORD,aliyun,DIRECT
+  - DOMAIN-KEYWORD,alibaba,DIRECT
+  - DOMAIN-KEYWORD,dingtalk,DIRECT
+  - DOMAIN-KEYWORD,youku,DIRECT
+  - DOMAIN-KEYWORD,iqiyi,DIRECT
+  - DOMAIN-KEYWORD,mgtv,DIRECT
+  - DOMAIN-KEYWORD,sohu,DIRECT
+  - DOMAIN-KEYWORD,360,DIRECT
+  - DOMAIN-KEYWORD,so,DIRECT
+  - DOMAIN-KEYWORD,amap,DIRECT
+  - DOMAIN-KEYWORD,gaode,DIRECT
+  - DOMAIN-KEYWORD,12306,DIRECT
+  - DOMAIN-KEYWORD,china,DIRECT
 
   # 中国大陆域名与地理 IP 直连
   - GEOSITE,category-games@cn,DIRECT
   - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT
 
-  # 兜底：所有境外流量走代理
-  - MATCH,PROXY
+  # 兜底：未匹配的境外流量走 VPS 入口（5000G/月充足，不烧清洗节点配额）
+  - MATCH,自动优选
