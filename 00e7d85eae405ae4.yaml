@@ -3,49 +3,49 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-- name: Gemini反代-142.252.102.198
+- name: Gemini反代-104.202.107.226
   type: vless
-  server: us08.graniterapids.com
-  port: 443
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  server: 38.55.99.192
+  port: 2096
+  uuid: cb782998-d453-4d26-93be-ce5c6de87fd3
   udp: true
   network: tcp
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.apple.com
+  servername: image-assets-edge.appepicgames.store
   client-fingerprint: chrome
   reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
-- name: Gemini反代-209.146.116.238
+    public-key: C4A41kgII9yrbmkhSisP8_3XKwCzBpdXqDDzZ8AncRg
+    short-id: a28df7a0cb4a0ce5
+  flow: xtls-rprx-vision
+- name: Gemini反代-149.19.158.66
   type: vless
-  server: us04.graniterapids.com
-  port: 1300
-  uuid: 3ff232e9-f66e-469f-98b0-0c13b3ab501d
+  server: 38.55.99.192
+  port: 2096
+  uuid: cb782998-d453-4d26-93be-ce5c6de87fd3
   udp: true
   network: tcp
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.apple.com
+  servername: artifact-build-mirror.appepicgames.store
   client-fingerprint: chrome
   reality-opts:
-    public-key: Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs
-    short-id: 1bc2c1ef1c
+    public-key: JlzElPRd2VlTkENoS45vdLhp7yBRQvrjSTrxiIezZ14
+    short-id: 62e55f9208d3bd5c
+  flow: xtls-rprx-vision
 proxy-groups:
 - name: 谷歌入口
   type: select
   proxies:
   - Gemini反代优选
-  - Gemini反代-142.252.102.198
-  - Gemini反代-209.146.116.238
+  - Gemini反代-104.202.107.226
+  - Gemini反代-149.19.158.66
 - name: Gemini反代优选
   type: url-test
   url: https://www.google.com/
   interval: 180
   tolerance: 50
   proxies:
-  - Gemini反代-142.252.102.198
-  - Gemini反代-209.146.116.238
+  - Gemini反代-104.202.107.226
+  - Gemini反代-149.19.158.66
 rules:
 - IP-CIDR,107.150.27.20/32,DIRECT,no-resolve
 - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve

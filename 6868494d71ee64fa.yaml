@@ -371,6 +371,17 @@ proxy-groups:
   - 美国-快速
   - 美国-稳定
 rules:
+- DOMAIN-SUFFIX,1fyun.top,DIRECT
+- DOMAIN-SUFFIX,api-biubiu.sbs,DIRECT
+- DOMAIN-SUFFIX,biubiux.online,DIRECT
+- DOMAIN-SUFFIX,flashleap.net,DIRECT
+- DOMAIN-SUFFIX,flycat.mom,DIRECT
+- DOMAIN-SUFFIX,jichangbang.cc,DIRECT
+- DOMAIN-SUFFIX,nicecc.cc,DIRECT
+- DOMAIN-SUFFIX,sogocloud.world,DIRECT
+- DOMAIN-SUFFIX,weituyun.com,DIRECT
+- DOMAIN-SUFFIX,wuyoulink.com.cn,DIRECT
+- DOMAIN-SUFFIX,wuyoulink.net,DIRECT
 - DOMAIN-SUFFIX,youtube.com,自动优选
 - DOMAIN-SUFFIX,googlevideo.com,自动优选
 - DOMAIN-SUFFIX,ytimg.com,自动优选
@@ -611,16 +622,6 @@ rules:
 - DOMAIN-SUFFIX,zhimg.com,DIRECT
 - GEOIP,CN,DIRECT
 - GEOIP,private,DIRECT,no-resolve
-- DOMAIN-SUFFIX,biubiux.online,DIRECT
-- DOMAIN-SUFFIX,nicecc.cc,DIRECT
-- DOMAIN-SUFFIX,wuyoulink.com.cn,DIRECT
-- DOMAIN-SUFFIX,wuyoulink.net,DIRECT
-- DOMAIN-SUFFIX,weituyun.com,DIRECT
-- DOMAIN-SUFFIX,flycat.mom,DIRECT
-- DOMAIN-SUFFIX,flashleap.net,DIRECT
-- DOMAIN-SUFFIX,sogocloud.world,DIRECT
-- DOMAIN-SUFFIX,1fyun.top,DIRECT
-- DOMAIN-SUFFIX,jichangbang.cc,DIRECT
 - GEOSITE,category-games@cn,DIRECT
 - GEOSITE,cn,DIRECT
 - GEOSITE,private,DIRECT,no-resolve
